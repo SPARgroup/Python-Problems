@@ -19,6 +19,19 @@ def rotate(vect,rot):
     plt.legend()
     plt.show()
 
+def rotate_2 (vect, rot):
+    rad = rot * np.pi/180
+    alpha = vect[1]/ vect[0]
+    theta = cm.atan(alpha)
+    mag = np.sqrt((vect[0] * vect[0]) + (vect[1] * vect[1]))
+    x = mag * (cm.cos(rad + theta))
+    y = mag * (cm.sin(rad + theta))
+    plt.plot([0,vect[0]],[0,vect[1]], label= "Original Vector") #plot original vector
+    plt.plot([0, x], [0, y], label="Rotated Vector") #plot rotated vector
+    
+    plt.legend()
+    plt.show()
+    
 inp = input("Enter X and Y components: ").split()
 
 vect = [float(inp[0]), float(inp[1])]
@@ -43,7 +56,8 @@ min = np.min([vect[0], x, vect[1], y])
 plt.axes().set_aspect("equal")
 mag = np.round(np.sqrt((x * x) + (y * y)), decimals = 4) # calculate magnitude of the vector
 
-rotate(vect, angle)
+#rotate(vect, angle)
+rotate_2(vect, angle)
 
 print ("Magnitude of Vectors: ",mag)
 
