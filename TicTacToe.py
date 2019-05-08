@@ -1,5 +1,6 @@
 import os
 import msvcrt as ms
+import time
 
 
 def display(currState):
@@ -7,8 +8,8 @@ def display(currState):
     for i in range(3):
         for j in range(3):
             print(currState[(i * 3) + j], end="")
-            if (j + 1) % 3 != 0:
-                print(" ", end="")
+            if (j+1) % 3 != 0:
+                print(" | ", end="")
 
         print("\n")
 
@@ -32,14 +33,18 @@ magic = [6, 7, 2, 1, 5, 9, 8, 3, 4]
 X = []
 Y = []
 turn = True
-for i in range(9):
+moves = 0
+while moves < 9:
+    moves += 1
     counter = 0
     display(board)
-
+    insertVal = ""
     if turn:
         print("Player X")
+        insertVal = "X"
     else:
         print("Player O")
+        insertVal = "O"
 
 
     print("Play Your Move using WASD keys: ")
@@ -49,8 +54,19 @@ for i in range(9):
         move = process(j)
         counter = (counter + move) % 9
 
-    board.insert(counter, " ")
 
-    turn = not turn
+    if board[counter] != "_":
+        print("Invalid Move")
+        moves -= 1
+        time.sleep(1)
+    else:
+        board[counter] = insertVal
+        if turn:
+            X.append(magic[counter])
+        else:
+            Y.append(magic[counter])
+
+        turn = not turn
+
 
 input()
