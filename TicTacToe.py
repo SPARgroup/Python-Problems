@@ -39,7 +39,7 @@ def check(z):
 
 
 board = ['_', '_', '_', '_', '_', '_', '_', '_', '_']
-config = ['_', '_', '_', '_', '_', '_', '_', '_', '_']
+#config = ['_', '_', '_', '_', '_', '_', '_', '_', '_']
 
 magic = [6, 7, 2,
          1, 5, 9,
@@ -51,10 +51,9 @@ Y = []
 turn = True
 won = False
 
-moves = 0
+moves = 1
 
 while moves <= 9 and not won:
-    moves += 1
 
     counter = 0  #the starting point is the top-left. Change to 5 to start at center.
 
@@ -87,7 +86,6 @@ while moves <= 9 and not won:
         moves -= 1
         time.sleep(0.5)
         print("That's illegal!")
-        print(insertVal)
         time.sleep(1)
     else:
         board[counter] = insertVal
@@ -113,11 +111,11 @@ while moves <= 9 and not won:
                     print("Outstanding move!")
                     won = True
                     time.sleep(0.4)
-                    print("Player Y Wins.")
+                    print("Player O Wins.")
                 else:
                     continue
-
-    if moves == 9:
+    moves += 1
+    if moves == 10:
         break
 
 if not won:
