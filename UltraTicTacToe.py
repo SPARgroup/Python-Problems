@@ -150,7 +150,7 @@ while moves <= 81:
         print("Wait.")
         time.sleep(0.5)
         print("That's illegal.")
-        moves =- 1
+        moves -= 1
         time.sleep(0.5)
     else:
         board[bigscope][smallscope] = insertVal
@@ -168,11 +168,16 @@ while moves <= 81:
                     continue
 
             if isfilled(board[smallscope]):
-
-                print("They have no space for you in the",smallscope+1,"grid. So might as well be here itself.")
-                time.sleep(3)
-
+                if (isfilled(board[bigscope])):
+                    for checkcounter in range(9):
+                        if not (isfilled(board[checkcounter])):
+                            bigscope = checkcounter
+                else:
+                    print("They have no space for you in the",smallscope+1,"grid. So you might as well be here itself.")
+                    time.sleep(3)
             else:
+                print("test")
+                time.sleep(1)
                 bigscope = smallscope
 
         else:
@@ -188,11 +193,17 @@ while moves <= 81:
                     continue
 
             if isfilled(board[smallscope]):
-
-                print("They have no space for you in the",smallscope+1,"grid. So might as well be here itself.")
-                time.sleep(3)
-
+                if (isfilled(board[bigscope])):
+                    for checkcounter in range(9):
+                        if not (isfilled(board[checkcounter])):
+                            bigscope = checkcounter
+                else:
+                    print("They have no space for you in the", smallscope + 1,
+                          "grid. So you might as well be here itself.")
+                    time.sleep(3)
             else:
+                print("test")
+                time.sleep(1)
                 bigscope = smallscope
 
     moves += 1
