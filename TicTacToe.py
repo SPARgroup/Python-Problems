@@ -38,7 +38,9 @@ def check(z):
     return False
 
 
-board = ['_', '_', '_', '_', '_', '_', '_', '_', '_']
+board = ['_', '_', '_',
+         '_', '_', '_',
+         '_', '_', '_']
 #config = ['_', '_', '_', '_', '_', '_', '_', '_', '_']
 
 magic = [6, 7, 2,
@@ -52,10 +54,10 @@ turn = True
 won = False
 
 moves = 1
+filled = 0
+while moves <= 9 and (not won) and filled < 9:
 
-while moves <= 9 and not won:
-
-    counter = 0  #the starting point is the top-left. Change to 5 to start at center.
+    counter = 4  #the starting point is the top-left. Change to 0 to start at top-left corner.
 
     display(board)
 
@@ -68,7 +70,7 @@ while moves <= 9 and not won:
         print("Player O")
         insertVal = "O"
 
-    print("Play Your Move using WASD keys: ")
+    print("Play Your Move using WASD keys. (Your pointer starts at the center): ")
 
     x = input()
 
@@ -88,6 +90,7 @@ while moves <= 9 and not won:
         print("That's illegal!")
         time.sleep(1)
     else:
+        filled += 1
         board[counter] = insertVal
         if turn:
             turn = False
@@ -119,7 +122,8 @@ while moves <= 9 and not won:
         break
 
 if not won:
-  print("Nobody won and its a shame.\n")
+    display(board)
+    print("Nobody won and its a shame.\n")
 inp = ""
 while(not(inp == "F" or inp == "f")):
   inp = input("\nPress F and Enter to pay respects. ")
