@@ -54,14 +54,12 @@ def win(checkList):
 
     return counter
 
-
 def display_row(currState, jay, kay):
     print(currState[(3 * jay)], end=" | ")
     print(currState[(3 * jay) + 1], end=" | ")
     print(currState[(3 * jay) + 2], end="")
     if kay != 2:
         print("   I   ", end="")
-
 
 def ultrashow(currState):
     os.system("cls")
@@ -105,7 +103,7 @@ def isfilled(l):
     else:
         return True
 
-#@todo: find Python API to use network to store game states at a network location
+#@todo: find Python API to use network to store game states at a network location (probably on our site: https://cycada.ml)
 
 moves = 1
 
@@ -124,10 +122,10 @@ while moves <= 81:
     else:
         insertVal="O"
 
-    # if(win(x.wins) > 0 or win(y.wins) > 0):
-    #     print("X :",win(x.wins),"Y :",win(y.wins))
-
-    print("X :", win(x.wins), "Y :", win(y.wins))
+    if(win(x.wins) > 0 or win(y.wins) > 0):
+        print("X :",win(x.wins),"Y :",win(y.wins))
+    else:
+        print("Nobody has won any grid to their name yet.")
     print("\nIt is player",insertVal+"'s turn. You will play in the",bigscope+1,"grid.")
     print("\nNavigate using WASD keys (your pointer starts at the center) :")
 
@@ -144,7 +142,7 @@ while moves <= 81:
             smallscope = (smallscope + move) % 9
 
       #@todo: check if destination bigscope is already filled
-      #@todo: a variable to track how many total wins are there
+      #@todo: a variable to track how many total wins are there (kinda done)
 
     if smallscope < 0 or board[bigscope][smallscope] != '_':
         print("Wait.")
@@ -197,4 +195,5 @@ while moves <= 81:
 
     moves += 1
 
+print("Bro you literally finished the whole game in one go (We haven't made the save game function). Do you life'nt?")
 input()
