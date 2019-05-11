@@ -1,6 +1,10 @@
 import time
 import os
 
+def stringify(l):
+   string = " ".join(str(x) for x in l)
+   return string
+
 board = [['_', '_', '_',
           '_', '_', '_',
           '_', '_', '_'],
@@ -33,22 +37,18 @@ magic = [6, 7, 2,
          1, 5, 9,
          8, 3, 4]
 
-
-
 class player():
     def __init__(self):
         self.ac = [[], [], [], [], [], [], [], [], []]
         self.wins = [False, False, False, False, False, False, False, False, False]
         self.moves = [0,0,0,0,0,0,0,0,0]
 
-
 x = player()
 y = player()
 
-
-def win(checkList):
+def win(checklist):
     counter = 0
-    for i in checkList:
+    for i in checklist:
         if i == True:
             counter += 1
 
@@ -100,13 +100,12 @@ def isfilled(l):
     for i in l:
         if i == '_':
             return False
-    else:
-        return True
 
-#@todo: find Python API to use network to store game states at a network location (probably on our site: https://cycada.ml)
+    return True
+
+#@todo: find Python API to use network to store game states at a network location
 
 moves = 1
-
 bigscope = 0
 turn = True
 
@@ -122,10 +121,7 @@ while moves <= 81:
     else:
         insertVal="O"
 
-    if(win(x.wins) > 0 or win(y.wins) > 0):
-        print("X :",win(x.wins),"Y :",win(y.wins))
-    else:
-        print("Nobody has won any grid to their name yet.")
+    print("X :", win(x.wins), "Y :", win(y.wins))
     print("\nIt is player",insertVal+"'s turn. You will play in the",bigscope+1,"grid.")
     print("\nNavigate using WASD keys (your pointer starts at the center) :")
 
@@ -142,7 +138,7 @@ while moves <= 81:
             smallscope = (smallscope + move) % 9
 
       #@todo: check if destination bigscope is already filled
-      #@todo: a variable to track how many total wins are there (kinda done)
+      #@todo: a variable to track how many total wins are there
 
     if smallscope < 0 or board[bigscope][smallscope] != '_':
         print("Wait.")
@@ -162,14 +158,15 @@ while moves <= 81:
 
                 if check(x.ac[bigscope]) and y.wins[bigscope] == False:
                     x.wins[bigscope] = True
-                else:
-                    continue
 
             if isfilled(board[smallscope]):
+                print("test1")
+                time.sleep(1)
                 if (isfilled(board[bigscope])):
                     for checkcounter in range(9):
-                        if not (isfilled(board[checkcounter])):
+                        if not(isfilled(board[checkcounter])):
                             bigscope = checkcounter
+                            break
                 else:
                     print("They have no space for you in the",smallscope+1,"grid. So you might as well be here itself.")
                     time.sleep(3)
@@ -187,14 +184,14 @@ while moves <= 81:
 
                 if check(y.ac[bigscope]) and x.wins[bigscope] == False:
                     y.wins[bigscope] = True
-                else:
-                    continue
+
 
             if isfilled(board[smallscope]):
                 if (isfilled(board[bigscope])):
                     for checkcounter in range(9):
                         if not (isfilled(board[checkcounter])):
                             bigscope = checkcounter
+                            break
                 else:
                     print("They have no space for you in the", smallscope + 1,
                           "grid. So you might as well be here itself.")
@@ -206,5 +203,4 @@ while moves <= 81:
 
     moves += 1
 
-print("Bro you literally finished the whole game in one go (We haven't made the save game function). Do you life'nt?")
 input()
