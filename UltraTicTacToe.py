@@ -1,10 +1,6 @@
 import time
 import os
 
-def stringify(l):
-   string = " ".join(str(x) for x in l)
-   return string
-
 board = [['_', '_', '_',
           '_', '_', '_',
           '_', '_', '_'],
@@ -32,6 +28,33 @@ board = [['_', '_', '_',
          ['_', '_', '_',
           '_', '_', '_',
           '_', '_', '_']]
+
+def stringify(l):
+   string = " ".join(str(x) for x in l)
+   return string
+
+def prepdata(bd, _x, _y, _moves, f):
+    #prep board
+    _a=""
+    for i in bd:
+        _a += stringify(i) + "\n"
+
+    f.write(_a)
+    f.close()
+
+def loadgame(_name, _bd):
+    file = open(_name, "r")
+    arr = file.read().split("\n")
+
+    for i in range(9):
+        _bd[i] = arr[i].split()
+    file.close()
+
+def save(board, x, y, moves, file):
+    prepdata(board, x, y, moves, file)
+
+
+loadgame("test.txt", board)
 
 magic = [6, 7, 2,
          1, 5, 9,
@@ -109,98 +132,103 @@ moves = 1
 bigscope = 0
 turn = True
 
-while moves <= 81:
-    smallscope = 4
+try:
+    while moves <= 81:
+        smallscope = 4
 
-    ultrashow(board)
+        ultrashow(board)
 
-    insertVal = ""
+        insertVal = ""
 
-    if turn:
-        insertVal="X"
-    else:
-        insertVal="O"
-
-    print("X :", win(x.wins), "Y :", win(y.wins))
-    print("\nIt is player",insertVal+"'s turn. You will play in the",bigscope+1,"grid.")
-    print("\nNavigate using WASD keys (your pointer starts at the center) :")
-
-    inp = input()
-
-    for i in inp:
-        move = process(i)
-        if move == False:
-            print("Hold up!")
-            time.sleep(0.5)
-            smallscope = -1
-            break
-        else:
-            smallscope = (smallscope + move) % 9
-
-      #@todo: check if destination bigscope is already filled
-      #@todo: a variable to track how many total wins are there
-
-    if smallscope < 0 or board[bigscope][smallscope] != '_':
-        print("Wait.")
-        time.sleep(0.5)
-        print("That's illegal.")
-        moves -= 1
-        time.sleep(0.5)
-    else:
-        board[bigscope][smallscope] = insertVal
         if turn:
-            turn = False
-            x.moves[bigscope] += 1
-
-            x.ac[bigscope].append(magic[smallscope])
-
-            if x.moves[bigscope] >= 3:
-
-                if check(x.ac[bigscope]) and y.wins[bigscope] == False:
-                    x.wins[bigscope] = True
-
-            if isfilled(board[smallscope]):
-                print("test1")
-                time.sleep(1)
-                if (isfilled(board[bigscope])):
-                    for checkcounter in range(9):
-                        if not(isfilled(board[checkcounter])):
-                            bigscope = checkcounter
-                            break
-                else:
-                    print("They have no space for you in the",smallscope+1,"grid. So you might as well be here itself.")
-                    time.sleep(3)
-            else:
-                print("test")
-                time.sleep(1)
-                bigscope = smallscope
-
+            insertVal="X"
         else:
-            turn = True
-            y.moves[bigscope] += 1
-            y.ac[bigscope].append(magic[smallscope])
+            insertVal="O"
 
-            if y.moves[bigscope] >= 3:
+        print("X :", win(x.wins), "Y :", win(y.wins))
+        print("\nIt is player",insertVal+"'s turn. You will play in the",bigscope+1,"grid.")
+        print("\nNavigate using WASD keys (your pointer starts at the center) :")
 
-                if check(y.ac[bigscope]) and x.wins[bigscope] == False:
-                    y.wins[bigscope] = True
+        inp = input()
 
-
-            if isfilled(board[smallscope]):
-                if (isfilled(board[bigscope])):
-                    for checkcounter in range(9):
-                        if not (isfilled(board[checkcounter])):
-                            bigscope = checkcounter
-                            break
-                else:
-                    print("They have no space for you in the", smallscope + 1,
-                          "grid. So you might as well be here itself.")
-                    time.sleep(3)
+        for i in inp:
+            move = process(i)
+            if move == False:
+                print("Hold up!")
+                time.sleep(0.5)
+                smallscope = -1
+                break
             else:
-                print("test")
-                time.sleep(1)
-                bigscope = smallscope
+                smallscope = (smallscope + move) % 9
 
-    moves += 1
+          #@todo: check if destination bigscope is already filled
+          #@todo: a variable to track how many total wins are there
 
+        if smallscope < 0 or board[bigscope][smallscope] != '_':
+            print("Wait.")
+            time.sleep(0.5)
+            print("That's illegal.")
+            moves -= 1
+            time.sleep(0.5)
+        else:
+            board[bigscope][smallscope] = insertVal
+            if turn:
+                turn = False
+                x.moves[bigscope] += 1
+
+                x.ac[bigscope].append(magic[smallscope])
+
+                if x.moves[bigscope] >= 3:
+
+                    if check(x.ac[bigscope]) and y.wins[bigscope] == False:
+                        x.wins[bigscope] = True
+
+                if isfilled(board[smallscope]):
+
+                    if (isfilled(board[bigscope])):
+                        for checkcounter in range(9):
+                            if not(isfilled(board[checkcounter])):
+                                bigscope = checkcounter
+                                break
+                    else:
+                        print("They have no space for you in the",smallscope+1,"grid. So you might as well be here itself.")
+                        time.sleep(3)
+                else:
+
+                    bigscope = smallscope
+
+            else:
+                turn = True
+                y.moves[bigscope] += 1
+                y.ac[bigscope].append(magic[smallscope])
+
+                if y.moves[bigscope] >= 3:
+
+                    if check(y.ac[bigscope]) and x.wins[bigscope] == False:
+                        y.wins[bigscope] = True
+
+
+                if isfilled(board[smallscope]):
+                    if (isfilled(board[bigscope])):
+                        for checkcounter in range(9):
+                            if not (isfilled(board[checkcounter])):
+                                bigscope = checkcounter
+                                break
+                    else:
+                        print("They have no space for you in the", smallscope + 1,
+                              "grid. So you might as well be here itself.")
+                        time.sleep(3)
+                else:
+
+                    bigscope = smallscope
+
+        moves += 1
+        file = open("test.txt","w")
+        save(board, x, y, moves, file)
+        file.close()
+
+finally:
+    file = open("test.txt","w")
+    prepdata(board, x, y, moves, file)
+    file.close()
 input()
