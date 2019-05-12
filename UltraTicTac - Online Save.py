@@ -124,7 +124,8 @@ def loadgame(_data, _bd, __big, __moves, _turn, __x, __y):
     for j in yex:
         __y.moves[counter] = int(j)
         counter+=1
-    return __big
+    return __big, _turn, __moves
+
 def retrieveFile(_filename):
     url = "http://cycada.ml/game/" + _filename + ".txt"
     _data = req.get(url)
@@ -215,7 +216,7 @@ def isfilled(l):
 moves = 1
 bigscope = 0
 turn = True
-
+handler = []
 
 s = input("Do you want to continue saved game?(y/n): ")
 if(s == 'y' or s == 'Y'):
@@ -223,8 +224,11 @@ if(s == 'y' or s == 'Y'):
     data = retrieveFile(id)
     if data != False:
         # print(data)
-        bigscope = loadgame(data, board, bigscope, moves, turn, x, y)
-        print(bigscope, "SUPER SAIYYAN \n")
+        handler = loadgame(data, board, bigscope, moves, turn, x, y)
+        bigscope = handler[0]
+        turn = handler[1]
+        moves = handler[2]
+        print(bigscope, handler, turn, "SUPER SAIYYAN \n")
         time.sleep(4)
 
 try:
