@@ -31,37 +31,113 @@ board = [['_', '_', '_',
           '_', '_', '_',
           '_', '_', '_']]
 
+def returnBitForBool(e):
+    if e:
+        return "1"
+    else:
+        return "0"
+
 def stringify(l):
    string = " ".join(str(x) for x in l)
    return string
 
-def prepdata(bd, _x, _y, _moves, f):
-
+def prepdata(bd, _x, _y, _moves, f, _big, __turn):
     _a=""
     for i in bd:
         _a += stringify(i) + "\n"
 
+    _a += str(_big) + "\n" + str(_moves) + "\n" + returnBitForBool(__turn) + "\n"
+
+    for i in _x.ac:
+        _a += stringify(i) + "\n"
+
+    #Wins array for both players is a boolean array
+    yex = []
+
+    for i in _x.wins:
+        yex.append(returnBitForBool(i))
+
+    _a += stringify(yex) + "\n"
+    _a += stringify(_x.moves) + "\n"
+
+
+    for i in _y.ac:
+        _a += stringify(i) + "\n"
+
+    yay = []
+
+    for i in _y.wins:
+        yay.append(returnBitForBool(i))
+
+    _a += stringify(yay) + "\n"
+    _a += stringify(_y.moves) + "\n"
+
     f.write(_a)
+
     f.close()
 
-def loadgame(_data, _bd):
+def loadgame(_data, _bd, __big, __moves, _turn, __x, __y):
     arr = _data.split("\n")
+
     for i in range(9):
         _bd[i] = arr[i].split()
 
+    __big = int(arr[9])
+#    __moves = int(arr[10])
+    _turn = bool(arr[11])
 
+    #for player X
+    yex = []
+    for i in range(12, 21):
+        yex = arr[i].split()
+        for j in yex:
+            __x.ac[i - 12].append(int(j))
+
+    yex = arr[21].split()
+
+    counter = 0
+    for j in yex:
+        __x.wins[counter] = bool(int(j))
+        counter+=1
+
+    yex = arr[22].split()
+    counter = 0
+    for j in yex:
+        __x.moves[counter] = int(j)
+        counter+=1
+
+    #for player Y
+    for i in range(23, 32):
+        yex = arr[i].split()
+        for j in yex:
+            __y.ac[i - 23].append(int(j))
+
+    yex = arr[32].split()
+
+    counter = 0
+    for j in yex:
+        __y.wins[counter] = bool(int(j))
+        counter+=1
+
+    yex = arr[33].split()
+    counter = 0
+    for j in yex:
+        __y.moves[counter] = int(j)
+        counter+=1
+    return __big
 def retrieveFile(_filename):
-    params = {'id':_filename}
-    url = "http://cycada.ml/game/" + id + ".txt"
-    _data = req.get(url, params)
+    url = "http://cycada.ml/game/" + _filename + ".txt"
+    _data = req.get(url)
     if(_data.status_code != 404):
         return _data.content.decode('utf-8') #convert to string from binary object
     else:
         return False
 
 
-def save(board, x, y, moves, file):
-    prepdata(board, x, y, moves, file)
+def save(board, x, y, moves, _id, bigy, turn):
+    filey = open("tasty.txt","w")
+    prepdata(board, x, y, moves, filey, bigy, turn )
+    #r = req.post('http://cycada.ml/game/', files={file})
 
 class player():
     def __init__(self):
@@ -71,22 +147,12 @@ class player():
 
 x = player()
 y = player()
-s = input("Do you want to continue saved game?(y/n): ")
+
 
 #START OF MAIN LOGIC
-if(s == 'y' or s == 'Y'):
-    id = input("Enter game ID: ")
-    data = retrieveFile(id)
-    if data != False:
-        # print(data)
-        loadgame(data, board)
-
-
 magic = [6, 7, 2,
          1, 5, 9,
          8, 3, 4]
-
-
 
 def win(checklist):
     counter = 0
@@ -150,6 +216,17 @@ moves = 1
 bigscope = 0
 turn = True
 
+
+s = input("Do you want to continue saved game?(y/n): ")
+if(s == 'y' or s == 'Y'):
+    id = input("Enter game ID: ")
+    data = retrieveFile(id)
+    if data != False:
+        # print(data)
+        bigscope = loadgame(data, board, bigscope, moves, turn, x, y)
+        print(bigscope, "SUPER SAIYYAN \n")
+        time.sleep(4)
+
 try:
     while moves <= 81:
         smallscope = 4
@@ -163,11 +240,18 @@ try:
         else:
             insertVal="O"
 
-        print("X :", win(x.wins), "Y :", win(y.wins))
+        print("X :", win(x.wins), "O :", win(y.wins))
         print("\nIt is player",insertVal+"'s turn. You will play in the",bigscope+1,"grid.")
         print("\nNavigate using WASD keys (your pointer starts at the center) :")
-
+        print("\nPress 'Q' to save game and exit.", bigscope, x.ac)
         inp = input()
+        if inp == 'q' or inp == 'Q':
+            save(board, x, y, moves, id, bigscope, turn)
+            os.system("cls")
+            print("Saving...")
+            time.sleep(2)
+            exit()
+
 
         for i in inp:
             move = process(i)
@@ -241,12 +325,9 @@ try:
                     bigscope = smallscope
 
         moves += 1
-        file = open("test.txt","w")
-        save(board, x, y, moves, file)
-        file.close()
+
+
 
 finally:
-    file = open("test.txt","w")
-    prepdata(board, x, y, moves, file)
-    file.close()
+    print("BYE-BYE")
 input()
