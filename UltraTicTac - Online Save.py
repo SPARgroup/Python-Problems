@@ -133,10 +133,12 @@ def retrieveFile(_filename):
     print("Contacting server...")
     url = "http://cycada.ml/game/" + _filename + ".txt"
     _data = req.get(url)
-    if(_data.status_code != 404):
+    if(_data.status_code == 200):
         print("File found!")
         return _data.content.decode('utf-8') #convert to string from binary object
     else:
+        print("Wrong ID, try relaunching.")
+        time.sleep(2)
         return False
 
 
