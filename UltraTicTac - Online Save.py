@@ -44,22 +44,22 @@ def prepdata(bd, _x, _y, _moves, f):
     f.write(_a)
     f.close()
 
-def loadgame(_name, _bd):
-    file = open(_name, "r")
-    arr = file.read().split("\n")
-
+def loadgame(_data, _bd):
+    arr = _data.split("\n")
     for i in range(9):
         _bd[i] = arr[i].split()
-    file.close()
+
 
 def retrieveFile(_filename):
     params = {'id':_filename}
-    url = "https://cycada.ml/game/" + id + ".txt"
+    url = "http://cycada.ml/game/" + id + ".txt"
     _data = req.get(url, params)
     if(_data.status_code != 404):
         return _data.content.decode('utf-8') #convert to string from binary object
     else:
         return False
+
+
 def save(board, x, y, moves, file):
     prepdata(board, x, y, moves, file)
 
@@ -72,12 +72,15 @@ class player():
 x = player()
 y = player()
 s = input("Do you want to continue saved game?(y/n): ")
+
+#START OF MAIN LOGIC
 if(s == 'y' or s == 'Y'):
     id = input("Enter game ID: ")
     data = retrieveFile(id)
     if data != False:
-        print(data)
-#loadgame("test.txt", board)
+        # print(data)
+        loadgame(data, board)
+
 
 magic = [6, 7, 2,
          1, 5, 9,
@@ -142,7 +145,6 @@ def isfilled(l):
 
     return True
 
-#@todo: find Python API to use network to store game states at a network location
 
 moves = 1
 bigscope = 0
