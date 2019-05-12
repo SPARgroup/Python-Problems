@@ -2,6 +2,7 @@ import time
 import os
 import requests as req
 
+#Ultimate TICTACTOE v1.2
 
 board = [['_', '_', '_',
           '_', '_', '_',
@@ -73,18 +74,19 @@ def prepdata(bd, _x, _y, _moves, f, _big, __turn):
     _a += stringify(_y.moves) + "\n"
 
     f.write(_a)
-
+    return _a
     f.close()
 
-def loadgame(_data, _bd, __big, __moves, _turn, __x, __y):
+def loadgame(_data, _bd,__big, __moves, _turn, __x, __y):
+    print("Reading saved game...")
     arr = _data.split("\n")
 
     for i in range(9):
         _bd[i] = arr[i].split()
 
     __big = int(arr[9])
-#    __moves = int(arr[10])
-    _turn = bool(arr[11])
+    __moves = int(arr[10])
+    _turn = bool(int(arr[11]))
 
     #for player X
     yex = []
@@ -124,12 +126,15 @@ def loadgame(_data, _bd, __big, __moves, _turn, __x, __y):
     for j in yex:
         __y.moves[counter] = int(j)
         counter+=1
+
     return __big, _turn, __moves
 
 def retrieveFile(_filename):
+    print("Contacting server...")
     url = "http://cycada.ml/game/" + _filename + ".txt"
     _data = req.get(url)
     if(_data.status_code != 404):
+        print("File found!")
         return _data.content.decode('utf-8') #convert to string from binary object
     else:
         return False
@@ -137,8 +142,13 @@ def retrieveFile(_filename):
 
 def save(board, x, y, moves, _id, bigy, turn):
     filey = open("tasty.txt","w")
-    prepdata(board, x, y, moves, filey, bigy, turn )
-    #r = req.post('http://cycada.ml/game/', files={file})
+    returnedData = prepdata(board, x, y, moves, filey, bigy, turn)
+    url = "http://cycada.ml/game/savegame.php"
+    data = {'id' : id,'data' : returnedData}
+    status = req.post(url, data)
+    if not status:
+        print("Something went wrong, our server returned the code: ", status.status_code)
+
 
 class player():
     def __init__(self):
@@ -217,8 +227,13 @@ moves = 1
 bigscope = 0
 turn = True
 handler = []
+id = None
+print("Ultimate TicTacToe Online\n        v1.2\n[Requires an internet connection to play a saved game]")
+
+time.sleep(1)
 
 s = input("Do you want to continue saved game?(y/n): ")
+
 if(s == 'y' or s == 'Y'):
     id = input("Enter game ID: ")
     data = retrieveFile(id)
@@ -228,8 +243,11 @@ if(s == 'y' or s == 'Y'):
         bigscope = handler[0]
         turn = handler[1]
         moves = handler[2]
-        print(bigscope, handler, turn, "SUPER SAIYYAN \n")
         time.sleep(4)
+    elif not data:
+        print("Something went wrong, maybe your entered ID was wrong.")
+else:
+    id = input("\nEnter game ID to enable game saving: ")
 
 try:
     while moves <= 81:
@@ -246,8 +264,9 @@ try:
 
         print("X :", win(x.wins), "O :", win(y.wins))
         print("\nIt is player",insertVal+"'s turn. You will play in the",bigscope+1,"grid.")
+        print("\nPress 'Q' and Enter to save game and exit.")
         print("\nNavigate using WASD keys (your pointer starts at the center) :")
-        print("\nPress 'Q' to save game and exit.", bigscope, x.ac)
+
         inp = input()
         if inp == 'q' or inp == 'Q':
             save(board, x, y, moves, id, bigscope, turn)
@@ -267,7 +286,6 @@ try:
             else:
                 smallscope = (smallscope + move) % 9
 
-          #@todo: check if destination bigscope is already filled
           #@todo: a variable to track how many total wins are there
 
         if smallscope < 0 or board[bigscope][smallscope] != '_':
@@ -330,8 +348,7 @@ try:
 
         moves += 1
 
-
-
 finally:
-    print("BYE-BYE")
+    print("Game Saved, your id is : ", id)
+    time.sleep(5)
 input()
