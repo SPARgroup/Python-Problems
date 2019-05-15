@@ -1,7 +1,7 @@
 import time
 import os
 import requests as req
-
+import pyp2p as p2p
 #Ultimate TICTACTOE v1.2
 
 board = [['_', '_', '_',
@@ -141,7 +141,6 @@ def retrieveFile(_filename):
         time.sleep(2)
         return False
 
-
 def save(board, x, y, moves, _id, bigy, turn):
     filey = open("tasty.txt","w")
     returnedData = prepdata(board, x, y, moves, filey, bigy, turn)
@@ -150,7 +149,6 @@ def save(board, x, y, moves, _id, bigy, turn):
     status = req.post(url, data)
     if not status:
         print("Something went wrong, our server returned the code: ", status.status_code)
-
 
 class player():
     def __init__(self):
@@ -230,6 +228,7 @@ bigscope = 0
 turn = True
 handler = []
 id = None
+
 print("Ultimate TicTacToe Online\n        v1.2\n[Requires an internet connection to play a saved game]")
 
 time.sleep(1)
@@ -245,12 +244,13 @@ if(s == 'y' or s == 'Y'):
         bigscope = handler[0]
         turn = handler[1]
         moves = handler[2]
-        time.sleep(4)
+        time.sleep(2)
     elif not data:
         print("Something went wrong, maybe your entered ID was wrong.")
 else:
     id = input("\nEnter game ID to enable game saving: ")
 
+movement = board
 try:
     while moves <= 81:
         smallscope = 4
@@ -268,6 +268,7 @@ try:
         print("\nIt is player",insertVal+"'s turn. You will play in the",bigscope+1,"grid.")
         print("\nPress 'Q' and Enter to save game and exit.")
         print("\nNavigate using WASD keys (your pointer starts at the center) :")
+
 
         inp = input()
         if inp == 'q' or inp == 'Q':
@@ -352,5 +353,4 @@ try:
 
 finally:
     print("Game Saved, your id is : ", id)
-    time.sleep(5)
-input()
+    input()

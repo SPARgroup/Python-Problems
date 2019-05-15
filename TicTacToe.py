@@ -128,5 +128,5 @@ inp = ""
 while(not(inp == "F" or inp == "f")):
   inp = input("\nPress F and Enter to pay respects. ")
 
-print("Endgame Now")
+print("\n You are in the Endgame now")
 time.sleep(1)
