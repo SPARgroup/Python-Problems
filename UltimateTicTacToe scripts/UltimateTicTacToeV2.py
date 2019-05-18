@@ -1,7 +1,6 @@
 import time
 import os
 import requests as req
-import pyp2p as p2p
 import msvcrt as ms
 import copy
 #Ultimate TICTACTOE v2.0
@@ -34,15 +33,18 @@ board = [['_', '_', '_',
           '_', '_', '_',
           '_', '_', '_']]
 
+
 def returnBitForBool(e):
     if e:
         return "1"
     else:
         return "0"
 
+
 def stringify(l):
-   string = " ".join(str(x) for x in l)
-   return string
+    string = " ".join(str(x) for x in l)
+    return string
+
 
 def prepdata(bd, _x, _y, _moves, f, _big, __turn):
     _a=""
@@ -63,7 +65,6 @@ def prepdata(bd, _x, _y, _moves, f, _big, __turn):
     _a += stringify(yex) + "\n"
     _a += stringify(_x.moves) + "\n"
 
-
     for i in _y.ac:
         _a += stringify(i) + "\n"
 
@@ -78,6 +79,7 @@ def prepdata(bd, _x, _y, _moves, f, _big, __turn):
     f.write(_a)
     return _a
     f.close()
+
 
 def loadgame(_data, _bd,__big, __moves, _turn, __x, __y):
     print("Reading saved game...")
@@ -131,11 +133,12 @@ def loadgame(_data, _bd,__big, __moves, _turn, __x, __y):
 
     return __big, _turn, __moves
 
+
 def retrieveFile(_filename):
     print("Contacting server...")
     url = "http://cycada.ml/game/" + _filename + ".txt"
     _data = req.get(url)
-    if(_data.status_code == 200):
+    if _data.status_code == 200:
         print("File found!")
         return _data.content.decode('utf-8') #convert to string from binary object
     else:
@@ -143,8 +146,9 @@ def retrieveFile(_filename):
         time.sleep(2)
         return False
 
+
 def save(board, x, y, moves, _id, bigy, turn):
-    filey = open("tasty.txt","w")
+    filey = open("tasty.txt", "w")
     returnedData = prepdata(board, x, y, moves, filey, bigy, turn)
     url = "http://cycada.ml/game/savegame.php"
     data = {'id' : id,'data' : returnedData}
@@ -160,7 +164,6 @@ class player():
 
 x = player()
 y = player()
-
 
 #START OF MAIN LOGIC
 magic = [6, 7, 2,
@@ -231,13 +234,13 @@ turn = True
 handler = []
 id = None
 
-print("Ultimate TicTacToe Online\n        v2.0\n[Requires an internet connection to play a saved game]")
+print("Ultimate TicTacToe Online\n        v2.0\n[Requires an internet connection to play a saved game]\nCredits: Samarth Singla | Ashmit Chamoli | Rishabh Sharma")
 
-time.sleep(1)
+time.sleep(0.5)
 
 s = input("Do you want to continue a saved game?(y/n): ")
 
-if(s == 'y' or s == 'Y'):
+if s == 'y' or s == 'Y':
     id = input("Enter game ID: ")
     data = retrieveFile(id)
     if data != False:
@@ -246,20 +249,21 @@ if(s == 'y' or s == 'Y'):
         bigscope = handler[0]
         turn = handler[1]
         moves = handler[2]
-        time.sleep(0.5)
+        time.sleep(0.3)
     elif not data:
         print("Something went wrong, maybe your entered ID was wrong.")
 else:
     id = input("\nEnter game ID to enable game saving: ")
 
 
-movement = copy.deepcopy(board) #movement is the replica board which is showed every move
+movement = copy.deepcopy(board)  #movement is the replica board which is showed every move
 
 try:
     while moves <= 81:
         smallscope = 4
-
-        ultrashow(board)
+        movement = copy.deepcopy(board)
+        movement[bigscope][smallscope] = '#'
+        ultrashow(movement)
 
         insertVal = ""
 
@@ -270,26 +274,26 @@ try:
 
         information = ""
         print("X :", win(x.wins), "O :", win(y.wins))
-        information += "X : "+ str(win(x.wins))+ " O : "+ str(win(y.wins)) + "\n"
+        information += "X : "+ str(win(x.wins)) + " O : " + str(win(y.wins)) + "\n"
 
-        print("It is player",insertVal+"'s turn. You will play in the ",bigscope+1," grid.")
-        information += "It is player "+str(insertVal)+"'s turn. You will play in the" + str(bigscope+1) + "grid.\n\n"
+        print("It is player", insertVal+"'s turn. You will play in the", bigscope+1,"grid.")
+        information += "It is player "+str(insertVal)+"'s turn. You will play in the " + str(bigscope+1) + " grid.\n\n"
 
         print("\nPress 'Q' at any time to save the game.")
-        information += "Press 'Q' and Enter to save game and exit.\n\n"
+        information += "Press 'Q' at any time to save the game.\n\n"
 
         print("\nNavigate using WASD keys (your pointer starts at the center) :")
         information += "Navigate using WASD keys (your pointer starts at the center) :"
 
         pressedEnter = False
-        while(not pressedEnter):
-            if(ms.kbhit()):
+        while not pressedEnter:
+            if ms.kbhit():
                 press = ms.getch().decode("utf-8")
-                if(press == "\r"):
+                if press == "\r":
                     pressedEnter = True
                     break
                 elif process(press) != False:
-                    print(smallscope)
+                    movement = copy.deepcopy(board)
                     smallscope = (smallscope + process(press)) % 9
 
                     movement[bigscope][smallscope] = "#"
@@ -298,31 +302,13 @@ try:
 
                     print(information)
                     movement = copy.deepcopy(board)
+                    time.sleep(0.03)
                 elif press == "q" or press == "Q":
                     save(board, x, y, moves, id, bigscope, turn)
                     os.system("cls")
                     print("Saving...")
                     time.sleep(2)
                     exit()
-
-        # inp = input()
-        # if inp == 'q' or inp == 'Q':
-        #     save(board, x, y, moves, id, bigscope, turn)
-        #     os.system("cls")
-        #     print("Saving...")
-        #     time.sleep(2)
-        #     exit()
-        #
-        #
-        # for i in inp:
-        #     move = process(i)
-        #     if move == False:
-        #         print("Hold up!")
-        #         time.sleep(0.5)
-        #         smallscope = -1
-        #         break
-        #     else:
-        #         smallscope = (smallscope + move) % 9
 
           #@todo: a variable to track how many total wins are there
 
@@ -347,13 +333,13 @@ try:
 
                 if isfilled(board[smallscope]):
 
-                    if (isfilled(board[bigscope])):
+                    if isfilled(board[bigscope]):
                         for checkcounter in range(9):
                             if not(isfilled(board[checkcounter])):
                                 bigscope = checkcounter
                                 break
                     else:
-                        print("They have no space for you in the",smallscope+1,"grid. So you might as well be here itself.")
+                        print("They have no space for you in the", smallscope+1, "grid. So you might as well be here itself.")
                         time.sleep(3)
                 else:
 
@@ -369,9 +355,8 @@ try:
                     if check(y.ac[bigscope]) and x.wins[bigscope] == False:
                         y.wins[bigscope] = True
 
-
                 if isfilled(board[smallscope]):
-                    if (isfilled(board[bigscope])):
+                    if isfilled(board[bigscope]):
                         for checkcounter in range(9):
                             if not (isfilled(board[checkcounter])):
                                 bigscope = checkcounter
@@ -387,5 +372,9 @@ try:
         moves += 1
 
 finally:
+    save(board, x, y, moves, id, bigscope, turn)
+    os.system("cls")
+    print("Saving...")
+    time.sleep(0.5)
     print("Game Saved, your id is : ", id)
     input()
