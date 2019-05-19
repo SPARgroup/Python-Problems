@@ -369,9 +369,27 @@ try:
 
                     bigscope = smallscope
 
+        if win(x.wins) == 5:
+            os.system("cls")
+            ultrashow(board)
+            print(
+                "Victoire royale! Player X won. After the game is saved, press Enter to exit.")  # The game will be deleted from the server. To save the game, press 'Q' and Enter.
+            time.sleep(5)
+            exit()
+
+        elif win(y.wins) == 5:
+            os.system("cls")
+            ultrashow(board)
+            print("Victoire royale! Player O won. After the game is saved, press Enter to exit.")
+            time.sleep(5)
+            exit()
+
+        moves += 1
         moves += 1
 
 finally:
+    # @todo: if game if finished then save or lete file from server accoringly
+
     save(board, x, y, moves, id, bigscope, turn)
     os.system("cls")
     print("Saving...")
