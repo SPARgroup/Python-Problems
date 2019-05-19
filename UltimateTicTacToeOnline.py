@@ -349,8 +349,7 @@ try:
 
                     bigscope = smallscope
 
-
-
+        moves += 1
 
 finally:
     print("Game Saved, your id is : ", id)
