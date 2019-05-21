@@ -2,7 +2,6 @@ import socket as sock
 import time
 import threading as td
 
-
 def recievemsg(mySocket):
     while 1:
         try:
@@ -14,25 +13,27 @@ def recievemsg(mySocket):
             pass
 
 
-target_local = "192.168.2.62"  #set manually, server not set up
+target_public = "182.64.168.174"  #set manually, server not set up
 target_port = 0
 me = sock.socket(sock.AF_INET, sock.SOCK_DGRAM)
 
-me.bind(("", 0))
 
-print("My Port: ", me.getsockname()[1])
+me.bind(("192.168.1.9", 0))
 
-#s = sock.socket(sock.AF_INET, sock.SOCK_DGRAM)
+print("My Port: ", me.getsockname()[1], "My IP: ", me.getsockname()[0])
 
 target_port = int(input("Enter target's port:"))
 
-#s.bind((target_local, target_port))
+
 t = td.Thread(target=recievemsg, args=(me,))
 t.start()
+
 while 1:
     try:
-        msg = input("Enter message for Bheem:").encode("utf-8")
-        me.sendto(msg, (target_local, target_port))
+        msg = input("Enter message for Avatar:").encode("utf-8")
+        me.sendto(msg, (target_public, target_port))
+
     except:
+        print ("yoyo")
         time.sleep(0.2)
         pass
