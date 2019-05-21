@@ -1,7 +1,19 @@
 import socket as sock
 import time
+import threading as td
 
-target_local = "192.168.88.75"#set manually, server not set up
+def recievemsg(mySocket):
+    while 1:
+        try:
+            dat, add = mySocket.recvfrom(1024)
+            dat = dat.decode('utf-8')
+            print("\nBheem Says:", dat)
+        except:
+            time.sleep(1)
+            pass
+
+
+target_local = "192.168.88.75"  #set manually, server not set up
 target_port = 0
 me = sock.socket(sock.AF_INET, sock.SOCK_DGRAM)
 
@@ -14,15 +26,12 @@ print("My Port: ", me.getsockname()[1])
 target_port = int(input("Enter target's port:"))
 
 #s.bind((target_local, target_port))
-
+t = td.Thread(target=recievemsg, args=(me,))
+t.start()
 while 1:
     try:
         msg = input("Enter message for Bheem:").encode("utf-8")
         me.sendto(msg, (target_local, target_port))
-        data, addr = me.recvfrom(1024)
-        data = data.decode("utf-8")
-        print("Bheem says:", data)
-        time.sleep(2)
     except:
-        time.sleep(1)
+        time.sleep(0.2)
         pass
