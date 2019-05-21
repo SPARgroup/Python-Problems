@@ -2,6 +2,7 @@ import socket as sock
 import time
 import threading as td
 
+
 def recievemsg(mySocket):
     while 1:
         try:
@@ -13,7 +14,7 @@ def recievemsg(mySocket):
             pass
 
 
-target_local = "192.168.88.75"  #set manually, server not set up
+target_local = "192.168.2.62"  #set manually, server not set up
 target_port = 0
 me = sock.socket(sock.AF_INET, sock.SOCK_DGRAM)
 
