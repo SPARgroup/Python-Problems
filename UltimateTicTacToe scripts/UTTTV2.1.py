@@ -133,7 +133,6 @@ def loadgame(_data, _bd,__big, __moves, _turn, __x, __y):
 
     return __big, _turn, __moves
 
-
 def retrieveFile(_filename):
     print("Contacting server...")
     url = "http://cycada.ml/game/" + _filename + ".txt"
