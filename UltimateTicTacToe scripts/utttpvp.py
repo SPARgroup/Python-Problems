@@ -18,13 +18,16 @@ def askServer(gid, my_jid):
     if returned == "NEW_GAME":
         #we are P1
         #wait
+
         return True
     elif returned == "ROOM_FILLED":
         print("This game already has 2 players in it.")
         return False
 
     else:
-        #get game state
+        #if returned[-1] == "x":
+
+        #get game state from server
             #if hamari bari
                 #play our move
                 #message the returned jid(opponent jid)
