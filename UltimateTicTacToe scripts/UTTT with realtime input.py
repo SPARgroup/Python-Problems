@@ -6,6 +6,7 @@ import msvcrt as ms
 import copy
 #Ultimate TICTACTOE v2.0
 
+
 board = [['_', '_', '_',
           '_', '_', '_',
           '_', '_', '_'],
