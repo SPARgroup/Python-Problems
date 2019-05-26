@@ -3,6 +3,7 @@ import time
 import threading as td
 import slixmpp as slix
 import logging
+import asyncio
 
 my_jid = "spar@xmpp.jp"
 my_pass = "spargroupgaming"
@@ -25,6 +26,8 @@ class receiver(slix.ClientXMPP):
             msg.reply("Thanks for sending\n%(body)s" % msg).send()
             print(msg['body'])
 
+def good():
+    pass
 
 class sender(slix.ClientXMPP):
 
@@ -43,7 +46,7 @@ class sender(slix.ClientXMPP):
     def sendmsg(self, _msg):
         self.send_message(mto=self.recipient, mbody=_msg, mtype="chat")
 
-
+newthread = td.Thread(target=good)
 logging.basicConfig(level="DEBUG", format='%(levelname)-8s %(message)s')
 
 # message = input("Enter Message: ")
@@ -55,9 +58,6 @@ logging.basicConfig(level="DEBUG", format='%(levelname)-8s %(message)s')
 # #sender.send_message_to_recipient(opponent_jid, message)
 # sender.process(timeout=5)
 
-
-receiver = receiver(opponent_jid, my_pass)
-receiver.connect()
-receiver.process()
+newthread.start()
 
 input("Press Enter to continue")
