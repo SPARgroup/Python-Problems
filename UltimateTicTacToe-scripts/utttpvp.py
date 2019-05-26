@@ -8,32 +8,33 @@ import msvcrt as ms
 import copy
 import webbrowser as web
 
+
 #functions
-def askServer(gid, my_jid):
-    url = "http://cycada.ml/game/coordinate/coordinate.php"
-    data = {"id":gid, "jid":my_jid}
-
-    returned = req.get(url, data)
-
-    if returned == "NEW_GAME":
-        #we are P1
-        #wait
-
-        return True
-    elif returned == "ROOM_FILLED":
-        print("This game already has 2 players in it.")
-        return False
-
-    else:
-        #if returned[-1] == "x":
-
-        #get game state from server
-            #if hamari bari
-                #play our move
-                #message the returned jid(opponent jid)
-            #else
-                #message opponent
-        return returned
+# def askServer(gid, my_jid):
+#     url = "http://cycada.ml/game/coordinate/coordinate.php"
+#     data = {"id":gid, "jid":my_jid}
+#
+#     returned = req.get(url, data)
+#
+#     if returned == "NEW_GAME":
+#         #we are P1
+#         #wait
+#
+#         return True
+#     elif returned == "ROOM_FILLED":
+#         print("This game already has 2 players in it.")
+#         return False
+#
+#     else:
+#         #if returned[-1] == "x":
+#
+#         #get game state from server
+#             #if hamari bari
+#                 #play our move
+#                 #message the returned jid(opponent jid)
+#             #else
+#                 #message opponent
+#         return "Hoi"
 
 
 
