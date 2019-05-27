@@ -5,10 +5,10 @@ import slixmpp as slix
 import logging
 import asyncio
 
-my_jid = "spar@xmpp.jp"
+my_jid = "spargroup@xmpp.jp"
 my_pass = "spargroupgaming"
 
-opponent_jid = "spargroup@xmpp.jp"
+opponent_jid = "spar@xmpp.jp"
 
 #Message handler is working for multiple, sequential messages
 class receiver(slix.ClientXMPP):
@@ -25,9 +25,11 @@ class receiver(slix.ClientXMPP):
         if msg['type'] in ('chat', 'normal'):
             msg.reply("Thanks for sending\n%(body)s" % msg).send()
             print(msg['body'])
+recv = receiver(my_jid, my_pass)
+recv.connect()
+# def threader():
+#     recv.process()
 
-def good():
-    pass
 
 class sender(slix.ClientXMPP):
 
@@ -46,18 +48,17 @@ class sender(slix.ClientXMPP):
     def sendmsg(self, _msg):
         self.send_message(mto=self.recipient, mbody=_msg, mtype="chat")
 
-newthread = td.Thread(target=good)
+loop = None
+async def start_listening():
+    pass
+# newthread = td.Thread(target=good)
 logging.basicConfig(level="DEBUG", format='%(levelname)-8s %(message)s')
 
-# message = input("Enter Message: ")
-#
-# sender = sender(my_jid, my_pass, opponent_jid, message)
-#
-#
-# sender.connect()
-# #sender.send_message_to_recipient(opponent_jid, message)
-# sender.process(timeout=5)
+# t = td.Thread(target=threader)
+# #t.daemon = True #now you can exit the code before this gets finished(it never will)
+# t.start()
 
-newthread.start()
+task = asyncio.ensure_future(start_listening())
+
 
 input("Press Enter to continue")
