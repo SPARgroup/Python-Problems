@@ -9,7 +9,7 @@ import copy
 import webbrowser as web
 import functions as func
 
-
+yes = ['yes', 'y', 'yeah', 'ye', 'yeet', 'yup'] # for checking users response
 #classes
 
 #receiver class (xmpp derived)
@@ -25,7 +25,7 @@ class receiver(slix.ClientXMPP):
 
     def message(self, msg):
         #do something
-        pass
+        print(msg) # YEAHHHH ITS WORKING BEZOS!
 
 
 #sender class (xmpp derived)
@@ -58,9 +58,9 @@ class player():
 #variables
 enemyMoves = []
 
-jid = ''
+jid = 'spar@xmpp.jp'
 
-password = ''
+password = 'spargroupgaming'
 
 opponent_jid = ''
 
@@ -124,15 +124,16 @@ myturn = None
 #oops
 game_start = False
 
+receiving = True
+recv = receiver(jid, password)
+recv.connect()
 #Thread functions
 def start_receiving(enemy_moves):
-    recv = receiver(jid,password)
-    recv.connect()
-    recv.process()
+    while receiving :
+        recv.process(timeout=10)
 
 receivingThread = td.Thread(target=start_receiving, args = (enemyMoves,))
 receivingThread.start()
-#functions
 def ask_server(gid):
 
     url = "http://cycada.ml/game/coordinate/coordinate.php"
@@ -353,15 +354,21 @@ def isfilled(l):
     return True
 
 #Intro
-print("Ultimate TicTacToe Online\n        v2.1\n[Requires an internet connection to play a saved game]\nCredits: Samarth Singla | Ashmit Chamoli | Rishabh Sharma | Abhivir Singh")
+intro = "Ultimate TicTacToe Online\n        v2.1"
+func.animatedPrint(intro, 15, 20)
+time.sleep(0.5)
+print("\n[Requires an internet connection to play a saved game]")
+time.sleep(0.2)
+credits = "\nCredits: Samarth Singla | Ashmit Chamoli | Rishabh Sharma | Abhivir Singh\n"
+func.animatedPrint(credits, 40, 5)
 time.sleep(0.5)
 
 #ask user for account
-n_1 = input("Do you have a Jabber/XMPP account?(y/n): ")
+n_1 = func.custom_input("\nDo you have a Jabber/XMPP account? (y/n): ", rate = 10)
 n_1 = n_1.lower()
 
 #Input reg. details
-if n_1[0] == 'y':
+if n_1 in yes:
     jid = input("\nEnter your User ID: ")
     password = input("Enter Password: ")
 
@@ -370,13 +377,13 @@ else:
     print("Opening Registration link in 3 seconds...")
     time.sleep(3)
     web.open("https://www.xmpp.jp/signup")
-    jid = input("\nEnter your User ID: ")
+    jid = func.custom_input("\nEnter your User ID: ")
     password = input("Enter Password: ")
 
 #initialise game
 s = input("\nDo you want to continue a saved game?(y/n): ")
-
-if s[0] == 'y' or s[0] == 'Y':
+s = s.lower()
+if s in yes:
     gameid = input("Enter game ID: ")
     data = retrieveFile(gameid)
     if data != False:
