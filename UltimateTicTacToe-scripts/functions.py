@@ -9,7 +9,7 @@ def animatedPrint(s, speed, rate):
 
         speed += speed * rate
 
-def custom_input(string, speed = 20, rate = 5):
+def custom_input(string, speed = 30, rate = 10):
     animatedPrint(string,speed, rate )
     k = input()
     return k

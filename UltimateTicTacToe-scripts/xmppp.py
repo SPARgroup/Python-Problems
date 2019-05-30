@@ -29,6 +29,12 @@ class receiver(ClientXMPP):
             msg.reply("Thanks for sending\n%(body)s" % msg).send()
 
 
+class sender(ClientXMPP):
+    def __init__(self, jid, password):
+        ClientXMPP.__init__(jid, password)
+
+        self.add_event_handler()
+
 logging.basicConfig(level="DEBUG", format='%(levelname)-8s %(message)s')
 
 recv = receiver(my_jid, my_pass)

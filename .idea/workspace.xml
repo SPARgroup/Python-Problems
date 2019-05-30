@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2af4d0d-3e59-40d7-b7f5-81775547b959" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/sending.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" afterDir="false" />
@@ -18,25 +19,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+            <state relative-caret-position="235">
+              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#687#1204#0" />
-                <element signature="e#3046#3992#0" />
-                <element signature="e#4024#4077#0" />
-                <element signature="e#4102#4156#0" />
-                <element signature="e#4214#4854#0" />
-                <element signature="e#4882#5872#0" />
-                <element signature="e#5908#6260#0" />
-                <element signature="e#6314#6645#0" />
-                <element signature="e#6672#6774#0" />
-                <element signature="e#6819#7011#0" />
-                <element signature="e#7044#7332#0" />
-                <element signature="e#7355#7537#0" />
-                <element signature="e#7558#7769#0" />
-                <element signature="e#7793#7867#0" />
+                <element signature="e#3583#4529#0" />
+                <element signature="e#4561#4614#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/sending.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -44,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+            <state relative-caret-position="231">
+              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -53,29 +51,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/xmppp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+            <state relative-caret-position="777">
+              <caret line="37" selection-start-line="37" selection-end-line="37" selection-end-column="72" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://E:/Softwares/Python 3.7.3 Core/Lib/site-packages/slixmpp/xmlstream/xmlstream.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="843">
-              <caret line="795" selection-start-line="795" selection-end-line="795" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://E:/Softwares/Python 3.7.3 Core/Lib/site-packages/sleekxmpp/clientxmpp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="135" column="8" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -88,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/UTTTV2.1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="843">
+            <state relative-caret-position="4242">
               <caret line="208" selection-start-line="208" selection-end-line="265" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -122,6 +102,7 @@
         <option value="$PROJECT_DIR$/UltimateTicTacToe scripts/UTTTV2.1.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe scripts/utttpvp.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/xmppp.py" />
+        <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/sending.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" />
       </list>
@@ -301,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558970925357</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Receiving is working inside a thread!">
+      <created>1559060284139</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559060284139</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -313,8 +301,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23043944" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.25294748" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33333334" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.27116826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -349,7 +337,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started client negotiations through server. Yet to implement threading and stuff." />
     <MESSAGE value="Random stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Random stuff" />
+    <MESSAGE value="Receiving is working inside a thread!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Receiving is working inside a thread!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -452,26 +441,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/client.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://E:/Softwares/Python 3.7.3 Core/Lib/site-packages/slixmpp/xmlstream/xmlstream.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/2091295338/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="843">
-          <caret line="795" selection-start-line="795" selection-end-line="795" />
+        <state relative-caret-position="-1365">
+          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://E:/Softwares/Python 3.7.3 Core/Lib/site-packages/sleekxmpp/clientxmpp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
+        <state relative-caret-position="2646">
           <caret line="135" column="8" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
         </state>
       </provider>
     </entry>
+    <entry file="file://E:/Softwares/Python 3.7.3 Core/Lib/site-packages/slixmpp/xmlstream/xmlstream.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/sending.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/client.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/UTTTV2.1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="843">
+        <state relative-caret-position="4242">
           <caret line="208" selection-start-line="208" selection-end-line="265" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -481,48 +484,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/xmppp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        <state relative-caret-position="777">
+          <caret line="37" selection-start-line="37" selection-end-line="37" selection-end-column="72" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/2091295338/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1365">
-          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        <state relative-caret-position="231">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+        <state relative-caret-position="235">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#687#1204#0" />
-            <element signature="e#3046#3992#0" />
-            <element signature="e#4024#4077#0" />
-            <element signature="e#4102#4156#0" />
-            <element signature="e#4214#4854#0" />
-            <element signature="e#4882#5872#0" />
-            <element signature="e#5908#6260#0" />
-            <element signature="e#6314#6645#0" />
-            <element signature="e#6672#6774#0" />
-            <element signature="e#6819#7011#0" />
-            <element signature="e#7044#7332#0" />
-            <element signature="e#7355#7537#0" />
-            <element signature="e#7558#7769#0" />
-            <element signature="e#7793#7867#0" />
+            <element signature="e#3583#4529#0" />
+            <element signature="e#4561#4614#0" />
           </folding>
         </state>
       </provider>

@@ -8,6 +8,7 @@ import msvcrt as ms
 import copy
 import webbrowser as web
 import functions as func
+import sending
 
 yes = ['yes', 'y', 'yeah', 'ye', 'yeet', 'yup'] # for checking users response
 #classes
@@ -25,22 +26,30 @@ class receiver(slix.ClientXMPP):
 
     def message(self, msg):
         #do something
-        print(msg) # YEAHHHH ITS WORKING BEZOS!
+        print("Opponent says:", msg['body']) # YEAHHHH ITS WORKING BEZOS!
 
+    def sendMessage(self, msg):
+        self.send_message(mto="spargroup@xmpp.jp", mbody=msg, mtype="chat")
 
-#sender class (xmpp derived)
+#sender class (xmpp derived) USELESS
 class sender(slix.ClientXMPP):
     def __init__(self, jid, password, recipient, msg, msgtype):
-        super().__init__(jid, password)
+        slix.ClientXMPP.__init__(self, jid, password)
         self.recipient = recipient
         self.msg = msg
         self.msgtype = msgtype
 
         self.add_event_handler('session_start', self.start)
 
+        # self.send_presence()
+        # self.get_roster()
+        # print("DEBUG send_message")
+        # self.send_message(mto=self.recipient, mbody=self.msg, mtype=self.msgtype)
+
     def start(self, event):
         self.send_presence()
         self.get_roster()
+        print("DEBUG send_message")
         self.send_message(mto=self.recipient, mbody=self.msg, mtype=self.msgtype)
 
     def sendmsg(self, _msg):
@@ -130,10 +139,11 @@ recv.connect()
 #Thread functions
 def start_receiving(enemy_moves):
     while receiving :
-        recv.process(timeout=10)
+        recv.process(timeout=1)
 
 receivingThread = td.Thread(target=start_receiving, args = (enemyMoves,))
 receivingThread.start()
+
 def ask_server(gid):
 
     url = "http://cycada.ml/game/coordinate/coordinate.php"
@@ -355,16 +365,16 @@ def isfilled(l):
 
 #Intro
 intro = "Ultimate TicTacToe Online\n        v2.1"
-func.animatedPrint(intro, 15, 20)
+func.animatedPrint(intro, 30, 20)
 time.sleep(0.5)
 print("\n[Requires an internet connection to play a saved game]")
 time.sleep(0.2)
 credits = "\nCredits: Samarth Singla | Ashmit Chamoli | Rishabh Sharma | Abhivir Singh\n"
-func.animatedPrint(credits, 40, 5)
+func.animatedPrint(credits, 450, 5)
 time.sleep(0.5)
 
 #ask user for account
-n_1 = func.custom_input("\nDo you have a Jabber/XMPP account? (y/n): ", rate = 10)
+n_1 = func.custom_input("\nDo you have a Jabber/XMPP account? (y/n): ", rate = 20)
 n_1 = n_1.lower()
 
 #Input reg. details
@@ -396,3 +406,13 @@ if s in yes:
 else:
     gameid = input("\nEnter game ID to enable game saving: ")
 
+logging.basicConfig(level="DEBUG", format='%(levelname)-8s %(message)s')
+
+inp = ''
+while(inp != 'STOP'):
+    inp = func.custom_input("Enter Message")
+    recv.sendMessage(inp)
+    time.sleep(0.5)
+
+print("Send Attempted")
+input()
