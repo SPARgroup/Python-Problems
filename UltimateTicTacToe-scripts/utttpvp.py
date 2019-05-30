@@ -8,15 +8,17 @@ import msvcrt as ms
 import copy
 import webbrowser as web
 import functions as func
-import sending
+
 
 yes = ['yes', 'y', 'yeah', 'ye', 'yeet', 'yup'] # for checking users response
 #classes
 
-#receiver class (xmpp derived)
-class receiver(slix.ClientXMPP):
-    def __init__(self, jid, password):
+#Communicator class (xmpp derived)
+class communicator(slix.ClientXMPP):
+    def __init__(self, jid, password, opp_jid):
         slix.ClientXMPP.__init__(self, jid, password)
+        self.opp_jid = opp_jid
+
         self.add_event_handler("session_start", self.start)
         self.add_event_handler("message", self.message)
 
@@ -26,35 +28,10 @@ class receiver(slix.ClientXMPP):
 
     def message(self, msg):
         #do something
-        print("Opponent says:", msg['body']) # YEAHHHH ITS WORKING BEZOS!
+        print("\nOpponent says:", msg['body'],"\nEnter Message: ") # YEAHHHH ITS WORKING BEZOS!
 
     def sendMessage(self, msg):
-        self.send_message(mto="spargroup@xmpp.jp", mbody=msg, mtype="chat")
-
-#sender class (xmpp derived) USELESS
-class sender(slix.ClientXMPP):
-    def __init__(self, jid, password, recipient, msg, msgtype):
-        slix.ClientXMPP.__init__(self, jid, password)
-        self.recipient = recipient
-        self.msg = msg
-        self.msgtype = msgtype
-
-        self.add_event_handler('session_start', self.start)
-
-        # self.send_presence()
-        # self.get_roster()
-        # print("DEBUG send_message")
-        # self.send_message(mto=self.recipient, mbody=self.msg, mtype=self.msgtype)
-
-    def start(self, event):
-        self.send_presence()
-        self.get_roster()
-        print("DEBUG send_message")
-        self.send_message(mto=self.recipient, mbody=self.msg, mtype=self.msgtype)
-
-    def sendmsg(self, _msg):
-        self.send_message(mto=self.recipient, mbody=_msg, mtype="chat")
-
+        self.send_message(mto=self.opp_jid, mbody=msg, mtype="chat")
 
 #players' class, contains data like their account (moves) wins, etc
 class player():
@@ -71,7 +48,7 @@ jid = 'spar@xmpp.jp'
 
 password = 'spargroupgaming'
 
-opponent_jid = ''
+opponent_jid = 'spargroup@xmpp.jp'
 
 gameid = ''
 
@@ -103,7 +80,7 @@ board = [['_', '_', '_',
           '_', '_', '_',
           '_', '_', '_']]
 
-#new instance of players (has to be changed to make it online 1v1
+#new instance of players (has to be changed to make it online 1v1)
 x = player()
 y = player()
 
@@ -134,14 +111,17 @@ myturn = None
 game_start = False
 
 receiving = True
-recv = receiver(jid, password)
-recv.connect()
+
+#START COMMUNICATOR THREAD
+comm = communicator(jid, password, opponent_jid)
+comm.connect()
 #Thread functions
 def start_receiving(enemy_moves):
     while receiving :
-        recv.process(timeout=1)
+        comm.process(timeout=1)
 
 receivingThread = td.Thread(target=start_receiving, args = (enemyMoves,))
+receivingThread.daemon = True
 receivingThread.start()
 
 def ask_server(gid):
@@ -406,12 +386,11 @@ if s in yes:
 else:
     gameid = input("\nEnter game ID to enable game saving: ")
 
-logging.basicConfig(level="DEBUG", format='%(levelname)-8s %(message)s')
 
 inp = ''
 while(inp != 'STOP'):
-    inp = func.custom_input("Enter Message")
-    recv.sendMessage(inp)
+    inp = func.custom_input("Enter Message: ")
+    comm.sendMessage(inp)
     time.sleep(0.5)
 
 print("Send Attempted")

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2af4d0d-3e59-40d7-b7f5-81775547b959" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/sending.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/sending.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/xmppp.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/xmppp.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,22 +17,57 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+            <state relative-caret-position="532">
+              <caret line="115" column="47" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="47" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#360#882#0" />
+                <element signature="e#1770#1969#0" />
+                <element signature="e#2093#2158#0" />
+                <element signature="e#1397#1462#0" />
+                <element signature="e#1473#1538#0" />
+                <element signature="e#1549#1614#0" />
+                <element signature="e#1625#1690#0" />
+                <element signature="e#1701#1766#0" />
+                <element signature="e#1777#1842#0" />
+                <element signature="e#1853#1918#0" />
+                <element signature="e#1929#1994#0" />
+                <element signature="e#3407#3456#0" />
                 <element signature="e#3583#4529#0" />
                 <element signature="e#4561#4614#0" />
+                <element signature="e#4639#4693#0" />
+                <element signature="e#4751#5391#0" />
+                <element signature="e#5419#6409#0" />
+                <element signature="e#6445#6797#0" />
+                <element signature="e#6180#6511#0" />
+                <element signature="e#7209#7311#0" />
+                <element signature="e#7356#7548#0" />
+                <element signature="e#7581#7869#0" />
+                <element signature="e#7892#8074#0" />
+                <element signature="e#8095#8306#0" />
+                <element signature="e#8330#8404#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/sending.py">
+        <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="189">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#274#339#0" />
+                <element signature="e#350#415#0" />
+                <element signature="e#426#491#0" />
+                <element signature="e#502#567#0" />
+                <element signature="e#578#643#0" />
+                <element signature="e#654#719#0" />
+                <element signature="e#730#795#0" />
+                <element signature="e#806#871#0" />
+                <element signature="e#882#947#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,6 +127,7 @@
     <setting file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/xmppp.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -102,14 +136,15 @@
         <option value="$PROJECT_DIR$/UltimateTicTacToe scripts/UTTTV2.1.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe scripts/utttpvp.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/xmppp.py" />
-        <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/sending.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" />
+        <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/sending.py" />
+        <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
@@ -117,7 +152,25 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Python-Problems" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python-Problems" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python-Problems" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python-Problems" type="462c0819:PsiDirectoryNode" />
+              <item name="UltimateTicTacToe-scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -289,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559060284139</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Receiving and sending both working yay">
+      <created>1559203272850</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1559203272850</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -301,13 +361,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33333334" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27116826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3290461" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" weight="0.7191854" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" weight="0.4340836" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3290461" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -338,7 +398,8 @@
     <MESSAGE value="Started client negotiations through server. Yet to implement threading and stuff." />
     <MESSAGE value="Random stuff" />
     <MESSAGE value="Receiving is working inside a thread!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Receiving is working inside a thread!" />
+    <MESSAGE value="Receiving and sending both working yay" />
+    <option name="LAST_COMMIT_MESSAGE" value="Receiving and sending both working yay" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -462,13 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/sending.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/client.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -499,14 +553,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py">
+    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        <state relative-caret-position="189">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#274#339#0" />
+            <element signature="e#350#415#0" />
+            <element signature="e#426#491#0" />
+            <element signature="e#502#567#0" />
+            <element signature="e#578#643#0" />
+            <element signature="e#654#719#0" />
+            <element signature="e#730#795#0" />
+            <element signature="e#806#871#0" />
+            <element signature="e#882#947#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="115" column="47" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#360#882#0" />
+            <element signature="e#1770#1969#0" />
+            <element signature="e#2093#2158#0" />
+            <element signature="e#1397#1462#0" />
+            <element signature="e#1473#1538#0" />
+            <element signature="e#1549#1614#0" />
+            <element signature="e#1625#1690#0" />
+            <element signature="e#1701#1766#0" />
+            <element signature="e#1777#1842#0" />
+            <element signature="e#1853#1918#0" />
+            <element signature="e#1929#1994#0" />
+            <element signature="e#3407#3456#0" />
             <element signature="e#3583#4529#0" />
             <element signature="e#4561#4614#0" />
+            <element signature="e#4639#4693#0" />
+            <element signature="e#4751#5391#0" />
+            <element signature="e#5419#6409#0" />
+            <element signature="e#6445#6797#0" />
+            <element signature="e#6180#6511#0" />
+            <element signature="e#7209#7311#0" />
+            <element signature="e#7356#7548#0" />
+            <element signature="e#7581#7869#0" />
+            <element signature="e#7892#8074#0" />
+            <element signature="e#8095#8306#0" />
+            <element signature="e#8330#8404#0" />
           </folding>
         </state>
       </provider>
