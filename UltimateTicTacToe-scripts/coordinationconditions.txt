@@ -1,0 +1,37 @@
+1. The player is starting a new game:
+    Server: return "NEW_GAME"
+
+    Client: a. detect the new_game
+            b. set his own turn to True
+            c. set the game turn to True or False (decide)
+
+2. The game exists but there is only 1 player yet:
+    Sub Conditions:
+        i. The same player is requesting again:
+            Server: Return "NEW_GAME"
+
+            Client: see: 1 -> Client above
+
+        ii. Another player is requesting:
+            Server: a. return "<p1 jid>#SENDINFO"  (telling p2 that you are p2, please send message to p1)
+
+            Client: a. extract <p1 jid>
+                    b. see the SEND_INFO tag
+                    c. send message to p1
+                    d. extract game file from server
+                    e. loadgame
+                    f. wait for p1 message
+
+3. The game exists with 2 players in it:
+    Server :
+        i. if the request is p1
+            return "<p2 jid>#P1"
+        ii. if request is p2
+            return "<p1 jid>#P2"
+
+    Client: a. Set turn accordingly (True if #P1 is there and vice versa)
+            b. message opponent
+            c. extract game file from server
+            d. loadgame
+            e. wait/play
+

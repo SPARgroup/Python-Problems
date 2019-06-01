@@ -145,10 +145,7 @@ def ask_server(gid):
         if dat[1] == "SEND_INFO":
             #Send player 1 my Jid (I am player 2)
             my_turn = False
-            send = sender(jid, password, dat[0],"normal")
-            send.connect()
-            print("\nContacting Player...")
-            send.process(timeout=5)
+            #contact other player
             return(dat[0])
         else:
             if dat[1] == "P1":
