@@ -424,7 +424,7 @@ try:
         moves += 1
 
 finally:
-    # @todo: if game if finished then save or lete file from server accoringly
+    # @todo: if game if finished then save or delete file from server accoringly
 
     save(board, x, y, moves, id, bigscope, turn)
     os.system("cls")

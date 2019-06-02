@@ -26,3 +26,13 @@ def ask_for_account():
         web.open("https://www.xmpp.jp/signup")
         jid = func.custom_input("\nEnter your User ID: ")
         password = input("Enter Password: ")
+
+def play_intro():
+    intro = "Ultimate TicTacToe Online\n        v2.1"
+    animatedPrint(intro, 30, 20)
+    sleep(0.5)
+    print("\n[Requires an internet connection to play a saved game]")
+    sleep(0.2)
+    creds = "\nCredits: Samarth Singla | Ashmit Chamoli | Rishabh Sharma | Abhivir Singh\n"
+    animatedPrint(creds, 80, 5)
+    sleep(0.5)
