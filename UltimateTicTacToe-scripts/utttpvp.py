@@ -136,6 +136,7 @@ def ask_server(gid):
         myturn = True # I am player 1
         save(board, x, y, moves, gameid, bigscope, turn)
         return returned
+
     elif returned == "ROOM_FILLED":
         print("This game already has 2 players in it.")
         return False

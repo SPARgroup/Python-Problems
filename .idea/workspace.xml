@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2af4d0d-3e59-40d7-b7f5-81775547b959" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/playground.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/UTTTV2.1.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/UTTTV2.1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,115 +18,64 @@
     <favorites_list name="Python-Problems" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3483">
-              <caret line="147" column="33" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+            <state relative-caret-position="767">
+              <caret line="563" column="25" selection-start-line="563" selection-start-column="25" selection-end-line="563" selection-end-column="25" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#267#275#0" />
-                <element signature="e#353#1041#0" />
-                <element signature="e#405#598#0" />
-                <element signature="e#636#682#0" />
-                <element signature="e#720#976#0" />
-                <element signature="e#818#880#0" />
-                <element signature="e#871#931#0" />
-                <element signature="e#1019#1218#0" />
-                <element signature="e#1047#1218#0" />
-                <element signature="e#1358#2033#0" />
-                <element signature="e#1359#1424#0" />
-                <element signature="e#1435#1500#0" />
-                <element signature="e#1511#1576#0" />
-                <element signature="e#1587#1652#0" />
-                <element signature="e#1663#1728#0" />
-                <element signature="e#1739#1804#0" />
-                <element signature="e#1815#1880#0" />
-                <element signature="e#1891#1956#0" />
-                <element signature="e#1967#2032#0" />
-                <element signature="e#2173#2218#0" />
-                <element signature="e#2720#2781#0" />
-                <element signature="e#2981#3275#0" />
-                <element signature="e#3324#3377#0" />
-                <element signature="e#3402#3456#0" />
-                <element signature="e#3457#4251#0" />
-                <element signature="e#4285#5328#0" />
-                <element signature="e#4606#4688#0" />
-                <element signature="e#4759#4808#0" />
-                <element signature="e#4878#4922#0" />
-                <element signature="e#4978#5060#0" />
-                <element signature="e#5131#5180#0" />
-                <element signature="e#5250#5294#0" />
-                <element signature="e#5441#5804#0" />
-                <element signature="e#5516#5619#0" />
-                <element signature="e#5638#5716#0" />
-                <element signature="e#5743#5837#0" />
-                <element signature="e#5787#5817#0" />
-                <element signature="e#5882#6074#0" />
-                <element signature="e#6107#6395#0" />
-                <element signature="e#6155#6395#0" />
-                <element signature="e#6186#6287#0" />
-                <element signature="e#6321#6375#0" />
-                <element signature="e#6425#6635#0" />
-                <element signature="e#6656#6867#0" />
-                <element signature="e#6705#6849#0" />
-                <element signature="e#6747#6849#0" />
-                <element signature="e#6789#6849#0" />
-                <element signature="e#6891#6965#0" />
-                <element signature="e#8001#8457#0" />
-                <element signature="e#8065#8111#0" />
-                <element signature="e#8287#8380#0" />
-                <element signature="e#8348#8380#0" />
-                <element signature="e#8522#8567#0" />
-                <element signature="e#8505#8848#0" />
-                <element signature="e#8728#8762#0" />
-                <element signature="e#8781#8848#0" />
-                <element signature="e#8918#9128#0" />
-                <element signature="e#8886#9659#0" />
-                <element signature="e#9277#9469#1" />
-                <element signature="e#9656#9691#0" />
-                <element signature="e#9710#9745#0" />
-                <element signature="e#9895#10055#0" />
-                <element signature="e#9343#9421#0" />
-                <element signature="e#9433#9721#0" />
-                <element signature="e#9831#10127#0" />
-                <element signature="e#9976#10036#0" />
-                <element signature="e#11198#11302#0" />
-                <element signature="e#10310#10398#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/UTTTV2.1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="426" column="48" selection-start-line="426" selection-start-column="48" selection-end-line="426" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#294#302#0" />
+                <element signature="e#433#626#0" />
+                <element signature="e#664#710#0" />
+                <element signature="e#1178#1377#0" />
+                <element signature="e#1206#1377#0" />
+                <element signature="e#1517#2192#0" />
+                <element signature="e#1518#1583#0" />
+                <element signature="e#1594#1659#0" />
+                <element signature="e#1670#1735#0" />
+                <element signature="e#1746#1811#0" />
+                <element signature="e#1822#1887#0" />
+                <element signature="e#1898#1963#0" />
+                <element signature="e#1974#2039#0" />
+                <element signature="e#2050#2115#0" />
+                <element signature="e#2126#2191#0" />
+                <element signature="e#2290#2335#0" />
+                <element signature="e#2718#2754#0" />
+                <element signature="e#2978#3307#0" />
+                <element signature="e#3339#3392#0" />
+                <element signature="e#3417#3471#0" />
+                <element signature="e#3494#4336#0" />
+                <element signature="e#4364#5407#0" />
+                <element signature="e#4685#4767#0" />
+                <element signature="e#4838#4887#0" />
+                <element signature="e#4957#5001#0" />
+                <element signature="e#5057#5139#0" />
+                <element signature="e#5210#5259#0" />
+                <element signature="e#5329#5373#0" />
+                <element signature="e#5443#5838#0" />
+                <element signature="e#5638#5741#0" />
+                <element signature="e#5760#5838#0" />
+                <element signature="e#5865#5959#0" />
+                <element signature="e#5909#5939#0" />
+                <element signature="e#6004#6196#0" />
+                <element signature="e#6229#6517#0" />
+                <element signature="e#6277#6517#0" />
+                <element signature="e#6308#6409#0" />
+                <element signature="e#6443#6497#0" />
+                <element signature="e#6547#6757#0" />
+                <element signature="e#6778#6989#0" />
+                <element signature="e#7013#7087#0" />
+                <element signature="e#7033#7070#0" />
+                <element signature="e#7115#8174#0" />
+                <element signature="e#8208#8664#0" />
+                <element signature="e#8696#9109#0" />
+                <element signature="e#8989#9023#0" />
+                <element signature="e#9042#9109#0" />
+                <element signature="e#9630#9860#0" />
+                <element signature="e#9394#9586#1" />
+                <element signature="e#10675#10963#0" />
+                <element signature="e#11541#11629#0" />
               </folding>
             </state>
           </provider>
@@ -134,8 +84,122 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/coordinationconditions.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+            <state relative-caret-position="63">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="5" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-756">
+              <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+              <folding>
+                <element signature="e#268#276#0" />
+                <element signature="e#406#599#0" />
+                <element signature="e#637#683#0" />
+                <element signature="e#1022#1221#0" />
+                <element signature="e#1050#1221#0" />
+                <element signature="e#1361#2036#0" />
+                <element signature="e#1362#1427#0" />
+                <element signature="e#1438#1503#0" />
+                <element signature="e#1514#1579#0" />
+                <element signature="e#1590#1655#0" />
+                <element signature="e#1666#1731#0" />
+                <element signature="e#1742#1807#0" />
+                <element signature="e#1818#1883#0" />
+                <element signature="e#1894#1959#0" />
+                <element signature="e#1970#2035#0" />
+                <element signature="e#2176#2221#0" />
+                <element signature="e#2723#2772#0" />
+                <element signature="e#2929#3745#0" />
+                <element signature="e#3093#3247#0" />
+                <element signature="e#3293#3361#0" />
+                <element signature="e#3381#3745#0" />
+                <element signature="e#3454#3580#0" />
+                <element signature="e#3607#3745#0" />
+                <element signature="e#3777#3830#0" />
+                <element signature="e#3855#3909#0" />
+                <element signature="e#3967#4607#0" />
+                <element signature="e#4635#5625#0" />
+                <element signature="e#4903#4985#0" />
+                <element signature="e#5056#5105#0" />
+                <element signature="e#5175#5219#0" />
+                <element signature="e#5275#5357#0" />
+                <element signature="e#5428#5477#0" />
+                <element signature="e#5547#5591#0" />
+                <element signature="e#5661#6013#0" />
+                <element signature="e#5813#5916#0" />
+                <element signature="e#5935#6013#0" />
+                <element signature="e#6067#6398#0" />
+                <element signature="e#6425#6527#0" />
+                <element signature="e#6469#6507#0" />
+                <element signature="e#6572#6764#0" />
+                <element signature="e#6797#7085#0" />
+                <element signature="e#6845#7085#0" />
+                <element signature="e#6876#6977#0" />
+                <element signature="e#7011#7065#0" />
+                <element signature="e#7108#7290#0" />
+                <element signature="e#7311#7522#0" />
+                <element signature="e#7360#7504#0" />
+                <element signature="e#7402#7504#0" />
+                <element signature="e#7444#7504#0" />
+                <element signature="e#7546#7620#0" />
+                <element signature="e#7566#7603#0" />
+                <element signature="e#8117#8195#0" />
+                <element signature="e#8207#8495#0" />
+                <element signature="e#8605#8852#0" />
+                <element signature="e#8701#8761#0" />
+                <element signature="e#8959#9047#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/UTTTV2.1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1938">
+              <caret line="393" column="27" selection-start-line="393" selection-start-column="19" selection-end-line="393" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UltimateTicTacToeOnline.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="682">
+              <caret line="286" column="26" selection-start-line="286" selection-start-column="16" selection-end-line="286" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/playground.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#283#476#0" />
+                <element signature="e#514#560#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,9 +231,10 @@
         <option value="$PROJECT_DIR$/UltimateTicTacToe scripts/utttpvp.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/xmppp.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/sending.py" />
-        <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/coordinationconditions.txt" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" />
+        <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" />
+        <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/playground.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/UTTTV2.1.py" />
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py" />
       </list>
@@ -185,8 +250,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Python-Problems" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python-Problems" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python-Problems" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python-Problems" type="462c0819:PsiDirectoryNode" />
+              <item name="UltimateTicTacToe-scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -226,6 +306,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="playground" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python-Problems" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/UltimateTicTacToe-scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UltimateTicTacToe-scripts/playground.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -276,27 +377,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="utttpvp" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python-Problems" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/UltimateTicTacToe scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UltimateTicTacToe scripts/utttpvp.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="xmppp" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python-Problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -321,10 +401,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.prototyping" />
+        <item itemvalue="Python.playground" />
         <item itemvalue="Python.utttpvp (1)" />
         <item itemvalue="Python.xmppp" />
         <item itemvalue="Python.functions" />
-        <item itemvalue="Python.utttpvp" />
       </list>
     </recent_temporary>
   </component>
@@ -381,11 +461,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559407342836</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Nothing much.">
+      <created>1559492774329</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559492774329</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1057" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839228" weight="0.24973656" />
@@ -393,8 +480,8 @@
       <window_info id="Favorites" order="2" sideWeight="0.5016077" side_tool="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879582" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33333334" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.27116826" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33654878" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.27009645" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -443,7 +530,8 @@
     <MESSAGE value="Receiving and sending both working yay" />
     <MESSAGE value="Random" />
     <MESSAGE value="Created some planning and basic improvements in code. Do any changes in the &quot;prototyping.py&quot; script, transfer to the main file only when tested to be complete. Cheers!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created some planning and basic improvements in code. Do any changes in the &quot;prototyping.py&quot; script, transfer to the main file only when tested to be complete. Cheers!" />
+    <MESSAGE value="Nothing much." />
+    <option name="LAST_COMMIT_MESSAGE" value="Nothing much." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -582,112 +670,171 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+        <state relative-caret-position="714">
+          <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/UTTTV2.1.py">
+    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/playground.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="426" column="48" selection-start-line="426" selection-start-column="48" selection-end-line="426" selection-end-column="48" />
+        <state relative-caret-position="424">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3483">
-          <caret line="147" column="33" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#283#476#0" />
+            <element signature="e#514#560#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/coordinationconditions.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+        <state relative-caret-position="63">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="5" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-756">
+          <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <element signature="e#268#276#0" />
+            <element signature="e#406#599#0" />
+            <element signature="e#637#683#0" />
+            <element signature="e#1022#1221#0" />
+            <element signature="e#1050#1221#0" />
+            <element signature="e#1361#2036#0" />
+            <element signature="e#1362#1427#0" />
+            <element signature="e#1438#1503#0" />
+            <element signature="e#1514#1579#0" />
+            <element signature="e#1590#1655#0" />
+            <element signature="e#1666#1731#0" />
+            <element signature="e#1742#1807#0" />
+            <element signature="e#1818#1883#0" />
+            <element signature="e#1894#1959#0" />
+            <element signature="e#1970#2035#0" />
+            <element signature="e#2176#2221#0" />
+            <element signature="e#2723#2772#0" />
+            <element signature="e#2929#3745#0" />
+            <element signature="e#3093#3247#0" />
+            <element signature="e#3293#3361#0" />
+            <element signature="e#3381#3745#0" />
+            <element signature="e#3454#3580#0" />
+            <element signature="e#3607#3745#0" />
+            <element signature="e#3777#3830#0" />
+            <element signature="e#3855#3909#0" />
+            <element signature="e#3967#4607#0" />
+            <element signature="e#4635#5625#0" />
+            <element signature="e#4903#4985#0" />
+            <element signature="e#5056#5105#0" />
+            <element signature="e#5175#5219#0" />
+            <element signature="e#5275#5357#0" />
+            <element signature="e#5428#5477#0" />
+            <element signature="e#5547#5591#0" />
+            <element signature="e#5661#6013#0" />
+            <element signature="e#5813#5916#0" />
+            <element signature="e#5935#6013#0" />
+            <element signature="e#6067#6398#0" />
+            <element signature="e#6425#6527#0" />
+            <element signature="e#6469#6507#0" />
+            <element signature="e#6572#6764#0" />
+            <element signature="e#6797#7085#0" />
+            <element signature="e#6845#7085#0" />
+            <element signature="e#6876#6977#0" />
+            <element signature="e#7011#7065#0" />
+            <element signature="e#7108#7290#0" />
+            <element signature="e#7311#7522#0" />
+            <element signature="e#7360#7504#0" />
+            <element signature="e#7402#7504#0" />
+            <element signature="e#7444#7504#0" />
+            <element signature="e#7546#7620#0" />
+            <element signature="e#7566#7603#0" />
+            <element signature="e#8117#8195#0" />
+            <element signature="e#8207#8495#0" />
+            <element signature="e#8605#8852#0" />
+            <element signature="e#8701#8761#0" />
+            <element signature="e#8959#9047#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/UTTTV2.1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="393" column="27" selection-start-line="393" selection-start-column="19" selection-end-line="393" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UltimateTicTacToeOnline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="286" column="26" selection-start-line="286" selection-start-column="16" selection-end-line="286" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+        <state relative-caret-position="767">
+          <caret line="563" column="25" selection-start-line="563" selection-start-column="25" selection-end-line="563" selection-end-column="25" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#267#275#0" />
-            <element signature="e#353#1041#0" />
-            <element signature="e#405#598#0" />
-            <element signature="e#636#682#0" />
-            <element signature="e#720#976#0" />
-            <element signature="e#818#880#0" />
-            <element signature="e#871#931#0" />
-            <element signature="e#1019#1218#0" />
-            <element signature="e#1047#1218#0" />
-            <element signature="e#1358#2033#0" />
-            <element signature="e#1359#1424#0" />
-            <element signature="e#1435#1500#0" />
-            <element signature="e#1511#1576#0" />
-            <element signature="e#1587#1652#0" />
-            <element signature="e#1663#1728#0" />
-            <element signature="e#1739#1804#0" />
-            <element signature="e#1815#1880#0" />
-            <element signature="e#1891#1956#0" />
-            <element signature="e#1967#2032#0" />
-            <element signature="e#2173#2218#0" />
-            <element signature="e#2720#2781#0" />
-            <element signature="e#2981#3275#0" />
-            <element signature="e#3324#3377#0" />
-            <element signature="e#3402#3456#0" />
-            <element signature="e#3457#4251#0" />
-            <element signature="e#4285#5328#0" />
-            <element signature="e#4606#4688#0" />
-            <element signature="e#4759#4808#0" />
-            <element signature="e#4878#4922#0" />
-            <element signature="e#4978#5060#0" />
-            <element signature="e#5131#5180#0" />
-            <element signature="e#5250#5294#0" />
-            <element signature="e#5441#5804#0" />
-            <element signature="e#5516#5619#0" />
-            <element signature="e#5638#5716#0" />
-            <element signature="e#5743#5837#0" />
-            <element signature="e#5787#5817#0" />
-            <element signature="e#5882#6074#0" />
-            <element signature="e#6107#6395#0" />
-            <element signature="e#6155#6395#0" />
-            <element signature="e#6186#6287#0" />
-            <element signature="e#6321#6375#0" />
-            <element signature="e#6425#6635#0" />
-            <element signature="e#6656#6867#0" />
-            <element signature="e#6705#6849#0" />
-            <element signature="e#6747#6849#0" />
-            <element signature="e#6789#6849#0" />
-            <element signature="e#6891#6965#0" />
-            <element signature="e#8001#8457#0" />
-            <element signature="e#8065#8111#0" />
-            <element signature="e#8287#8380#0" />
-            <element signature="e#8348#8380#0" />
-            <element signature="e#8522#8567#0" />
-            <element signature="e#8505#8848#0" />
-            <element signature="e#8728#8762#0" />
-            <element signature="e#8781#8848#0" />
-            <element signature="e#8918#9128#0" />
-            <element signature="e#8886#9659#0" />
-            <element signature="e#9277#9469#1" />
-            <element signature="e#9656#9691#0" />
-            <element signature="e#9710#9745#0" />
-            <element signature="e#9895#10055#0" />
-            <element signature="e#9343#9421#0" />
-            <element signature="e#9433#9721#0" />
-            <element signature="e#9831#10127#0" />
-            <element signature="e#9976#10036#0" />
-            <element signature="e#11198#11302#0" />
-            <element signature="e#10310#10398#0" />
+            <element signature="e#294#302#0" />
+            <element signature="e#433#626#0" />
+            <element signature="e#664#710#0" />
+            <element signature="e#1178#1377#0" />
+            <element signature="e#1206#1377#0" />
+            <element signature="e#1517#2192#0" />
+            <element signature="e#1518#1583#0" />
+            <element signature="e#1594#1659#0" />
+            <element signature="e#1670#1735#0" />
+            <element signature="e#1746#1811#0" />
+            <element signature="e#1822#1887#0" />
+            <element signature="e#1898#1963#0" />
+            <element signature="e#1974#2039#0" />
+            <element signature="e#2050#2115#0" />
+            <element signature="e#2126#2191#0" />
+            <element signature="e#2290#2335#0" />
+            <element signature="e#2718#2754#0" />
+            <element signature="e#2978#3307#0" />
+            <element signature="e#3339#3392#0" />
+            <element signature="e#3417#3471#0" />
+            <element signature="e#3494#4336#0" />
+            <element signature="e#4364#5407#0" />
+            <element signature="e#4685#4767#0" />
+            <element signature="e#4838#4887#0" />
+            <element signature="e#4957#5001#0" />
+            <element signature="e#5057#5139#0" />
+            <element signature="e#5210#5259#0" />
+            <element signature="e#5329#5373#0" />
+            <element signature="e#5443#5838#0" />
+            <element signature="e#5638#5741#0" />
+            <element signature="e#5760#5838#0" />
+            <element signature="e#5865#5959#0" />
+            <element signature="e#5909#5939#0" />
+            <element signature="e#6004#6196#0" />
+            <element signature="e#6229#6517#0" />
+            <element signature="e#6277#6517#0" />
+            <element signature="e#6308#6409#0" />
+            <element signature="e#6443#6497#0" />
+            <element signature="e#6547#6757#0" />
+            <element signature="e#6778#6989#0" />
+            <element signature="e#7013#7087#0" />
+            <element signature="e#7033#7070#0" />
+            <element signature="e#7115#8174#0" />
+            <element signature="e#8208#8664#0" />
+            <element signature="e#8696#9109#0" />
+            <element signature="e#8989#9023#0" />
+            <element signature="e#9042#9109#0" />
+            <element signature="e#9630#9860#0" />
+            <element signature="e#9394#9586#1" />
+            <element signature="e#10675#10963#0" />
+            <element signature="e#11541#11629#0" />
           </folding>
         </state>
       </provider>

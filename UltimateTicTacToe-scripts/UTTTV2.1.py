@@ -421,7 +421,6 @@ try:
             exit()
 
         moves += 1
-        moves += 1
 
 finally:
     # @todo: if game if finished then save or delete file from server accoringly

@@ -9,7 +9,7 @@ import copy
 import webbrowser as web
 import functions as func
 
-yes = ['yes', 'y', 'yeah', 'ye', 'yeet', 'yup'] # for checking users response
+yes = ['yes', 'y', 'yeah', 'ye', 'yeet', 'yup', 'haan', 'bilkul', 'hanji'] # for checking users response
 #classes
 
 #Communicator class (xmpp derived)
@@ -29,15 +29,26 @@ class communicator(slix.ClientXMPP):
     def message(self, msg):
         #do something
         global receivedMove
+        global buffer
+        global opponent_jid
+        global enemyMoves
 
-        if msg['type'] == 'chat':
+        if msg['type'] == 'normal':
             receivedMove = True
             enemyMoves.append(msg['body'])
-        elif msg['type'] == 'normal':
+        elif msg['type'] == 'chat':
             print("\nOpponent says:", msg['body'])
+            if msg['body'] == "GAME_START":
+                opponent_jid = str(msg['from']).split("/")[0]
+                print(f"{opponent_jid} has accepted the challenge. Let the battle begin!")
+            buffer.append(msg)
+        # sender = str(msg['from'])
+        # print(type(sender))
+        # sender = sender.split("/")[0]
+        # print(sender)
 
-    def sendMessage(self, msg):
-        self.send_message(mto=self.opp_jid, mbody=msg, mtype="chat")
+    def sendMessage(self, msg, type):
+        self.send_message(mto=self.opp_jid, mbody=msg, mtype=type)
 
 #players' class, contains data like their account (moves) wins, etc
 class player:
@@ -48,6 +59,9 @@ class player:
 
 
 #variables
+
+buffer = []
+
 enemyMoves = []
 
 jid = 'spar@xmpp.jp'
@@ -56,7 +70,7 @@ password = 'spargroupgaming'
 
 opponent_jid = 'spargroup@xmpp.jp'
 
-gameid = ''
+gameid = 'sample'
 
 board = [['_', '_', '_',
           '_', '_', '_',
@@ -86,7 +100,7 @@ board = [['_', '_', '_',
           '_', '_', '_',
           '_', '_', '_']]
 
-#new instance of players (has to be changed to make it online 1v1)
+#new instance of players
 x = player()
 y = player()
 
@@ -104,6 +118,9 @@ moves = 1
 #big grid number
 bigscope = 0
 
+#smalll scope
+smallscope = 4
+
 #what is the turn?
 turn = True # or None maybe?
 
@@ -117,6 +134,8 @@ myturn = None
 game_start = False
 
 receiving = True
+
+movement = copy.deepcopy(board)
 
 #communicator and it's thread object
 #will be set later through the initialize function
@@ -337,25 +356,31 @@ def ask_server(gid):
     url = "http://cycada.ml/game/rooms/coordinate.php"
     data = {"id":gid, "jid":jid}
     returned = req.get(url, data)
+
     if returned.status_code != 200 :
         func.animatedPrint("There was a problem in our server, please try again later.")
     returned = returned.content.decode('utf-8')
-    print(returned)
+
     if returned == "NEW_GAME":
         #we are P1, save the state for once
-        myturn = True # I am player 1
+        myturn = True # I am player
         save()
         return returned
+
     elif returned == "ROOM_FILLED":
         print("This game already has 2 players in it.")
         return False
+
     else:
         dat = returned.split("#")
+
         if dat[1] == "SEND_INFO":
             #Send player 1 my Jid (I am player 2)
             myturn = False
             print('Have to send message to opponent')
+            comm.sendMessage("GAME_START", "chat")
             return dat[0]
+
         else: #the case that the player is revisiting the game after saving it
             if dat[1] == "P1":
                 myturn = True
@@ -370,13 +395,14 @@ def processResponse(resp):
     global opponent_jid
     global game_start
     if resp == "NEW_GAME":
-        #wait for signal
+        #We can't do anything so wait
         while not receivedMove:
             time.sleep(0.1)
             pass
     elif not resp:
         func.animatedPrint("Sorry, this room is already full, create a new game to play with a friend")
     else:
+        #Not a new game, we have got the opponent jid
         opponent_jid = resp
         game_start = True
 
@@ -393,6 +419,7 @@ def start_new_game(gid):
     if response.status_code == 200:
         #everything went fine
         pass
+
     else:
         print("There was a problem with the server, Sorry.")
         exit()
@@ -403,6 +430,8 @@ def initialize():
     global receivingThread
 
     comm = communicator(jid, password, opponent_jid)
+    comm.connect()
+
     receivingThread = td.Thread(target=start_receiving)
     receivingThread.daemon = True
     receivingThread.start()
@@ -420,27 +449,121 @@ def update_game(move):
     global receivedMove
     global bigscope
     global magic
+    global opponent_jid
+    global moves
 
     opponent_turn = not myturn
 
     if opponent_turn:
         insertVal = "X"
-        account = x
+        opponentAcc = x
+
     else:
         insertVal = "O"
-        account = y
+        opponentAcc = y
 
     board[bigscope][move] = insertVal
-    account.ac[bigscope].append(magic[move])
-    account.moves[bigscope] += 1
-
-    if check(account):
+    opponentAcc.ac[bigscope].append(magic[move])
+    opponentAcc.moves[bigscope] += 1
+    moves += 1
+    if check(opponentAcc.ac[bigscope]):
         #Opponent has won a block
-        account.wins[bigscope] = True
-        print(f"\nYour opponent {insertVal} won the block {bigscope}. Time to show your metal!")
+        opponentAcc.wins[bigscope] = True
+        print(f"\nYour opponent {opponent_jid} won the block {bigscope}. Time to show your metal!")
 
     bigscope = move #set up for local player's move
+
     receivedMove = True
+
+def send_move():
+    pass
+
+
+def playGame():
+    #Globalisation
+    global buffer
+    global enemyMoves
+    global jid
+    global password
+    global opponent_jid
+    global gameid
+    global board
+    global x
+    global y
+    global magic
+    global receivedMove
+    global moves
+    global bigscope
+    global smallscope
+    global turn
+    global handler
+    global myturn
+    global game_start
+    global receiving
+    global movement
+
+    myAccount = None
+    insertVal = None
+
+    if myturn:
+        insertVal = "X"
+        myAccount = x
+    elif not myturn:
+        insertVal = "O"
+        myAccount = y
+    else:
+        print("KAALA HIT: myturn not set yet.")
+
+    while moves < 81:
+        if turn == myturn and game_start:
+            smallscope = 4
+            movement = copy.deepcopy(board)
+            movement[bigscope][smallscope] = '#'
+            ultrashow(movement)
+
+            information = ""
+            information += "X : " + str(win(x.wins)) + " O : " + str(win(y.wins)) + "\n"
+            information += "It is player " + str(insertVal) + "'s turn. You will play in the " + str(bigscope + 1) + " grid.\n\n"
+            information += "Press 'Q' at any time to save the game.\n\n"
+            information += "Navigate using WASD keys (your pointer starts at the center) :"
+            print(information)
+
+            pressedEnter = False
+            while not pressedEnter:
+                if ms.kbhit():
+                    press = ms.getch().decode("utf-8")
+                    if press == "\r":
+                        pressedEnter = True
+                        break
+                    elif process(press):
+                        movement = copy.deepcopy(board)
+                        smallscope = (smallscope + process(press)) % 9
+
+                        movement[bigscope][smallscope] = "#"
+
+                        ultrashow(movement)
+
+                        print(information)
+                        movement = copy.deepcopy(board)
+                        time.sleep(0.03)
+                    elif press == "q" or press == "Q":
+                        save()
+                        os.system("cls")
+                        print("Saving...")
+                        time.sleep(2)
+                        exit()
+
+            if board[bigscope][smallscope] != '_':
+                print("Wait, ", end="")
+                time.sleep(0.5)
+                print("That's illegal.")
+                moves -= 1
+                time.sleep(0.5)
+            else:
+                pass
+                #do shits
+
+
 
 
 #Do all the init stuff here. Already contains thread launching and stuff.
@@ -483,6 +606,9 @@ if s in yes:
 else:
     gameid = input("\nEnter game ID to enable game saving: ")
     #@todo: steps to create new game and stuff
+    recvd = ask_server(gameid)
+    start_new_game(gameid)
+    processResponse(recvd)
 
 
 #demo messaging system start
