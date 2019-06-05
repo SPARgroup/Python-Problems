@@ -9,6 +9,7 @@ import copy
 import webbrowser as web
 import functions as func
 
+
 yes = ['yes', 'y', 'yeah', 'ye', 'yeet', 'yup', 'haan', 'bilkul', 'hanji'] # for checking users response
 #classes
 
@@ -34,10 +35,12 @@ class communicator(slix.ClientXMPP):
         global enemyMoves
 
         if msg['type'] == 'normal':
-            receivedMove = True
+            update_game(int(msg['body'].decode('utf-8')))
             enemyMoves.append(msg['body'])
+
+
         elif msg['type'] == 'chat':
-            print("\nOpponent says:", msg['body'])
+            #print("\nOpponent says:", msg['body'])
             if msg['body'] == "GAME_START":
                 opponent_jid = str(msg['from']).split("/")[0]
                 print(f"{opponent_jid} has accepted the challenge. Let the battle begin!")
@@ -62,15 +65,16 @@ class player:
 
 buffer = []
 
+
 enemyMoves = []
 
-jid = 'spar@xmpp.jp'
+jid = ''
 
-password = 'spargroupgaming'
+password = ''
 
-opponent_jid = 'spargroup@xmpp.jp'
+opponent_jid = None
 
-gameid = 'sample'
+gameid = ''
 
 board = [['_', '_', '_',
           '_', '_', '_',
@@ -100,6 +104,7 @@ board = [['_', '_', '_',
           '_', '_', '_',
           '_', '_', '_']]
 
+information = ""
 #new instance of players
 x = player()
 y = player()
@@ -132,6 +137,8 @@ myturn = None
 
 #Shall we?
 game_start = False
+
+printed = False
 
 receiving = True
 
@@ -394,7 +401,8 @@ def processResponse(resp):
     #includes waiting for player 2 to join game
     global opponent_jid
     global game_start
-    if resp == "NEW_GAME":
+
+    if resp == "NEW_GAME" or opponent_jid == None:
         #We can't do anything so wait
         while not receivedMove:
             time.sleep(0.1)
@@ -475,12 +483,14 @@ def update_game(move):
 
     receivedMove = True
 
+
 def send_move():
     pass
 
 
 def playGame():
     #Globalisation
+    global printed
     global buffer
     global enemyMoves
     global jid
@@ -498,9 +508,9 @@ def playGame():
     global turn
     global handler
     global myturn
-    global game_start
     global receiving
     global movement
+    global comm
 
     myAccount = None
     insertVal = None
@@ -515,17 +525,24 @@ def playGame():
         print("KAALA HIT: myturn not set yet.")
 
     while moves < 81:
-        if turn == myturn and game_start:
+        if not printed:
+            information = "X : " + str(win(x.wins)) + " O : " + str(win(y.wins)) + "\n"
+            information += "X:{} O:{}\n".format(win(x.wins), win(y.wins))
+            if turn == myturn:
+                information += "Your turn, you are playing in the {} grid.\n\n".format(bigscope + 1)
+                information += "Navigate using WASD keys (your pointer starts at the center) :"
+
+            else:
+                information += "It's {}'s turn. \n\n".format(opponent_jid.split("@")[0])
+
+            information += "Press 'Q' at any time to save the game.\n\n"
+
+        if turn == myturn:
+            printed = False
             smallscope = 4
             movement = copy.deepcopy(board)
             movement[bigscope][smallscope] = '#'
             ultrashow(movement)
-
-            information = ""
-            information += "X : " + str(win(x.wins)) + " O : " + str(win(y.wins)) + "\n"
-            information += "It is player " + str(insertVal) + "'s turn. You will play in the " + str(bigscope + 1) + " grid.\n\n"
-            information += "Press 'Q' at any time to save the game.\n\n"
-            information += "Navigate using WASD keys (your pointer starts at the center) :"
             print(information)
 
             pressedEnter = False
@@ -559,15 +576,31 @@ def playGame():
                 print("That's illegal.")
                 moves -= 1
                 time.sleep(0.5)
-            else:
-                pass
-                #do shits
 
+            else:
+                board[bigscope][smallscope] = insertVal
+                myAccount.ac[bigscope].append(magic[smallscope])
+                myAccount.moves[bigscope] += 1
+                moves += 1
+                if check(myAccount.ac[bigscope]):
+                    # Opponent has won a block
+                    myAccount.wins[bigscope] = True
+                    print(f"\nYou have won the {bigscope} block!")
+
+                comm.sendMessage(smallscope, "normal")
+                turn = not turn
+
+
+                #do shits
+        elif turn != myturn:
+            if not printed:
+                print(information)
+                printed = True
 
 
 
 #Do all the init stuff here. Already contains thread launching and stuff.
-initialize()
+
 
 #Intro
 func.play_intro()
@@ -596,6 +629,7 @@ if s in yes:
     gameid = input("Enter game ID: ")
     recvd = ask_server(gameid)
     processResponse(recvd)
+    initialize()
     data = retrieveFile(gameid)
     if data:
         loadgame(data)
@@ -609,6 +643,7 @@ else:
     recvd = ask_server(gameid)
     start_new_game(gameid)
     processResponse(recvd)
+    initialize()
 
 
 #demo messaging system start

@@ -36,3 +36,8 @@ def play_intro():
     creds = "\nCredits: Samarth Singla | Ashmit Chamoli | Rishabh Sharma | Abhivir Singh\n"
     animatedPrint(creds, 80, 5)
     sleep(0.5)
+
+def plus():
+    global o
+    o += 1
+    print(o)
