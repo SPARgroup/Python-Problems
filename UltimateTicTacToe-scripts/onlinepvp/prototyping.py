@@ -43,12 +43,14 @@ class communicator(slix.ClientXMPP):
             #print("\nOpponent says:", msg['body'])
             if msg['body'] == "GAME_START":
                 opponent_jid = str(msg['from']).split("/")[0]
+                print(msg)
+                print(opponent_jid)
                 print(f"{opponent_jid} has accepted the challenge. Let the battle begin!")
             buffer.append(msg)
 
 
-    def sendMessage(self, opponent, msg, type):
-        self.send_message(mto=opponent, mbody=msg, mtype=type)
+    def sendMessage(self, opponent, msg, mtype):
+        self.send_message(mto=opponent, mbody=msg, mtype=mtype)
 
 #players' class, contains data like their account (moves) wins, etc
 class player:
@@ -148,6 +150,11 @@ comm = None
 receivingThread = None
 
 #Thread functions
+
+def debug(err):
+    print(f"\n KAALA HIT: {err}")
+
+
 def start_receiving():
     global enemyMoves
     while receiving :
@@ -357,6 +364,8 @@ def isfilled(l):
 
 def ask_server(gid):
     global myturn
+    global opponent_jid
+    global jid
     url = "http://cycada.ml/game/rooms/coordinate.php"
     data = {"id":gid, "jid":jid}
     returned = req.get(url, data)
@@ -367,7 +376,7 @@ def ask_server(gid):
 
     if returned == "NEW_GAME":
         #we are P1, save the state for once
-        myturn = True # I am player
+        myturn = True # I am player 1
         save()
         return returned
 
@@ -381,14 +390,17 @@ def ask_server(gid):
         if dat[1] == "SEND_INFO":
             #Send player 1 my Jid (I am player 2)
             myturn = False
+            opponent_jid = dat[0]
             print('Have to send message to opponent')
             comm.sendMessage(opponent_jid, "GAME_START", "chat")
             return dat[0]
 
         else: #the case that the player is revisiting the game after saving it
             if dat[1] == "P1":
+                opponent_jid = dat[0]
                 myturn = True
             elif dat[1] == "P2":
+                opponent_jid = dat[0]
                 myturn = False
             return dat[0]
 
@@ -399,7 +411,7 @@ def processResponse(resp):
     global opponent_jid
     global game_start
 
-    if resp == "NEW_GAME" or opponent_jid == None:
+    if resp == "NEW_GAME" or opponent_jid is None:
         #We can't do anything so wait
         while not receivedMove:
             time.sleep(0.1)
@@ -508,7 +520,7 @@ def playGame():
     global receiving
     global movement
     global comm
-
+    global information
     myAccount = None
     insertVal = None
 
@@ -639,6 +651,7 @@ else:
     #@todo: steps to create new game and stuff
     recvd = ask_server(gameid)
     start_new_game(gameid)
+    print(f"\nNew game created! Waiting for opponent to join...")
     processResponse(recvd)
 
 
