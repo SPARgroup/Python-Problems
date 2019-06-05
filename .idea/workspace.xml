@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2af4d0d-3e59-40d7-b7f5-81775547b959" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/terminal.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/playground.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,9 +19,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="465">
+              <caret line="436" column="37" selection-start-line="436" selection-start-column="37" selection-end-line="436" selection-end-column="37" />
               <folding>
+                <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#294#302#0" />
                 <element signature="e#664#710#0" />
                 <element signature="e#1975#2650#0" />
@@ -66,18 +64,14 @@
                 <element signature="e#7432#7492#0" />
                 <element signature="e#7534#7608#0" />
                 <element signature="e#7554#7591#0" />
-                <element signature="e#7636#8730#0" />
                 <element signature="e#7987#8097#0" />
                 <element signature="e#8143#8211#0" />
-                <element signature="e#8231#8730#0" />
-                <element signature="e#8304#8499#0" />
                 <element signature="e#8592#8730#0" />
-                <element signature="e#8764#9287#0" />
                 <element signature="e#8764#8810#0" />
                 <element signature="e#9319#9733#0" />
                 <element signature="e#9612#9646#0" />
                 <element signature="e#9666#9733#0" />
-                <element signature="e#9758#9988#0" />
+                <element signature="e#10018#10970#0" />
                 <element signature="e#10018#10210#1" />
                 <element signature="e#10993#10997#0" />
                 <element signature="e#11478#11515#0" />
@@ -86,7 +80,6 @@
                 <element signature="e#12521#12570#0" />
                 <element signature="e#13796#13874#0" />
                 <element signature="e#13886#14174#0" />
-                <element signature="e#14837#14925#0" />
               </folding>
             </state>
           </provider>
@@ -407,7 +400,21 @@
       <option name="project" value="LOCAL" />
       <updated>1559492774329</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Clients working.">
+      <created>1559726002742</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1559726002742</updated>
+    </task>
+    <task id="LOCAL-00009" summary="We are smart.">
+      <created>1559726392440</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1559726392440</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -419,7 +426,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.5016077" side_tool="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879582" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33654878" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.9678457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27009645" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -470,7 +477,9 @@
     <MESSAGE value="Random" />
     <MESSAGE value="Created some planning and basic improvements in code. Do any changes in the &quot;prototyping.py&quot; script, transfer to the main file only when tested to be complete. Cheers!" />
     <MESSAGE value="Nothing much." />
-    <option name="LAST_COMMIT_MESSAGE" value="Nothing much." />
+    <MESSAGE value="Clients working." />
+    <MESSAGE value="We are smart." />
+    <option name="LAST_COMMIT_MESSAGE" value="We are smart." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -663,9 +672,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="465">
+          <caret line="436" column="37" selection-start-line="436" selection-start-column="37" selection-end-line="436" selection-end-column="37" />
           <folding>
+            <element signature="e#0#11#0" expanded="true" />
             <element signature="e#294#302#0" />
             <element signature="e#664#710#0" />
             <element signature="e#1975#2650#0" />
@@ -707,18 +717,14 @@
             <element signature="e#7432#7492#0" />
             <element signature="e#7534#7608#0" />
             <element signature="e#7554#7591#0" />
-            <element signature="e#7636#8730#0" />
             <element signature="e#7987#8097#0" />
             <element signature="e#8143#8211#0" />
-            <element signature="e#8231#8730#0" />
-            <element signature="e#8304#8499#0" />
             <element signature="e#8592#8730#0" />
-            <element signature="e#8764#9287#0" />
             <element signature="e#8764#8810#0" />
             <element signature="e#9319#9733#0" />
             <element signature="e#9612#9646#0" />
             <element signature="e#9666#9733#0" />
-            <element signature="e#9758#9988#0" />
+            <element signature="e#10018#10970#0" />
             <element signature="e#10018#10210#1" />
             <element signature="e#10993#10997#0" />
             <element signature="e#11478#11515#0" />
@@ -727,7 +733,6 @@
             <element signature="e#12521#12570#0" />
             <element signature="e#13796#13874#0" />
             <element signature="e#13886#14174#0" />
-            <element signature="e#14837#14925#0" />
           </folding>
         </state>
       </provider>

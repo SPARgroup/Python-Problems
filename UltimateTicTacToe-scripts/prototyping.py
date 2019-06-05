@@ -434,7 +434,7 @@ def initialize():
     global comm
     global receivingThread
 
-    comm = communicator(jid, password, opponent_jid)
+    comm = communicator(jid, password)
     comm.connect()
 
     receivingThread = td.Thread(target=start_receiving)
