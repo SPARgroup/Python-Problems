@@ -16,9 +16,9 @@ yes = ['yes', 'y', 'yeah', 'ye', 'yeet', 'yup', 'haan', 'bilkul', 'hanji'] # for
 #Communicator class (xmpp derived)
 class communicator(slix.ClientXMPP):
 
-    def __init__(self, jid, password, opp_jid):
+    def __init__(self, jid, password):
         slix.ClientXMPP.__init__(self, jid, password)
-        self.opp_jid = opp_jid
+
 
         self.add_event_handler("session_start", self.start)
         self.add_event_handler("message", self.message)
@@ -45,13 +45,10 @@ class communicator(slix.ClientXMPP):
                 opponent_jid = str(msg['from']).split("/")[0]
                 print(f"{opponent_jid} has accepted the challenge. Let the battle begin!")
             buffer.append(msg)
-        # sender = str(msg['from'])
-        # print(type(sender))
-        # sender = sender.split("/")[0]
-        # print(sender)
 
-    def sendMessage(self, msg, type):
-        self.send_message(mto=self.opp_jid, mbody=msg, mtype=type)
+
+    def sendMessage(self, opponent, msg, type):
+        self.send_message(mto=self.opponent, mbody=msg, mtype=type)
 
 #players' class, contains data like their account (moves) wins, etc
 class player:
@@ -385,7 +382,7 @@ def ask_server(gid):
             #Send player 1 my Jid (I am player 2)
             myturn = False
             print('Have to send message to opponent')
-            comm.sendMessage("GAME_START", "chat")
+            comm.sendMessage(opponent_jid, "GAME_START", "chat")
             return dat[0]
 
         else: #the case that the player is revisiting the game after saving it
@@ -587,7 +584,7 @@ def playGame():
                     myAccount.wins[bigscope] = True
                     print(f"\nYou have won the {bigscope} block!")
 
-                comm.sendMessage(smallscope, "normal")
+                comm.sendMessage(opponent_jid, smallscope, "normal")
                 turn = not turn
 
 
@@ -621,7 +618,7 @@ else:
     web.open("https://www.xmpp.jp/signup")
     jid = func.custom_input("\nEnter your User ID: ")
     password = input("Enter Password: ")
-
+initialize()
 #initialise game
 s = func.custom_input("\nDo you want to continue a saved game?(y/n): ")
 s = s.lower()
@@ -629,7 +626,7 @@ if s in yes:
     gameid = input("Enter game ID: ")
     recvd = ask_server(gameid)
     processResponse(recvd)
-    initialize()
+
     data = retrieveFile(gameid)
     if data:
         loadgame(data)
@@ -643,15 +640,11 @@ else:
     recvd = ask_server(gameid)
     start_new_game(gameid)
     processResponse(recvd)
-    initialize()
 
 
-#demo messaging system start
-inp = ''
-while inp != 'STOP':
-    inp = func.custom_input("Enter Message: ")
-    comm.sendMessage(inp)
-    time.sleep(0.5)
+while True:
+    if game_start:
+        playGame()
 
-print("Send Attempted")
+
 input()
