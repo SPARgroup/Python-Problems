@@ -48,7 +48,7 @@ class communicator(slix.ClientXMPP):
 
 
     def sendMessage(self, opponent, msg, type):
-        self.send_message(mto=self.opponent, mbody=msg, mtype=type)
+        self.send_message(mto=opponent, mbody=msg, mtype=type)
 
 #players' class, contains data like their account (moves) wins, etc
 class player:
