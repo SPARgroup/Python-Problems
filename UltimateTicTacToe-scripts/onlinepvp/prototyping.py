@@ -225,8 +225,8 @@ def prepdata():
     _a += stringify(y.moves) + "\n"
 
     f.write(_a)
-    return _a
     f.close()
+    return _a
 
 
 def loadgame(_data):
@@ -570,7 +570,7 @@ def playGame():
                         ultrashow(movement)
 
                         print(information)
-                        movement = copy.deepcopy(board)
+                        #movement = copy.deepcopy(board)
                         time.sleep(0.03)
                     elif press == "q" or press == "Q":
                         save()
