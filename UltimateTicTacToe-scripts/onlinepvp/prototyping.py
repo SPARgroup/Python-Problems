@@ -33,6 +33,8 @@ class communicator(slix.ClientXMPP):
         global buffer
         global opponent_jid
         global enemyMoves
+        global challengeAccepted
+        global game_start
 
         if msg['type'] == 'normal':
             update_game(int(msg['body'].decode('utf-8')))
@@ -42,10 +44,12 @@ class communicator(slix.ClientXMPP):
         elif msg['type'] == 'chat':
             #print("\nOpponent says:", msg['body'])
             if msg['body'] == "GAME_START":
+                challengeAccepted = True
                 opponent_jid = str(msg['from']).split("/")[0]
                 print(msg)
                 print(opponent_jid)
                 print(f"{opponent_jid} has accepted the challenge. Let the battle begin!")
+                game_start = True
             buffer.append(msg)
 
 
@@ -138,6 +142,8 @@ myturn = None
 game_start = False
 
 printed = False
+
+challengeAccepted = False
 
 receiving = True
 
@@ -369,7 +375,7 @@ def ask_server(gid):
     url = "http://cycada.ml/game/rooms/coordinate.php"
     data = {"id":gid, "jid":jid}
     returned = req.get(url, data)
-
+    debug(returned.content)
     if returned.status_code != 200 :
         func.animatedPrint("There was a problem in our server, please try again later.")
     returned = returned.content.decode('utf-8')
@@ -413,9 +419,10 @@ def processResponse(resp):
 
     if resp == "NEW_GAME" or opponent_jid is None:
         #We can't do anything so wait
-        while not receivedMove:
-            time.sleep(0.1)
+        while not challengeAccepted:
+            time.sleep(0.5)
             pass
+
     elif not resp:
         func.animatedPrint("Sorry, this room is already full, create a new game to play with a friend")
     else:
@@ -429,6 +436,7 @@ def start_new_game(gid):
     #put empty file on server
     url = 'http://cycada.ml/game/savegame.php'
     empty_state = prepdata()
+    debug(empty_state)
     dat = {'id':gid, 'data':empty_state}
 
     response = req.post(url, dat)
@@ -468,6 +476,7 @@ def update_game(move):
     global magic
     global opponent_jid
     global moves
+    global turn
 
     opponent_turn = not myturn
 
@@ -489,7 +498,7 @@ def update_game(move):
         print(f"\nYour opponent {opponent_jid} won the block {bigscope}. Time to show your metal!")
 
     bigscope = move #set up for local player's move
-
+    turn = not turn
     receivedMove = True
 
 
@@ -524,6 +533,7 @@ def playGame():
     myAccount = None
     insertVal = None
 
+
     if myturn:
         insertVal = "X"
         myAccount = x
@@ -534,9 +544,10 @@ def playGame():
         print("KAALA HIT: myturn not set yet.")
 
     while moves < 81:
+        receivedMove = False
+
         if not printed:
             information = "X : " + str(win(x.wins)) + " O : " + str(win(y.wins)) + "\n"
-            information += "X:{} O:{}\n".format(win(x.wins), win(y.wins))
             if turn == myturn:
                 information += "Your turn, you are playing in the {} grid.\n\n".format(bigscope + 1)
                 information += "Navigate using WASD keys (your pointer starts at the center) :"
@@ -602,9 +613,15 @@ def playGame():
 
                 #do shits
         elif turn != myturn:
+
             if not printed:
+                ultrashow(board)
                 print(information)
                 printed = True
+
+            while not receivedMove:
+                time.sleep(0.5)
+                pass
 
 
 
@@ -637,6 +654,7 @@ s = s.lower()
 if s in yes:
     gameid = input("Enter game ID: ")
     recvd = ask_server(gameid)
+    debug(recvd)
     processResponse(recvd)
 
     data = retrieveFile(gameid)
@@ -650,6 +668,7 @@ else:
     gameid = input("\nEnter game ID to enable game saving: ")
     #@todo: steps to create new game and stuff
     recvd = ask_server(gameid)
+    debug(recvd)
     start_new_game(gameid)
     print(f"\nNew game created! Waiting for opponent to join...")
     processResponse(recvd)
