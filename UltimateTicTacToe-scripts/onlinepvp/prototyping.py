@@ -36,12 +36,14 @@ class communicator(slix.ClientXMPP):
         global challengeAccepted
         global game_start
 
+        print(msg['type'])
         if msg['type'] == 'normal':
             update_game(int(msg['body'].decode('utf-8')))
             enemyMoves.append(msg['body'])
 
 
         elif msg['type'] == 'chat':
+
             #print("\nOpponent says:", msg['body'])
             if msg['body'] == "GAME_START":
                 challengeAccepted = True
@@ -50,6 +52,10 @@ class communicator(slix.ClientXMPP):
                 print(opponent_jid)
                 print(f"{opponent_jid} has accepted the challenge. Let the battle begin!")
                 game_start = True
+
+            else:
+                update_game(int(msg['body'].decode('utf-8')))
+                enemyMoves.append(msg['body'])
             buffer.append(msg)
 
 
@@ -550,12 +556,14 @@ def playGame():
             information = "X : " + str(win(x.wins)) + " O : " + str(win(y.wins)) + "\n"
             if turn == myturn:
                 information += "Your turn, you are playing in the {} grid.\n\n".format(bigscope + 1)
+                information += "Press 'Q' at any time to save the game.\n\n"
                 information += "Navigate using WASD keys (your pointer starts at the center) :"
 
             else:
                 information += "It's {}'s turn. \n\n".format(opponent_jid.split("@")[0])
+                information += "Press 'Q' at any time to save the game.\n\n"
 
-            information += "Press 'Q' at any time to save the game.\n\n"
+
 
         if turn == myturn:
             printed = False
@@ -570,6 +578,7 @@ def playGame():
                 if ms.kbhit():
                     press = ms.getch().decode("utf-8")
                     if press == "\r":
+
                         pressedEnter = True
                         break
                     elif process(press):
@@ -651,6 +660,7 @@ initialize()
 #initialise game
 s = func.custom_input("\nDo you want to continue a saved game?(y/n): ")
 s = s.lower()
+
 if s in yes:
     gameid = input("Enter game ID: ")
     recvd = ask_server(gameid)
