@@ -36,7 +36,6 @@ class communicator(slix.ClientXMPP):
         global challengeAccepted
         global game_start
 
-        print(msg['type'])
         if msg['type'] == 'normal':
             update_game(int(msg['body'].decode('utf-8')))
             enemyMoves.append(msg['body'])
@@ -56,6 +55,7 @@ class communicator(slix.ClientXMPP):
             else:
                 update_game(int(msg['body'].decode('utf-8')))
                 enemyMoves.append(msg['body'])
+                game_start = True
             buffer.append(msg)
 
 
@@ -431,6 +431,8 @@ def processResponse(resp):
 
     elif not resp:
         func.animatedPrint("Sorry, this room is already full, create a new game to play with a friend")
+        time.sleep(2)
+        exit()
     else:
         #Not a new game, we have got the opponent jid
         opponent_jid = resp
