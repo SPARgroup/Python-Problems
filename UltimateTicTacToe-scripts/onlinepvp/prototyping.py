@@ -39,6 +39,7 @@ class communicator(slix.ClientXMPP):
         if msg['type'] == 'normal':
             update_game(int(msg['body'].decode('utf-8')))
             enemyMoves.append(msg['body'])
+            buffer.append(msg)
 
 
         elif msg['type'] == 'chat':
@@ -50,11 +51,6 @@ class communicator(slix.ClientXMPP):
                 print(msg)
                 print(opponent_jid)
                 print(f"{opponent_jid} has accepted the challenge. Let the battle begin!")
-                game_start = True
-
-            else:
-                update_game(int(msg['body'].decode('utf-8')))
-                enemyMoves.append(msg['body'])
                 game_start = True
             buffer.append(msg)
 
@@ -378,17 +374,19 @@ def ask_server(gid):
     global myturn
     global opponent_jid
     global jid
+
     url = "http://cycada.ml/game/rooms/coordinate.php"
     data = {"id":gid, "jid":jid}
     returned = req.get(url, data)
     debug(returned.content)
+
     if returned.status_code != 200 :
         func.animatedPrint("There was a problem in our server, please try again later.")
     returned = returned.content.decode('utf-8')
 
     if returned == "NEW_GAME":
         #we are P1, save the state for once
-        myturn = True # I am player 1
+        myturn = True #I am player 1
         save()
         return returned
 
@@ -398,23 +396,18 @@ def ask_server(gid):
 
     else:
         dat = returned.split("#")
+        #Boom
+        if dat[1] == "P1":
+            myturn = True
 
-        if dat[1] == "SEND_INFO":
-            #Send player 1 my Jid (I am player 2)
+        elif dat[1] == "P2":
             myturn = False
-            opponent_jid = dat[0]
-            print('Have to send message to opponent')
-            comm.sendMessage(opponent_jid, "GAME_START", "chat")
-            return dat[0]
 
-        else: #the case that the player is revisiting the game after saving it
-            if dat[1] == "P1":
-                opponent_jid = dat[0]
-                myturn = True
-            elif dat[1] == "P2":
-                opponent_jid = dat[0]
-                myturn = False
-            return dat[0]
+        opponent_jid = dat[0]
+
+        comm.sendMessage(opponent_jid, "GAME_START", "chat")
+
+        return None
 
 
 def processResponse(resp):
@@ -423,21 +416,28 @@ def processResponse(resp):
     global opponent_jid
     global game_start
 
-    if resp == "NEW_GAME" or opponent_jid is None:
-        #We can't do anything so wait
-        while not challengeAccepted:
-            time.sleep(0.5)
-            pass
+    # if resp == "NEW_GAME" or opponent_jid is None:
+    #     #We can't do anything so wait
+    #     while not challengeAccepted:
+    #         time.sleep(0.5)
+    #         pass
+    #
+    # elif not resp:
+    #     func.animatedPrint("Sorry, this room is already full, create a new game to play with a friend")
+    #     time.sleep(2)
+    #     exit()
+    # else:
+    #     #Not a new game, we have got the opponent jid
+    #     opponent_jid = resp
+    #     game_start = True
 
-    elif not resp:
-        func.animatedPrint("Sorry, this room is already full, create a new game to play with a friend")
-        time.sleep(2)
-        exit()
-    else:
-        #Not a new game, we have got the opponent jid
-        opponent_jid = resp
-        game_start = True
+    if resp == "NEW_GAME":
 
+        pass
+    elif resp == "ROOM_FULL":
+        pass
+    elif resp is None:
+        pass
 
 def start_new_game(gid):
     """Puts empty game file on the server, being player 1 himself."""
