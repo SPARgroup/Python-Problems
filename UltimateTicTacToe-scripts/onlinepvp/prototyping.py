@@ -8,6 +8,32 @@ import msvcrt as ms
 import copy
 import webbrowser as web
 import functions as func
+import pygame as pg, pygame
+
+def updater():
+    global clock
+    global disp
+    global takingInput
+    global events
+
+    # disp.fill((228, 106, 107))
+    # pygame.display.update()
+
+    while True:
+        pass
+
+w = 200
+h = 200
+
+events = []
+# disp = pygame.display.set_mode((w, h))
+# takingInput = False
+# pygame.display.set_caption("Input Window")
+# clock = pygame.time.Clock()
+# displayupdater = td.Thread(target=updater, args=())
+# displayupdater.daemon = True
+# #displayupdater.start()
+
 
 
 yes = ['yes', 'y', 'yeah', 'ye', 'yeet', 'yup', 'haan', 'bilkul', 'hanji'] # for checking users response
@@ -35,16 +61,62 @@ class communicator(slix.ClientXMPP):
         global enemyMoves
         global challengeAccepted
         global game_start
+        global board
+        global x
+        global y
+        global myturn
+        global receivedMove
+        global bigscope
+        global magic
+        global opponent_jid
+        global moves
+        global turn
 
+        #I WAS DOING WHAT WAS NECESSARY
         if msg['type'] == 'normal':
-            update_game(int(msg['body'].decode('utf-8')))
+            debug(msg)
+            challengeAccepted = True
+            print("Entering function")
+
+            move = int(msg['body'])
+            print(move)
+            ##UPDATE GAME START
+            debug("Hello, this is update_game function here.")
+            opponent_turn=not myturn
+
+            print("Previous Turn: ",turn)
+
+            if opponent_turn:
+                insertVal="X"
+                opponentAcc=x
+
+            else:
+                insertVal="O"
+                opponentAcc=y
+
+            board[bigscope][move]=insertVal
+            opponentAcc.ac[bigscope].append(magic[move])
+            opponentAcc.moves[bigscope]+=1
+            moves+=1
+            if check(opponentAcc.ac[bigscope]):
+                # Opponent has won a block
+                opponentAcc.wins[bigscope]=True
+                print(f"\nYour opponent {opponent_jid} won the block {bigscope}. Time to show your metal!")
+
+            bigscope=move  # set up for local player's move
+
+            turn = not turn
+
+            print("Current Turn: ",turn)
+
+            receivedMove = True
+
+            ##UPDATE GAME END
+
             enemyMoves.append(msg['body'])
             buffer.append(msg)
 
-
         elif msg['type'] == 'chat':
-
-            #print("\nOpponent says:", msg['body'])
             if msg['body'] == "GAME_START":
                 challengeAccepted = True
                 opponent_jid = str(msg['from']).split("/")[0]
@@ -56,7 +128,9 @@ class communicator(slix.ClientXMPP):
 
 
     def sendMessage(self, opponent, msg, mtype):
-        self.send_message(mto=opponent, mbody=msg, mtype=mtype)
+        self.send_message(mto=opponent, mbody=str(msg), mtype=mtype)
+
+
 
 #players' class, contains data like their account (moves) wins, etc
 class player:
@@ -151,6 +225,7 @@ receiving = True
 
 movement = copy.deepcopy(board)
 
+running = True
 #communicator and it's thread object
 #will be set later through the initialize function
 comm = None
@@ -416,28 +491,22 @@ def processResponse(resp):
     global opponent_jid
     global game_start
 
-    # if resp == "NEW_GAME" or opponent_jid is None:
-    #     #We can't do anything so wait
-    #     while not challengeAccepted:
-    #         time.sleep(0.5)
-    #         pass
-    #
-    # elif not resp:
-    #     func.animatedPrint("Sorry, this room is already full, create a new game to play with a friend")
-    #     time.sleep(2)
-    #     exit()
-    # else:
-    #     #Not a new game, we have got the opponent jid
-    #     opponent_jid = resp
-    #     game_start = True
 
     if resp == "NEW_GAME":
+        func.animatedPrint("Waiting for opponent to join", 45, 5)
 
-        pass
+        while not challengeAccepted:
+            time.sleep(1)
+        game_start = True
+        return
     elif resp == "ROOM_FULL":
-        pass
+        func.animatedPrint("This room is already full.", 45, 5)
+        time.sleep(3)
+        exit()
     elif resp is None:
+        game_start = True
         pass
+
 
 def start_new_game(gid):
     """Puts empty game file on the server, being player 1 himself."""
@@ -486,7 +555,10 @@ def update_game(move):
     global moves
     global turn
 
+    print("Hello, this is update_game function here.")
     opponent_turn = not myturn
+
+    print("Current Turn: ", turn)
 
     if opponent_turn:
         insertVal = "X"
@@ -514,6 +586,21 @@ def send_move():
     pass
 
 
+def keypress(press):
+    global movement, information
+    global smallscope, bigscope
+
+    movement=copy.deepcopy(board)
+    smallscope=(smallscope + process(press)) % 9
+
+    movement[bigscope][smallscope]="#"
+
+    ultrashow(movement)
+
+    print(information)
+    time.sleep(0.03)
+
+
 def playGame():
     #Globalisation
     global printed
@@ -538,6 +625,8 @@ def playGame():
     global movement
     global comm
     global information
+    global events
+
     myAccount = None
     insertVal = None
 
@@ -580,7 +669,6 @@ def playGame():
                 if ms.kbhit():
                     press = ms.getch().decode("utf-8")
                     if press == "\r":
-
                         pressedEnter = True
                         break
                     elif process(press):
@@ -601,6 +689,38 @@ def playGame():
                         time.sleep(2)
                         exit()
 
+            # #PYGAME
+            # takingInput = True
+            # while not pressedEnter:
+            #     for event in events:
+            #         disp.fill((228, 106, 107))
+            #         pygame.display.update()
+            #         if event.type == pygame.KEYDOWN:
+            #             if pygame.key.get_pressed()[pygame.K_RETURN]:
+            #                 pressedEnter = True
+            #                 break
+            #
+            #             if pygame.key.get_pressed()[pygame.K_w] or pygame.key.get_pressed()[pygame.K_UP]:
+            #                 keypress("w")
+            #             elif pygame.key.get_pressed()[pygame.K_a] or pygame.key.get_pressed()[pygame.K_LEFT]:
+            #                 keypress("a")
+            #             elif pygame.key.get_pressed()[pygame.K_s] or pygame.key.get_pressed()[pygame.K_DOWN]:
+            #                 keypress("s")
+            #             elif pygame.key.get_pressed()[pygame.K_d] or pygame.key.get_pressed()[pygame.K_RIGHT]:
+            #                 keypress("d")
+            #             elif pygame.key.get_pressed()[pygame.K_q]:
+            #                 save()
+            #                 os.system("cls")
+            #                 print("Saving...")
+            #                 time.sleep(2)
+            #                 exit()
+            #         elif event.type == pygame.QUIT:
+            #             save()
+            #             os.system("cls")
+            #             print("Saving...")
+            #             time.sleep(2)
+            #             exit()
+            # takingInput = False
             if board[bigscope][smallscope] != '_':
                 print("Wait, ", end="")
                 time.sleep(0.5)
@@ -618,7 +738,8 @@ def playGame():
                     myAccount.wins[bigscope] = True
                     print(f"\nYou have won the {bigscope} block!")
 
-                comm.sendMessage(opponent_jid, smallscope, "normal")
+                bigscope = smallscope
+                comm.sendMessage(opponent_jid, str(smallscope), "normal")
                 turn = not turn
 
 
@@ -631,9 +752,8 @@ def playGame():
                 printed = True
 
             while not receivedMove:
-                time.sleep(0.5)
+                time.sleep(0.2)
                 pass
-
 
 
 #Do all the init stuff here. Already contains thread launching and stuff.
@@ -663,7 +783,7 @@ initialize()
 s = func.custom_input("\nDo you want to continue a saved game?(y/n): ")
 s = s.lower()
 
-if s in yes:
+if s in yes or s[0] == "y":
     gameid = input("Enter game ID: ")
     recvd = ask_server(gameid)
     debug(recvd)
@@ -682,11 +802,11 @@ else:
     recvd = ask_server(gameid)
     debug(recvd)
     start_new_game(gameid)
-    print(f"\nNew game created! Waiting for opponent to join...")
+    print(f"\nNew game created!")
     processResponse(recvd)
 
 
-while True:
+while running:
     if game_start:
         playGame()
 
