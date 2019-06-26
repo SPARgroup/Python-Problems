@@ -9,6 +9,7 @@ import copy
 import webbrowser as web
 import functions as func
 import pygame as pg, pygame
+import globals as g
 
 def updater():
     global clock
