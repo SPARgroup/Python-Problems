@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8fc96182-2070-4e21-a35b-6c754ff8ec82" name="Default Changelist" comment="Ultra random">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinepvp/prototyping.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlinepvp/prototyping.py" afterDir="false" />
     </list>
     <ignored path="E:\Projects\Coding Projects\Python\Python-Problems\UltimateTicTacToe scripts\.idea\shelf/" />
     <ignored path="D:\PROJECTS\PythonProjects\Python-Problems\UltimateTicTacToe-scripts\.idea\shelf/" />
@@ -19,84 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/onlinepvp/prototyping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="16852">
               <caret line="776" selection-start-line="776" selection-end-line="777" />
-              <folding>
-                <element signature="e#256#419#0" />
-                <element signature="e#331#359#0" />
-                <element signature="e#450#490#0" />
-                <element signature="e#807#815#0" />
-                <element signature="e#3496#3695#0" />
-                <element signature="e#3524#3695#0" />
-                <element signature="e#3808#4483#0" />
-                <element signature="e#3809#3874#0" />
-                <element signature="e#3885#3950#0" />
-                <element signature="e#3961#4026#0" />
-                <element signature="e#4037#4102#0" />
-                <element signature="e#4113#4178#0" />
-                <element signature="e#4189#4254#0" />
-                <element signature="e#4265#4330#0" />
-                <element signature="e#4341#4406#0" />
-                <element signature="e#4417#4482#0" />
-                <element signature="e#4598#4643#0" />
-                <element signature="e#5148#5184#0" />
-                <element signature="e#5312#5341#0" />
-                <element signature="e#5371#5442#0" />
-                <element signature="e#5461#5790#0" />
-                <element signature="e#5822#5875#0" />
-                <element signature="e#5900#5954#0" />
-                <element signature="e#5977#6819#0" />
-                <element signature="e#6847#7890#0" />
-                <element signature="e#7168#7250#0" />
-                <element signature="e#7321#7370#0" />
-                <element signature="e#7440#7484#0" />
-                <element signature="e#7540#7622#0" />
-                <element signature="e#7693#7742#0" />
-                <element signature="e#7812#7856#0" />
-                <element signature="e#7926#8321#0" />
-                <element signature="e#8121#8224#0" />
-                <element signature="e#8243#8321#0" />
-                <element signature="e#8348#8442#0" />
-                <element signature="e#8392#8422#0" />
-                <element signature="e#8487#8679#0" />
-                <element signature="e#8712#9000#0" />
-                <element signature="e#8760#9000#0" />
-                <element signature="e#8791#8892#0" />
-                <element signature="e#8926#8980#0" />
-                <element signature="e#9030#9240#0" />
-                <element signature="e#9261#9472#0" />
-                <element signature="e#9310#9454#0" />
-                <element signature="e#9352#9454#0" />
-                <element signature="e#9394#9454#0" />
-                <element signature="e#9496#9570#0" />
-                <element signature="e#9516#9553#0" />
-                <element signature="e#9598#10525#0" />
-                <element signature="e#10017#10128#0" />
-                <element signature="e#10174#10242#0" />
-                <element signature="e#10262#10525#0" />
-                <element signature="e#10559#11092#0" />
-                <element signature="e#10559#10605#0" />
-                <element signature="e#10737#10899#0" />
-                <element signature="e#10938#11030#0" />
-                <element signature="e#11062#11092#0" />
-                <element signature="e#11124#11561#0" />
-                <element signature="e#11440#11474#0" />
-                <element signature="e#11494#11561#0" />
-                <element signature="e#11586#11802#0" />
-                <element signature="e#11832#12909#0" />
-                <element signature="e#11832#12024#1" />
-                <element signature="e#12358#12397#0" />
-                <element signature="e#12417#12456#0" />
-                <element signature="e#12645#12812#0" />
-                <element signature="e#12933#12937#0" />
-                <element signature="e#12965#13219#0" />
-                <element signature="e#18454#18527#0" />
-                <element signature="e#18719#18797#0" />
-                <element signature="e#18809#19097#0" />
-                <element signature="e#19247#19539#0" />
-                <element signature="e#19410#19448#0" />
-                <element signature="e#19551#19791#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -104,7 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/onlinepvp/renderer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="220">
+              <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -113,10 +37,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://E:/GAMES/game/savedata/game_save_data.ARCADEJUMP">
+        <entry file="file://$PROJECT_DIR$/../arcadejump.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="863">
+              <caret line="988" column="14" selection-start-line="988" selection-start-column="14" selection-end-line="988" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,6 +74,7 @@
         <option value="$PROJECT_DIR$/utttpvp.py" />
         <option value="$PROJECT_DIR$/onlinepvp/prototyping.py" />
         <option value="E:/GAMES/game/savedata/game_save_data.ARCADEJUMP" />
+        <option value="$PROJECT_DIR$/../arcadejump.py" />
       </list>
     </option>
   </component>
@@ -158,28 +86,10 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="UltimateTicTacToe-scripts" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\Projects\Coding Projects\Python\Python-Problems\UltimateTicTacToe-scripts" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="UltimateTicTacToe-scripts" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\Projects\Coding Projects\Python\Python-Problems\UltimateTicTacToe-scripts" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="onlinepvp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -384,100 +294,35 @@
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1860585705/builtins.py" />
     <entry file="file://$PROJECT_DIR$/onlinepvp/prototyping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="16852">
           <caret line="776" selection-start-line="776" selection-end-line="777" />
-          <folding>
-            <element signature="e#256#419#0" />
-            <element signature="e#331#359#0" />
-            <element signature="e#450#490#0" />
-            <element signature="e#807#815#0" />
-            <element signature="e#3496#3695#0" />
-            <element signature="e#3524#3695#0" />
-            <element signature="e#3808#4483#0" />
-            <element signature="e#3809#3874#0" />
-            <element signature="e#3885#3950#0" />
-            <element signature="e#3961#4026#0" />
-            <element signature="e#4037#4102#0" />
-            <element signature="e#4113#4178#0" />
-            <element signature="e#4189#4254#0" />
-            <element signature="e#4265#4330#0" />
-            <element signature="e#4341#4406#0" />
-            <element signature="e#4417#4482#0" />
-            <element signature="e#4598#4643#0" />
-            <element signature="e#5148#5184#0" />
-            <element signature="e#5312#5341#0" />
-            <element signature="e#5371#5442#0" />
-            <element signature="e#5461#5790#0" />
-            <element signature="e#5822#5875#0" />
-            <element signature="e#5900#5954#0" />
-            <element signature="e#5977#6819#0" />
-            <element signature="e#6847#7890#0" />
-            <element signature="e#7168#7250#0" />
-            <element signature="e#7321#7370#0" />
-            <element signature="e#7440#7484#0" />
-            <element signature="e#7540#7622#0" />
-            <element signature="e#7693#7742#0" />
-            <element signature="e#7812#7856#0" />
-            <element signature="e#7926#8321#0" />
-            <element signature="e#8121#8224#0" />
-            <element signature="e#8243#8321#0" />
-            <element signature="e#8348#8442#0" />
-            <element signature="e#8392#8422#0" />
-            <element signature="e#8487#8679#0" />
-            <element signature="e#8712#9000#0" />
-            <element signature="e#8760#9000#0" />
-            <element signature="e#8791#8892#0" />
-            <element signature="e#8926#8980#0" />
-            <element signature="e#9030#9240#0" />
-            <element signature="e#9261#9472#0" />
-            <element signature="e#9310#9454#0" />
-            <element signature="e#9352#9454#0" />
-            <element signature="e#9394#9454#0" />
-            <element signature="e#9496#9570#0" />
-            <element signature="e#9516#9553#0" />
-            <element signature="e#9598#10525#0" />
-            <element signature="e#10017#10128#0" />
-            <element signature="e#10174#10242#0" />
-            <element signature="e#10262#10525#0" />
-            <element signature="e#10559#11092#0" />
-            <element signature="e#10559#10605#0" />
-            <element signature="e#10737#10899#0" />
-            <element signature="e#10938#11030#0" />
-            <element signature="e#11062#11092#0" />
-            <element signature="e#11124#11561#0" />
-            <element signature="e#11440#11474#0" />
-            <element signature="e#11494#11561#0" />
-            <element signature="e#11586#11802#0" />
-            <element signature="e#11832#12909#0" />
-            <element signature="e#11832#12024#1" />
-            <element signature="e#12358#12397#0" />
-            <element signature="e#12417#12456#0" />
-            <element signature="e#12645#12812#0" />
-            <element signature="e#12933#12937#0" />
-            <element signature="e#12965#13219#0" />
-            <element signature="e#18454#18527#0" />
-            <element signature="e#18719#18797#0" />
-            <element signature="e#18809#19097#0" />
-            <element signature="e#19247#19539#0" />
-            <element signature="e#19410#19448#0" />
-            <element signature="e#19551#19791#0" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/GAMES/game/savedata/game_save_data.ARCADEJUMP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/onlinepvp/renderer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="220">
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/GAMES/game/savedata/game_save_data.ARCADEJUMP">
+    <entry file="file://$PROJECT_DIR$/../arcadejump.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="863">
+          <caret line="988" column="14" selection-start-line="988" selection-start-column="14" selection-end-line="988" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
