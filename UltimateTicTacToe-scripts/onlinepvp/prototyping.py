@@ -9,7 +9,7 @@ import copy
 import webbrowser as web
 import functions as func
 import pygame as pg, pygame
-import globals as g
+#import globals as g
 
 def updater():
     global clock
@@ -75,17 +75,17 @@ class communicator(slix.ClientXMPP):
 
         #I WAS DOING WHAT WAS NECESSARY
         if msg['type'] == 'normal':
-            debug(msg)
+            #debug(msg)
             challengeAccepted = True
-            print("Entering function")
+            #print("Entering function")
 
             move = int(msg['body'])
-            print(move)
+            #print(move)
             ##UPDATE GAME START
-            debug("Hello, this is update_game function here.")
+            #debug("Hello, this is update_game function here.")
             opponent_turn=not myturn
 
-            print("Previous Turn: ",turn)
+            #print("Previous Turn: ",turn)
 
             if opponent_turn:
                 insertVal="X"
@@ -108,7 +108,7 @@ class communicator(slix.ClientXMPP):
 
             turn = not turn
 
-            print("Current Turn: ",turn)
+            #print("Current Turn: ",turn)
 
             receivedMove = True
 
@@ -121,9 +121,9 @@ class communicator(slix.ClientXMPP):
             if msg['body'] == "GAME_START":
                 challengeAccepted = True
                 opponent_jid = str(msg['from']).split("/")[0]
-                print(msg)
-                print(opponent_jid)
-                print(f"{opponent_jid} has accepted the challenge. Let the battle begin!")
+                #print(msg)
+                #print(opponent_jid)
+                print(f"{opponent_jid.split('@')[0]} has accepted the challenge. Let the battle begin!")
                 game_start = True
             buffer.append(msg)
 
@@ -643,7 +643,7 @@ def playGame():
 
     while moves < 81:
         receivedMove = False
-
+        printed = False
         if not printed:
             information = "X : " + str(win(x.wins)) + " O : " + str(win(y.wins)) + "\n"
             if turn == myturn:
@@ -684,7 +684,7 @@ def playGame():
                         #movement = copy.deepcopy(board)
                         time.sleep(0.03)
                     elif press == "q" or press == "Q":
-                        save()
+
                         os.system("cls")
                         print("Saving...")
                         time.sleep(2)
@@ -752,7 +752,16 @@ def playGame():
                 print(information)
                 printed = True
 
+
             while not receivedMove:
+                if ms.kbhit():
+                    press = ms.getch().decode("utf-8")
+                    if press == "q" or press == "Q":
+
+                        os.system("cls")
+                        print("Saving...")
+                        time.sleep(2)
+                        exit()
                 time.sleep(0.2)
                 pass
 
@@ -808,8 +817,12 @@ else:
 
 
 while running:
-    if game_start:
-        playGame()
-
-
+    try:
+        if game_start:
+            playGame()
+    finally:
+        save()
+        print("Thanks for Playing! Your game has been saved.")
+        input("Press Enter to Exit.")
+        #chaud++
 input()
