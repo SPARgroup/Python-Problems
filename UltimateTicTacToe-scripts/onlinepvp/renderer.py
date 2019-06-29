@@ -35,10 +35,6 @@ board = [['_', '_', '_',
 class images:
     pass
 
-class colors:
-    black = (0,0,0)
-    pass
-
 #initialization function
 def init():
     global board
@@ -100,8 +96,8 @@ def calc_positions():
         c += 1
 
 def sample_show():
-    g.disp.fill(colors.black)
-    g.disp.blit(images.bigboard, (0,0))
+    g.disp.fill(g.colors.bgColor)
+    g.disp.blit(images.bigboard, g.board_center_offset)
     for each in g.pos:
         for pos in each:
             renderAtCenter(images.x, pos)
