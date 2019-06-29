@@ -9,7 +9,10 @@ import copy
 import webbrowser as web
 import functions as func
 import pygame as pg, pygame
-#import globals as g
+import renderer as render
+import globals as g
+
+
 
 def updater():
     global clock
@@ -401,18 +404,10 @@ def display_row(currState, jay, kay):
 
 
 def ultrashow(currState):
+    global bigscope
+    global smallscope
+    render.render(currState, bigscope , smallscope)
     os.system("cls")
-    for i in range(3):
-        for j in range(3):
-            for k in range(3):
-                display_row(currState[(3 * i) + k], j, k)
-
-            print("\n")
-        if (i != 2):
-            for a in range(44):
-                print("_", end="")
-        print("\n")
-
 
 def process(moveChar):
     if moveChar == "w":
@@ -601,6 +596,18 @@ def keypress(press):
     print(information)
     time.sleep(0.03)
 
+def draws():
+    global x
+    global y
+    global board
+    counter = 0
+    for i in range(9):
+        if isfilled(board[i]) and (not(x.wins[i] or y.wins[i])):
+            counter+=1
+        else:
+            pass
+
+    return counter
 
 def playGame():
     #Globalisation
@@ -635,13 +642,28 @@ def playGame():
     if myturn:
         insertVal = "X"
         myAccount = x
+        oppAccount = y
     elif not myturn:
         insertVal = "O"
         myAccount = y
+        oppAccount = x
     else:
         print("KAALA HIT: myturn not set yet.")
 
     while moves < 81:
+
+        if win(myAccount.wins) > (9 - draws()) // 2:
+            print("You won the game!")
+            exit()
+        elif win(oppAccount.wins) > (9 - draws()) // 2:
+            print(f"{opponent_jid.split('@')[0]} won the game. Better luck next time")
+            exit()
+        elif win(x.wins) + win(y.wins) == (9 - draws()) // 2:
+            print("No one won and it's a shame")
+            exit()
+
+
+        events = pygame.event.get()
         receivedMove = False
         printed = False
         if not printed:
@@ -666,62 +688,65 @@ def playGame():
             print(information)
 
             pressedEnter = False
-            while not pressedEnter:
-                if ms.kbhit():
-                    press = ms.getch().decode("utf-8")
-                    if press == "\r":
-                        pressedEnter = True
-                        break
-                    elif process(press):
-                        movement = copy.deepcopy(board)
-                        smallscope = (smallscope + process(press)) % 9
-
-                        movement[bigscope][smallscope] = "#"
-
-                        ultrashow(movement)
-
-                        print(information)
-                        #movement = copy.deepcopy(board)
-                        time.sleep(0.03)
-                    elif press == "q" or press == "Q":
-
-                        os.system("cls")
-                        print("Saving...")
-                        time.sleep(2)
-                        exit()
-
-            # #PYGAME
-            # takingInput = True
             # while not pressedEnter:
-            #     for event in events:
-            #         disp.fill((228, 106, 107))
-            #         pygame.display.update()
-            #         if event.type == pygame.KEYDOWN:
-            #             if pygame.key.get_pressed()[pygame.K_RETURN]:
-            #                 pressedEnter = True
-            #                 break
+            #     if ms.kbhit():
+            #         press = ms.getch().decode("utf-8")
+            #         if press == "\r":
+            #             pressedEnter = True
+            #             break
+            #         elif process(press):
+            #             movement = copy.deepcopy(board)
+            #             smallscope = (smallscope + process(press)) % 9
             #
-            #             if pygame.key.get_pressed()[pygame.K_w] or pygame.key.get_pressed()[pygame.K_UP]:
-            #                 keypress("w")
-            #             elif pygame.key.get_pressed()[pygame.K_a] or pygame.key.get_pressed()[pygame.K_LEFT]:
-            #                 keypress("a")
-            #             elif pygame.key.get_pressed()[pygame.K_s] or pygame.key.get_pressed()[pygame.K_DOWN]:
-            #                 keypress("s")
-            #             elif pygame.key.get_pressed()[pygame.K_d] or pygame.key.get_pressed()[pygame.K_RIGHT]:
-            #                 keypress("d")
-            #             elif pygame.key.get_pressed()[pygame.K_q]:
-            #                 save()
-            #                 os.system("cls")
-            #                 print("Saving...")
-            #                 time.sleep(2)
-            #                 exit()
-            #         elif event.type == pygame.QUIT:
-            #             save()
+            #             movement[bigscope][smallscope] = "#"
+            #
+            #             ultrashow(movement)
+            #
+            #             print(information)
+            #             #movement = copy.deepcopy(board)
+            #             time.sleep(0.03)
+            #         elif press == "q" or press == "Q":
+            #
             #             os.system("cls")
             #             print("Saving...")
             #             time.sleep(2)
             #             exit()
-            # takingInput = False
+
+            #PYGAME
+            takingInput = True
+            while not pressedEnter:
+                for event in pygame.event.get():
+                    if event.type == pygame.KEYDOWN:
+                        if pygame.key.get_pressed()[pygame.K_RETURN]:
+                            pressedEnter = True
+                            break
+
+                        if pygame.key.get_pressed()[pygame.K_w] or pygame.key.get_pressed()[pygame.K_UP]:
+                            keypress("w")
+                        elif pygame.key.get_pressed()[pygame.K_a] or pygame.key.get_pressed()[pygame.K_LEFT]:
+                            keypress("a")
+                        elif pygame.key.get_pressed()[pygame.K_s] or pygame.key.get_pressed()[pygame.K_DOWN]:
+                            keypress("s")
+                        elif pygame.key.get_pressed()[pygame.K_d] or pygame.key.get_pressed()[pygame.K_RIGHT]:
+                            keypress("d")
+                        elif pygame.key.get_pressed()[pygame.K_q]:
+                            save()
+                            os.system("cls")
+                            print("Saving...")
+                            time.sleep(2)
+                            exit()
+                        else:
+                            pass
+
+                    elif event.type == pygame.QUIT:
+                        save()
+                        os.system("cls")
+                        print("Saving...")
+                        time.sleep(2)
+                        exit()
+                    else:
+                        pass
+            takingInput = False
             if board[bigscope][smallscope] != '_':
                 print("Wait, ", end="")
                 time.sleep(0.5)
@@ -734,8 +759,7 @@ def playGame():
                 myAccount.ac[bigscope].append(magic[smallscope])
                 myAccount.moves[bigscope] += 1
                 moves += 1
-                if check(myAccount.ac[bigscope]):
-                    # Opponent has won a block
+                if check(myAccount.ac[bigscope]) and oppAccount.wins[bigscope] == False:
                     myAccount.wins[bigscope] = True
                     print(f"\nYou have won the {bigscope} block!")
 
@@ -754,16 +778,21 @@ def playGame():
 
 
             while not receivedMove:
-                if ms.kbhit():
-                    press = ms.getch().decode("utf-8")
-                    if press == "q" or press == "Q":
-
-                        os.system("cls")
-                        print("Saving...")
-                        time.sleep(2)
-                        exit()
+                events = pygame.event.get()
+                #Check if it has to save
                 time.sleep(0.2)
                 pass
+
+        if win(myAccount.wins) > (9 - draws()) // 2:
+            print("You won the game!")
+            exit()
+        elif win(oppAccount.wins) > (9 - draws()) // 2:
+            print(f"{opponent_jid.split('@')[0]} won the game. Better luck next time")
+            exit()
+        elif win(x.wins) + win(y.wins) == (9 - draws()) // 2:
+            print("No one won and it's a shame")
+            exit()
+
 
 
 #Do all the init stuff here. Already contains thread launching and stuff.
@@ -815,7 +844,7 @@ else:
     print(f"\nNew game created!")
     processResponse(recvd)
 
-
+render.init()
 while running:
     try:
         if game_start:

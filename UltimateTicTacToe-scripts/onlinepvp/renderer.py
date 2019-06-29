@@ -2,6 +2,7 @@ import pygame as pg, pygame
 import globals as g
 import os
 import time
+import threading as t
 
 #vars
 board = [['_', '_', '_',
@@ -39,13 +40,32 @@ class images:
 def init():
     global board
     pygame.init()
-    g.disp = pygame.display.set_mode(g.size)
+    g.disp = pygame.display.set_mode(g.size) #, flags=g.window_flags"""
     g.clock = pygame.time.Clock()
     loadimages()
+    calc_centers(board)
+    calc_positions()
 
 
 def render(board, bigscope, smallscope):
-    pass
+    g.disp.fill(g.colors.bgColor)
+    for i in range(9):
+        if i == bigscope:
+            renderAtCenter(images.square, g.pos[i][smallscope])
+        else:
+            for e in range(9):
+                renderAtCenter(images.square, g.pos[i][e])
+
+        for j in range(9):
+            if board[i][j] == "X":
+                renderAtCenter(images.x, g.pos[i][j])
+            elif board[i][j] == "O":
+                renderAtCenter(images.o, g.pos[i][j])
+            else:
+                pass
+    renderAtCenter(images.bigboard, g.centers[4])
+    pygame.display.update()
+
 
 def loadimages():
     images.bigboard = pg.transform.scale(pg.image.load("resources/bigboard.png").convert_alpha(), g.boardsize)
@@ -82,41 +102,31 @@ def calc_centers(currState):
             for a in range(44):
                 print("_", end="")
         print("\n")
-
+# 1-3,
 def calc_positions():
     c = 0
     size = g.squaresize[0] #it has to be square aspect ratio
     for center in g.centers:
         for i in range(-1, 2):
             for j in range(-1, 2):
-                x = center[0] + (size * i)
-                y = center[1] + (size * j)
+                y = center[0] + (size * i)
+                x = center[1] + (size * j)
                 g.pos[c].append((x,y))
 
         c += 1
 
-def sample_show():
-    g.disp.fill(g.colors.bgColor)
-    g.disp.blit(images.bigboard, g.board_center_offset)
-    for each in g.pos:
-        for pos in each:
-            renderAtCenter(images.x, pos)
-
-    pygame.display.update()
 
 def renderAtCenter(img, coord):
-    rect=img.get_rect()
+    rect = img.get_rect()
     rect.center=coord
     g.disp.blit(img,rect)
 
 
-init()
-calc_centers(board)
-calc_positions()
-sample_show()
+def loop():
+    while 1:
+        for event in pygame.event.get():
+            pass
 
-while 1:
-    for event in pygame.event.get():
-        pass
 
-print(g.centers)
+thread = t.Thread(target=loop, args=())
+
