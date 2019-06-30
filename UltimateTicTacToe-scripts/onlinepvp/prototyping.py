@@ -406,8 +406,11 @@ def display_row(currState, jay, kay):
 def ultrashow(currState):
     global bigscope
     global smallscope
-    render.render(currState, bigscope , smallscope)
+    global board
+
+    render.render(board, bigscope , smallscope)
     os.system("cls")
+
 
 def process(moveChar):
     if moveChar == "w":
@@ -550,6 +553,10 @@ def update_game(move):
     global opponent_jid
     global moves
     global turn
+
+    move = int(move)
+    print("Received:", move)
+    sleep(2)
 
     print("Hello, this is update_game function here.")
     opponent_turn = not myturn
@@ -763,8 +770,9 @@ def playGame():
                     myAccount.wins[bigscope] = True
                     print(f"\nYou have won the {bigscope} block!")
 
-                bigscope = smallscope
+                bigscope = copy.copy(smallscope)
                 comm.sendMessage(opponent_jid, str(smallscope), "normal")
+                print("Sent:", smallscope)
                 turn = not turn
 
 

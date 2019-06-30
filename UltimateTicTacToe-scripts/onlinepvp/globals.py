@@ -7,18 +7,18 @@ title = "Ultimate TicTacToe Multiplayer v3.0"
 
 boardsize = (600, 600)
 smallsize = (boardsize[0]//3, boardsize[1]//3)
-squaresize = (smallsize[0]//3, smallsize[1]//3)
+square = (smallsize[0] // 3,smallsize[1] // 3)
 
 inner_padding = 25 #for x_o
 square_padding = 10
 
-x_o_size = (squaresize[0] - inner_padding, squaresize[1] - inner_padding)
-squaresize = (squaresize[0] - square_padding, squaresize[1] - square_padding)
+x_o_size = (square[0] - inner_padding,square[1] - inner_padding)
+squaresize = (square[0] - square_padding,square[1] - square_padding)
 
 pos = [[],[],[],[],[],[],[],[],[]]
 centers = [(0,0)] * 9
 
-board_center_offset = (10,10)
+board_center_offset = (0,0)
 
 window_flags = pygame.FULLSCREEN
 

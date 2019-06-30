@@ -79,9 +79,7 @@ def row_pos(currState, jay, kay, aai):
     print(currState[(3 * jay)], end=" | ")
     print(currState[(3 * jay) + 1], end=" | ")
     print(currState[(3 * jay) + 2], end="")
-    print(aai, jay,kay,end="")
-
-    #g.pos[(3 * jay)] =
+    #print(aai, jay,kay,end="")
 
     if kay != 2:
         print("   I   ", end="") #mid divider
@@ -90,27 +88,43 @@ def row_pos(currState, jay, kay, aai):
 
 def calc_centers(currState):
     #os.system("cls")
-    for i in range(3):
-        for j in range(3):
-            for k in range(3):
-                row_pos(currState[(3 * i) + k], j, k, i)
+    # for i in range(3):
+    #     for j in range(3):
+    #         for k in range(3):
+    #             row_pos(currState[(3 * i) + k], j, k, i)
+    #
+    #             g.centers[(3*i) + k] = (int(g.smallsize[0]*(k + 0.5) + g.board_center_offset[0]), int(g.smallsize[1]*(i+0.5) + g.board_center_offset[1]))
+    #
+    #         print("\n")
+    #     if (i != 2):
+    #         for a in range(44):
+    #             print("_", end="")
+    #     print("\n")
 
-                g.centers[(3*i) + k] = (int(g.smallsize[0]*(k + 0.5) + g.board_center_offset[0]), int(g.smallsize[1]*(i+0.5) + g.board_center_offset[1]))
+    for i in range(9):
+        yIndex = i // 3
+        y = (yIndex + 0.5) * g.smallsize[1]
+        y += g.board_center_offset[1]
 
-            print("\n")
-        if (i != 2):
-            for a in range(44):
-                print("_", end="")
-        print("\n")
+        xIndex = i % 3
+        x = (xIndex + 0.5) * g.smallsize[0]
+        x += g.board_center_offset[0]
+
+        g.centers[i] = (int(x),int(y))
+
+
+
 # 1-3,
 def calc_positions():
-    c = 0
-    size = g.squaresize[0] #it has to be square aspect ratio
+    c = 0 # counter for the grid we are on right now
+    size = g.square[0] #it has to be square aspect ratio
     for center in g.centers:
         for i in range(-1, 2):
             for j in range(-1, 2):
-                y = center[0] + (size * i)
-                x = center[1] + (size * j)
+                #j represents column, while i represents row
+                #x position depends on column(j), y position on row(i)
+                y = center[1] + (i * g.squaresize[1])
+                x = center[0] + (j * g.squaresize[0])
                 g.pos[c].append((x,y))
 
         c += 1
@@ -121,12 +135,7 @@ def renderAtCenter(img, coord):
     rect.center=coord
     g.disp.blit(img,rect)
 
+calc_centers(board)
+calc_positions()
 
-def loop():
-    while 1:
-        for event in pygame.event.get():
-            pass
-
-
-thread = t.Thread(target=loop, args=())
 
