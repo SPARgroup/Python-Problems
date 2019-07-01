@@ -11,7 +11,8 @@ import functions as func
 import pygame as pg, pygame
 import renderer as render
 import globals as g
-
+import sys
+from tkinter import messagebox as alert
 
 
 def updater():
@@ -38,7 +39,8 @@ events = []
 # displayupdater.daemon = True
 # #displayupdater.start()
 
-
+buttons = []
+clicked = None
 
 yes = ['yes', 'y', 'yeah', 'ye', 'yeet', 'yup', 'haan', 'bilkul', 'hanji'] # for checking users response
 #classes
@@ -144,10 +146,40 @@ class player:
         self.moves = [0,0,0,0,0,0,0,0,0]
 
 
+class Button:
+    global buttons
+    global clicked
+
+    def __init__(self, name, primary, hover,clicked, pos):
+        self.name = name
+        self.primary = primary
+        self.hover = hover
+        self.clicked = clicked
+        self.pos = pos
+
+        buttons.append(self)
+
+        self.render(self.primary)
+    def render(self, img):
+        self.rect = render.renderAtCenter(img, self.pos)
+        pygame.display.update(self.rect)
+
+    def check_hover(self, mouse_pos):
+        if self.rect.collidepoint(mouse_pos):
+            self.render(self.hover)
+        else:
+            self.render(self.primary)
+
+    def check_click(self, mouse_pos):
+        if self.rect.collidepoint(mouse_pos):
+            self.render(self.clicked)
+            return True
+        else:
+            return False
+
 #variables
 
 buffer = []
-
 
 enemyMoves = []
 
@@ -236,6 +268,8 @@ comm = None
 
 receivingThread = None
 
+save_count = 0
+max_save_count = 5
 #Thread functions
 
 def debug(err):
@@ -603,6 +637,7 @@ def keypress(press):
     print(information)
     time.sleep(0.03)
 
+
 def draws():
     global x
     global y
@@ -615,6 +650,13 @@ def draws():
             pass
 
     return counter
+
+
+def loadButtons():
+    quitButton = Button("quit", render.images.quit[0], render.images.quit[1], render.images.quit[2], g.button_coord['quit'])
+    save_button = Button("save", render.images.save[0], render.images.save[1], render.images.save[2], g.button_coord['save'])
+    info_button = Button("info", render.images.info[0], render.images.info[1], render.images.info[2], g.button_coord['info'])
+
 
 def playGame():
     #Globalisation
@@ -641,6 +683,10 @@ def playGame():
     global comm
     global information
     global events
+    global buttons
+    global clicked
+    global save_count
+    global max_save_count
 
     myAccount = None
     insertVal = None
@@ -695,34 +741,15 @@ def playGame():
             print(information)
 
             pressedEnter = False
-            # while not pressedEnter:
-            #     if ms.kbhit():
-            #         press = ms.getch().decode("utf-8")
-            #         if press == "\r":
-            #             pressedEnter = True
-            #             break
-            #         elif process(press):
-            #             movement = copy.deepcopy(board)
-            #             smallscope = (smallscope + process(press)) % 9
-            #
-            #             movement[bigscope][smallscope] = "#"
-            #
-            #             ultrashow(movement)
-            #
-            #             print(information)
-            #             #movement = copy.deepcopy(board)
-            #             time.sleep(0.03)
-            #         elif press == "q" or press == "Q":
-            #
-            #             os.system("cls")
-            #             print("Saving...")
-            #             time.sleep(2)
-            #             exit()
 
             #PYGAME
             takingInput = True
             while not pressedEnter:
+                for button in buttons:
+                    button.check_hover(pygame.mouse.get_pos())
+
                 for event in pygame.event.get():
+
                     if event.type == pygame.KEYDOWN:
                         if pygame.key.get_pressed()[pygame.K_RETURN]:
                             pressedEnter = True
@@ -741,16 +768,28 @@ def playGame():
                             os.system("cls")
                             print("Saving...")
                             time.sleep(2)
-                            exit()
+                            sys.exit()
                         else:
                             pass
-
+                    elif event.type == pygame.MOUSEBUTTONDOWN:
+                        for button in buttons:
+                            if button.check_click(pygame.mouse.get_pos()):
+                                if button.name == "quit":
+                                    sys.exit()
+                                elif button.name == "info":
+                                    pass
+                                elif button.name == "save":
+                                    if save_count < max_save_count:
+                                        save()
+                                        save_count+=1
+                                    else:
+                                        alert("Out of saves", "You are out of the set limit of {} saves per match!\nYou can always quit to save it though.".format(max_save_count))
                     elif event.type == pygame.QUIT:
                         save()
                         os.system("cls")
                         print("Saving...")
                         time.sleep(2)
-                        exit()
+                        sys.exit()
                     else:
                         pass
             takingInput = False
@@ -787,7 +826,26 @@ def playGame():
 
             while not receivedMove:
                 events = pygame.event.get()
-                #Check if it has to save
+
+                for event in events:
+                    for button in buttons:
+                        button.check_hover(pygame.mouse.get_pos())
+
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        for button in buttons:
+                            if button.check_click(pygame.mouse.get_pos()):
+                                if button.name == "quit":
+                                    sys.exit()
+                                elif button.name == "info":
+                                    pass
+                                elif button.name == "save":
+                                    if save_count < max_save_count:
+                                        save()
+                                        save_count += 1
+                                    else:
+                                        alert("Out of saves",
+                                              "You are out of the set limit of {} saves per match!\nYou can always quit to save it though.".format(
+                                                  max_save_count))
                 time.sleep(0.2)
                 pass
 
@@ -796,7 +854,7 @@ def playGame():
             exit()
         elif win(oppAccount.wins) > (9 - draws()) // 2:
             print(f"{opponent_jid.split('@')[0]} won the game. Better luck next time")
-            exit()
+            sys.exit()
         elif win(x.wins) + win(y.wins) == (9 - draws()) // 2:
             print("No one won and it's a shame")
             exit()
@@ -853,12 +911,16 @@ else:
     processResponse(recvd)
 
 render.init()
+loadButtons()
+g.disp.fill(g.colors.bgColor)
+pygame.display.update()
 while running:
     try:
         if game_start:
             playGame()
     finally:
         save()
+        pygame.quit()
         print("Thanks for Playing! Your game has been saved.")
         input("Press Enter to Exit.")
         #chaud++
