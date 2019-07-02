@@ -859,11 +859,6 @@ def playGame():
             print("No one won and it's a shame")
             exit()
 
-
-
-#Do all the init stuff here. Already contains thread launching and stuff.
-
-
 #Intro
 func.play_intro()
 
@@ -923,5 +918,4 @@ while running:
         pygame.quit()
         print("Thanks for Playing! Your game has been saved.")
         input("Press Enter to Exit.")
-        #chaud++
 input()

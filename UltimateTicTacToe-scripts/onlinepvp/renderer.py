@@ -140,8 +140,3 @@ def generate_sample():
     global board
     render(board, 3, 4)
 
-init()
-calc_centers(board)
-calc_positions()
-generate_sample()
-input()
