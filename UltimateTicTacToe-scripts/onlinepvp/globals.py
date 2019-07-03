@@ -1,4 +1,5 @@
 import pygame
+
 disp = None
 clock = None
 FPS = 60
@@ -22,7 +23,7 @@ centers = [(0,0)] * 9
 board_center_offset = (0,0)
 
 biggrid_render_offset = (0, 0)
-window_flags = pygame.FULLSCREEN
+window_flags = pygame.FULLSCREEN|pygame.RESIZABLE
 
 button_size = (smallsize[0] - 20, 90)
 
@@ -30,6 +31,8 @@ button_y = size[1] - button_size[1]/2 - 20
 
 button_coord = None
 
+
+swell = 10
 class colors:
     black = (0,0,0)
     dark_purple = (42, 28, 45)

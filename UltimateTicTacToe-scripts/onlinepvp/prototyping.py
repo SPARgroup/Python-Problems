@@ -134,8 +134,11 @@ class communicator(slix.ClientXMPP):
 
 
     def sendMessage(self, opponent, msg, mtype):
-        self.send_message(mto=opponent, mbody=str(msg), mtype=mtype)
-
+        try:
+            self.send_message(mto=opponent, mbody=str(msg), mtype=mtype)
+            return True
+        except:
+            return False
 
 
 #players' class, contains data like their account (moves) wins, etc
@@ -810,12 +813,17 @@ def playGame():
                     print(f"\nYou have won the {bigscope} block!")
 
                 bigscope = copy.copy(smallscope)
-                comm.sendMessage(opponent_jid, str(smallscope), "normal")
-                print("Sent:", smallscope)
                 turn = not turn
 
+                count = 0
+                while not comm.sendMessage(opponent_jid, str(smallscope), "normal") and count < 5:
+                    debug("ERROR: Could not establish a connection with the player. Trying to reconnect in 2 seconds...")
+                    time.sleep(2)
+                    count += 1
 
-                #do shits
+                if count >= 5:
+                    debug("Cannot send message, relaunch application")
+
         elif turn != myturn:
 
             if not printed:
@@ -863,7 +871,7 @@ def playGame():
 func.play_intro()
 
 #ask user for account
-n_1 = func.custom_input("\nDo you have a Jabber/XMPP account? (y/n): ", rate = 20)
+n_1 = func.custom_input("\nDo you have a Jabber/XMPP account? (y/n): ", speed= 20, rate = 20)
 n_1 = n_1.lower()
 
 #Input reg. details

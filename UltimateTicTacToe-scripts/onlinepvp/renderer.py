@@ -43,6 +43,7 @@ class images:
 def init():
     global board
     pygame.init()
+    os.system("cls")
     g.disp = pygame.display.set_mode(g.size) #, flags=g.window_flags"""
     g.clock = pygame.time.Clock()
     loadimages()
@@ -52,12 +53,17 @@ def init():
 
 def render(board, bigscope, smallscope):
     g.disp.fill(g.colors.bgColor)
+    squareImage = images.square
     for i in range(9):
         if i == bigscope:
             renderAtCenter(images.square, g.pos[i][smallscope])
         else:
+            if i == smallscope:
+                squareImage = images.square2
+            else:
+                squareImage = images.square
             for e in range(9):
-                renderAtCenter(images.square, g.pos[i][e])
+                renderAtCenter(squareImage, g.pos[i][e])
 
         for j in range(9):
             if board[i][j] == "X":
@@ -75,6 +81,7 @@ def loadimages():
     images.bigboard = pg.transform.scale(pg.image.load("resources/v2/bigBoard.png").convert_alpha(), g.boardsize)
     images.smallboard = pg.transform.scale(pg.image.load("resources/v2/smallGrid.png").convert_alpha(),g.smallsize)
     images.square = pg.transform.scale(pg.image.load("resources/v2/Square.png").convert_alpha(),g.squaresize)
+    images.square2=pg.transform.scale(pg.image.load("resources/v2/Square.png").convert_alpha(),(g.squaresize[0] + g.swell, g.squaresize[1] + g.swell))
     images.x = pg.transform.scale(pg.image.load("resources/v2/X.png").convert_alpha(),g.x_o_size)
     images.o = pg.transform.scale(pg.image.load("resources/v2/O.png").convert_alpha(),g.x_o_size)
 
@@ -140,3 +147,6 @@ def generate_sample():
     global board
     render(board, 3, 4)
 
+# init()
+# generate_sample()
+# input()
