@@ -14,20 +14,22 @@ int curr = 0;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+  Serial.print("Setting Up...\n");
+  pinMode(warningLight, OUTPUT);
   for(int i = 0; i <3; i++){
     pinMode(ins[i], INPUT);
-    pinMode(warningLight, OUTPUT);
     pinMode(outs[i], OUTPUT);
   }
+  Serial.print("Set pins... DONE.\n")
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   for(int i = 0; i < 3; i++){
     val = analogRead(ins[i]);
-
     if(val > 40){
       turnOn(i);
+      Serial.print("Obstacle\n");
       times[i] += loopTime;
 //      Serial.print(times[i]);
 //      Serial.print("\n");
@@ -42,12 +44,8 @@ void loop() {
         times[i] = 0;
        
         if (s > maxSpeed){
-          Serial.print("SPEED EXCEEDED ");
-//          Serial.print(s);
-//          Serial.print(" ");
-//          Serial.print(T);
-//          Serial.print("\n");
-          turnOn(warningLight);
+          Serial.print("SPEED EXCEEDED\n");
+          digitalWrite(warningLight, HIGH);
           curr = warningDelay;
         }
       }
@@ -55,7 +53,7 @@ void loop() {
   }
 
   if (curr <= 0){
-    turnOff(warningLight);
+    digitalWrite(warningLight, LOW);
   }
   else{
      curr -= loopTime;
@@ -64,14 +62,13 @@ void loop() {
 //  Serial.print(curr);
 //  Serial.print("\n"); 
   for (int j = 0; j < 3; j++){
-    if(states[j] <= 0){
+    if(states[j] <= 0){ 
       turnOff(j);
     }
     else{
       states[j] -= loopTime;
     }
   }
-
   delay(loopTime);
 }
 
