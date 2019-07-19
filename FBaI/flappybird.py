@@ -18,7 +18,8 @@ FPS = 60
 ANIMATION_SPEED = 0.18  # pixels per millisecond
 WIN_WIDTH = 284 * 2    # BG image size: 284x512 px; tiled twice
 WIN_HEIGHT = 512
-
+divide = 200
+n = 50
 
 class Bird(pygame.sprite.Sprite, ai):
     """OUR AI class methods"""
@@ -67,7 +68,7 @@ class Bird(pygame.sprite.Sprite, ai):
     normal_g = 0.0008
     increased_g = 0.00096
 
-    def __init__(self, x, y, msec_to_climb, images):
+    def __init__(self, x, y, msec_to_climb, images, chromosome):
         """Initialise a new Bird instance.
 
         Arguments:
@@ -83,6 +84,7 @@ class Bird(pygame.sprite.Sprite, ai):
                 1. image of the bird with its wing pointing downward
         """
         super(Bird, self).__init__()
+        ai.__init__(self, chromosome)
         self.x, self.y = x, y
         self.msec_to_climb = msec_to_climb
         self._img_wingup, self._img_wingdown = images
@@ -311,7 +313,10 @@ def msec_to_frames(milliseconds, fps=FPS):
     """
     return fps * milliseconds / 1000.0
 
-
+def make_gen(parents):
+    for i in range(n):
+        pass
+    #make gene crossover
 def main():
     """The application's entry point.
 
@@ -331,14 +336,15 @@ def main():
     # the bird stays in the same x position, so bird.x is a constant
     # center bird on screen
     generation=[]
-    no_of_birds=10
-    for i in range(no_of_birds):
-        b = Bird(50, int(WIN_HEIGHT/2 - Bird.HEIGHT/2), 2,
-                (images['bird-wingup'], images['bird-wingdown']))
-
+    chromosome = [-0.02, -3.4, -1.2, -0.6785]
     bird = Bird(50, int(WIN_HEIGHT/2 - Bird.HEIGHT/2), 2,
-                (images['bird-wingup'], images['bird-wingdown']))
+                (images['bird-wingup'], images['bird-wingdown']), chromosome)
 
+    for i in range(n):
+
+        b = Bird(50, int(WIN_HEIGHT/2 - Bird.HEIGHT/2), 2,
+                (images['bird-wingup'], images['bird-wingdown']), chromosome )
+        generation.append(b)
     pipes = deque()
 
     frame_clock = 0  # this counter is only incremented if the game isn't paused

@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2af4d0d-3e59-40d7-b7f5-81775547b959" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/keras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Python-Problems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-Problems.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UltimateTicTacToe-scripts/onlinepvp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateTicTacToe-scripts/onlinepvp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FBaI/dna.py" beforeDir="false" afterPath="$PROJECT_DIR$/FBaI/dna.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FBaI/flappybird.py" beforeDir="false" afterPath="$PROJECT_DIR$/FBaI/flappybird.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,20 +19,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/onlinepvp/prototyping.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FBaI/flappybird.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14844">
-              <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+            <state relative-caret-position="114">
+              <caret line="340" column="76" selection-start-line="340" selection-start-column="76" selection-end-line="340" selection-end-column="76" />
+              <folding>
+                <element signature="n#!!doc" />
+                <element signature="e#232#243#0" expanded="true" />
+                <element signature="e#558#4518#0" />
+                <element signature="e#589#771#1" />
+                <element signature="e#853#1927#1" />
+                <element signature="e#2168#3182#0" />
+                <element signature="e#2168#2853#1" />
+                <element signature="e#3229#3437#0" />
+                <element signature="e#3467#3488#0" />
+                <element signature="e#3535#4011#0" />
+                <element signature="e#3535#3874#1" />
+                <element signature="e#4055#4346#0" />
+                <element signature="e#4055#4207#1" />
+                <element signature="e#4390#4518#0" />
+                <element signature="e#4563#8899#0" />
+                <element signature="e#4563#5671#1" />
+                <element signature="e#5796#7700#0" />
+                <element signature="e#5796#6146#1" />
+                <element signature="e#6957#7064#0" />
+                <element signature="e#7753#7851#0" />
+                <element signature="e#7907#8011#0" />
+                <element signature="e#8058#8175#0" />
+                <element signature="e#8219#8337#0" />
+                <element signature="e#8385#8614#0" />
+                <element signature="e#8385#8549#1" />
+                <element signature="e#8659#8899#0" />
+                <element signature="e#8659#8845#1" />
+                <element signature="e#8925#10555#0" />
+                <element signature="e#8925#9572#1" />
+                <element signature="e#9617#10158#0" />
+                <element signature="e#9617#10011#1" />
+                <element signature="e#10171#10555#0" />
+                <element signature="e#10334#10395#0" />
+                <element signature="e#10599#10834#0" />
+                <element signature="e#10599#10801#1" />
+                <element signature="e#10884#11131#0" />
+                <element signature="e#10884#11092#1" />
+                <element signature="e#11150#11297#1" />
+                <element signature="e#11581#11645#0" />
+                <element signature="e#12209#12271#0" />
+                <element signature="e#12420#12503#0" />
+                <element signature="e#12554#12971#0" />
+                <element signature="e#12632#12666#0" />
+                <element signature="e#12903#12971#0" />
+                <element signature="e#13399#13441#0" />
+                <element signature="e#13479#13539#0" />
+                <element signature="e#13687#13930#0" />
+                <element signature="e#13761#13930#0" />
+                <element signature="e#14296#14446#0" />
+                <element signature="e#14296#14363#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/keras.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FBaI/dna.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state relative-caret-position="500">
+              <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -46,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1384526572/math.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
+            <state relative-caret-position="1700">
               <caret line="85" column="25" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="25" />
             </state>
           </provider>
@@ -65,6 +114,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/FBaI/flappybird.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/keras.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
@@ -85,6 +135,8 @@
         <option value="$PROJECT_DIR$/UltimateTicTacToe-scripts/onlinepvp/prototyping.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/keras.py" />
+        <option value="$PROJECT_DIR$/FBaI/dna.py" />
+        <option value="$PROJECT_DIR$/FBaI/flappybird.py" />
       </list>
     </option>
   </component>
@@ -98,18 +150,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Python-Problems" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python-Problems" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -143,7 +185,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.keras">
+  <component name="RunManager" selected="Python.flappybird">
+    <configuration name="flappybird" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python-Problems" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FBaI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FBaI/flappybird.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="keras" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python-Problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -228,34 +291,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="utttpvp (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python-Problems" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/UltimateTicTacToe-scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UltimateTicTacToe-scripts/utttpvp.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.flappybird" />
         <item itemvalue="Python.keras" />
         <item itemvalue="Python.prototyping (1)" />
         <item itemvalue="Python.prototyping" />
         <item itemvalue="Python.playground" />
-        <item itemvalue="Python.utttpvp (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -359,6 +401,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839228" visible="true" weight="0.15625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.14963119" />
@@ -492,13 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/onlinepvp/prototyping.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14844">
-          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/math.pyi">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -509,9 +545,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/UltimateTicTacToe-scripts/onlinepvp/prototyping.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1384526572/math.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
+        <state relative-caret-position="1700">
           <caret line="85" column="25" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="25" />
         </state>
       </provider>
@@ -519,9 +562,78 @@
     <entry file="file://$PROJECT_DIR$/keras.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FBaI/dna.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FBaI/flappybird.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="340" column="76" selection-start-line="340" selection-start-column="76" selection-end-line="340" selection-end-column="76" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#232#243#0" expanded="true" />
+            <element signature="e#558#4518#0" />
+            <element signature="e#589#771#1" />
+            <element signature="e#853#1927#1" />
+            <element signature="e#2168#3182#0" />
+            <element signature="e#2168#2853#1" />
+            <element signature="e#3229#3437#0" />
+            <element signature="e#3467#3488#0" />
+            <element signature="e#3535#4011#0" />
+            <element signature="e#3535#3874#1" />
+            <element signature="e#4055#4346#0" />
+            <element signature="e#4055#4207#1" />
+            <element signature="e#4390#4518#0" />
+            <element signature="e#4563#8899#0" />
+            <element signature="e#4563#5671#1" />
+            <element signature="e#5796#7700#0" />
+            <element signature="e#5796#6146#1" />
+            <element signature="e#6957#7064#0" />
+            <element signature="e#7753#7851#0" />
+            <element signature="e#7907#8011#0" />
+            <element signature="e#8058#8175#0" />
+            <element signature="e#8219#8337#0" />
+            <element signature="e#8385#8614#0" />
+            <element signature="e#8385#8549#1" />
+            <element signature="e#8659#8899#0" />
+            <element signature="e#8659#8845#1" />
+            <element signature="e#8925#10555#0" />
+            <element signature="e#8925#9572#1" />
+            <element signature="e#9617#10158#0" />
+            <element signature="e#9617#10011#1" />
+            <element signature="e#10171#10555#0" />
+            <element signature="e#10334#10395#0" />
+            <element signature="e#10599#10834#0" />
+            <element signature="e#10599#10801#1" />
+            <element signature="e#10884#11131#0" />
+            <element signature="e#10884#11092#1" />
+            <element signature="e#11150#11297#1" />
+            <element signature="e#11581#11645#0" />
+            <element signature="e#12209#12271#0" />
+            <element signature="e#12420#12503#0" />
+            <element signature="e#12554#12971#0" />
+            <element signature="e#12632#12666#0" />
+            <element signature="e#12903#12971#0" />
+            <element signature="e#13399#13441#0" />
+            <element signature="e#13479#13539#0" />
+            <element signature="e#13687#13930#0" />
+            <element signature="e#13761#13930#0" />
+            <element signature="e#14296#14446#0" />
+            <element signature="e#14296#14363#0" />
           </folding>
         </state>
       </provider>
