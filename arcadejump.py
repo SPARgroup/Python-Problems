@@ -83,7 +83,7 @@ pre = int(pre)
 obs_sizes = [pre+1, pre+3, pre+4, pre+5]
 powerup_sizes = obs_sizes
 
-discs = [] #main game array
+l = [] #main game array
 disc_positions = []
 
 
@@ -495,7 +495,7 @@ def cap(x, u, l):
 
 
 def addObstacles():
-    global discs
+    global l
     global obs_sizes
     global size
     global obs
@@ -521,7 +521,7 @@ def addObstacles():
 
 
 def addPowerups():
-    global discs
+    global l
     global power
     global powerup_sizes
     global size
@@ -541,7 +541,7 @@ def addPowerups():
 
 
 def makeLevel():
-    global discs
+    global l
     global hole_sizes
     global gap
     global level_len
@@ -651,7 +651,7 @@ def scroll(move):
     """this function scrolls the whole thing one unit to the right or to the left
     move is a boolean value, true means to the right"""
     global size
-    global discs
+    global l
     global movement
 
     if move:
@@ -673,7 +673,7 @@ def scroll(move):
 
 
 def renderDiscs():
-    global discs
+    global l
     global disc_positions
     global block_size
     global disp
@@ -799,7 +799,7 @@ def collision():
     global currentDisc
     global ball
     global block_size
-    global discs
+    global l
     global viewMover
     global move_view_speed
     global viewMoverThreads
