@@ -2,13 +2,14 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/keras.py" line="5" mnemonic="8" />
-    <bookmark url="file://$PROJECT_DIR$/HackerRank/MatrixRotation.py" line="10" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2af4d0d-3e59-40d7-b7f5-81775547b959" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HackerRank/MatrixRotation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Python-Problems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-Problems.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arcadejump.py" beforeDir="false" afterPath="$PROJECT_DIR$/arcadejump.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FBaI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FBaI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HackerRank/MatrixRotation.py" beforeDir="false" afterPath="$PROJECT_DIR$/HackerRank/MatrixRotation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,11 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HackerRank/MatrixRotation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-              <folding>
-                <element signature="e#16#27#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="894">
+              <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -49,110 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/arcadejump.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="13482">
               <caret line="649" selection-start-line="649" selection-end-line="672" />
-              <folding>
-                <element signature="e#2256#2549#0" />
-                <element signature="e#2305#2405#0" />
-                <element signature="e#2426#2549#0" />
-                <element signature="e#2562#2619#0" />
-                <element signature="e#3015#3062#0" />
-                <element signature="e#3064#3075#0" />
-                <element signature="e#3106#3110#0" />
-                <element signature="e#3130#3212#0" />
-                <element signature="e#3231#3387#0" />
-                <element signature="e#3287#3387#0" />
-                <element signature="e#3412#3416#0" />
-                <element signature="e#3438#4195#0" />
-                <element signature="e#3662#3922#0" />
-                <element signature="e#3953#4087#0" />
-                <element signature="e#4120#4195#0" />
-                <element signature="e#4218#4222#0" />
-                <element signature="e#4245#4280#0" />
-                <element signature="e#4304#4337#0" />
-                <element signature="e#4385#6016#0" />
-                <element signature="e#5076#5185#0" />
-                <element signature="e#5222#6016#0" />
-                <element signature="e#5395#5926#0" />
-                <element signature="e#5444#5926#0" />
-                <element signature="e#5510#5586#0" />
-                <element signature="e#5709#5757#0" />
-                <element signature="e#5878#5926#0" />
-                <element signature="e#6045#6945#0" />
-                <element signature="e#6306#6891#0" />
-                <element signature="e#6329#6541#0" />
-                <element signature="e#6569#6891#0" />
-                <element signature="e#6910#6945#0" />
-                <element signature="e#6974#7319#0" />
-                <element signature="e#7342#7511#0" />
-                <element signature="e#7407#7511#0" />
-                <element signature="e#7532#8153#0" />
-                <element signature="e#7895#7948#0" />
-                <element signature="e#8180#8453#0" />
-                <element signature="e#8478#10576#0" />
-                <element signature="e#9696#9704#0" />
-                <element signature="e#10607#10826#0" />
-                <element signature="e#10733#10826#0" />
-                <element signature="e#10767#10809#0" />
-                <element signature="e#10941#11076#0" />
-                <element signature="e#11099#11466#0" />
-                <element signature="e#11491#11577#0" />
-                <element signature="e#11604#12279#0" />
-                <element signature="e#11751#12123#0" />
-                <element signature="e#11806#12123#0" />
-                <element signature="e#11978#12123#0" />
-                <element signature="e#12305#12799#0" />
-                <element signature="e#12414#12799#0" />
-                <element signature="e#12445#12799#0" />
-                <element signature="e#12498#12799#0" />
-                <element signature="e#12726#12799#0" />
-                <element signature="e#12823#13404#0" />
-                <element signature="e#13025#13365#0" />
-                <element signature="e#13154#13284#0" />
-                <element signature="e#13429#14491#0" />
-                <element signature="e#14513#14531#0" />
-                <element signature="e#14554#14641#0" />
-                <element signature="e#14666#14748#0" />
-                <element signature="e#15457#16194#0" />
-                <element signature="e#15776#16194#0" />
-                <element signature="e#15821#16175#0" />
-                <element signature="e#16234#16399#0" />
-                <element signature="e#16425#17263#0" />
-                <element signature="e#16621#17263#0" />
-                <element signature="e#17289#17322#0" />
-                <element signature="e#17343#18164#0" />
-                <element signature="e#17546#17652#0" />
-                <element signature="e#18073#18135#0" />
-                <element signature="e#18104#18135#0" />
-                <element signature="e#18191#18224#0" />
-                <element signature="e#18249#18605#0" />
-                <element signature="e#18629#20736#0" />
-                <element signature="e#19150#19232#0" />
-                <element signature="e#19354#20684#0" />
-                <element signature="e#19440#19805#0" />
-                <element signature="e#19844#20068#0" />
-                <element signature="e#20110#20271#0" />
-                <element signature="e#20298#20684#0" />
-                <element signature="e#20298#20317#0" />
-                <element signature="e#20518#20559#0" />
-                <element signature="e#20703#20736#0" />
-                <element signature="e#20764#20914#0" />
-                <element signature="e#20866#20898#0" />
-                <element signature="e#20935#20939#0" />
-                <element signature="e#20968#21098#0" />
-                <element signature="e#21128#21205#0" />
-                <element signature="e#21233#21401#0" />
-                <element signature="e#21413#21490#0" />
-                <element signature="e#21503#21696#0" />
-                <element signature="e#21837#22744#0" />
-                <element signature="e#21872#22574#0" />
-                <element signature="e#21956#22517#0" />
-                <element signature="e#22074#22517#0" />
-                <element signature="e#22273#22423#0" />
-                <element signature="e#22474#22517#0" />
-                <element signature="e#22595#22645#0" />
-                <element signature="e#22757#22883#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -160,7 +56,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FBaI/dna.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
+            <state relative-caret-position="651">
               <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
@@ -183,8 +79,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/HackerRank/MatrixRotation.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/FBaI/flappybird.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/keras.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/FBaI/flappybird.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -220,7 +116,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,15 +123,21 @@
               <item name="Python-Problems" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python-Problems" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Python-Problems" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python-Problems" type="462c0819:PsiDirectoryNode" />
+              <item name="HackerRank" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/Projects/CodingProjects/pyscripts/PyScripts" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
@@ -489,15 +390,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839228" visible="true" weight="0.15625" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839228" visible="true" weight="0.15595363" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.14963119" />
       <window_info id="Favorites" order="2" sideWeight="0.5016077" side_tool="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3279743" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.9516908" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.95124596" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.9678457" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -651,6 +551,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1384526572/math.py" />
     <entry file="file://$PROJECT_DIR$/FBaI/flappybird.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -664,123 +565,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/arcadejump.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="13482">
           <caret line="649" selection-start-line="649" selection-end-line="672" />
-          <folding>
-            <element signature="e#2256#2549#0" />
-            <element signature="e#2305#2405#0" />
-            <element signature="e#2426#2549#0" />
-            <element signature="e#2562#2619#0" />
-            <element signature="e#3015#3062#0" />
-            <element signature="e#3064#3075#0" />
-            <element signature="e#3106#3110#0" />
-            <element signature="e#3130#3212#0" />
-            <element signature="e#3231#3387#0" />
-            <element signature="e#3287#3387#0" />
-            <element signature="e#3412#3416#0" />
-            <element signature="e#3438#4195#0" />
-            <element signature="e#3662#3922#0" />
-            <element signature="e#3953#4087#0" />
-            <element signature="e#4120#4195#0" />
-            <element signature="e#4218#4222#0" />
-            <element signature="e#4245#4280#0" />
-            <element signature="e#4304#4337#0" />
-            <element signature="e#4385#6016#0" />
-            <element signature="e#5076#5185#0" />
-            <element signature="e#5222#6016#0" />
-            <element signature="e#5395#5926#0" />
-            <element signature="e#5444#5926#0" />
-            <element signature="e#5510#5586#0" />
-            <element signature="e#5709#5757#0" />
-            <element signature="e#5878#5926#0" />
-            <element signature="e#6045#6945#0" />
-            <element signature="e#6306#6891#0" />
-            <element signature="e#6329#6541#0" />
-            <element signature="e#6569#6891#0" />
-            <element signature="e#6910#6945#0" />
-            <element signature="e#6974#7319#0" />
-            <element signature="e#7342#7511#0" />
-            <element signature="e#7407#7511#0" />
-            <element signature="e#7532#8153#0" />
-            <element signature="e#7895#7948#0" />
-            <element signature="e#8180#8453#0" />
-            <element signature="e#8478#10576#0" />
-            <element signature="e#9696#9704#0" />
-            <element signature="e#10607#10826#0" />
-            <element signature="e#10733#10826#0" />
-            <element signature="e#10767#10809#0" />
-            <element signature="e#10941#11076#0" />
-            <element signature="e#11099#11466#0" />
-            <element signature="e#11491#11577#0" />
-            <element signature="e#11604#12279#0" />
-            <element signature="e#11751#12123#0" />
-            <element signature="e#11806#12123#0" />
-            <element signature="e#11978#12123#0" />
-            <element signature="e#12305#12799#0" />
-            <element signature="e#12414#12799#0" />
-            <element signature="e#12445#12799#0" />
-            <element signature="e#12498#12799#0" />
-            <element signature="e#12726#12799#0" />
-            <element signature="e#12823#13404#0" />
-            <element signature="e#13025#13365#0" />
-            <element signature="e#13154#13284#0" />
-            <element signature="e#13429#14491#0" />
-            <element signature="e#14513#14531#0" />
-            <element signature="e#14554#14641#0" />
-            <element signature="e#14666#14748#0" />
-            <element signature="e#15457#16194#0" />
-            <element signature="e#15776#16194#0" />
-            <element signature="e#15821#16175#0" />
-            <element signature="e#16234#16399#0" />
-            <element signature="e#16425#17263#0" />
-            <element signature="e#16621#17263#0" />
-            <element signature="e#17289#17322#0" />
-            <element signature="e#17343#18164#0" />
-            <element signature="e#17546#17652#0" />
-            <element signature="e#18073#18135#0" />
-            <element signature="e#18104#18135#0" />
-            <element signature="e#18191#18224#0" />
-            <element signature="e#18249#18605#0" />
-            <element signature="e#18629#20736#0" />
-            <element signature="e#19150#19232#0" />
-            <element signature="e#19354#20684#0" />
-            <element signature="e#19440#19805#0" />
-            <element signature="e#19844#20068#0" />
-            <element signature="e#20110#20271#0" />
-            <element signature="e#20298#20684#0" />
-            <element signature="e#20298#20317#0" />
-            <element signature="e#20518#20559#0" />
-            <element signature="e#20703#20736#0" />
-            <element signature="e#20764#20914#0" />
-            <element signature="e#20866#20898#0" />
-            <element signature="e#20935#20939#0" />
-            <element signature="e#20968#21098#0" />
-            <element signature="e#21128#21205#0" />
-            <element signature="e#21233#21401#0" />
-            <element signature="e#21413#21490#0" />
-            <element signature="e#21503#21696#0" />
-            <element signature="e#21837#22744#0" />
-            <element signature="e#21872#22574#0" />
-            <element signature="e#21956#22517#0" />
-            <element signature="e#22074#22517#0" />
-            <element signature="e#22273#22423#0" />
-            <element signature="e#22474#22517#0" />
-            <element signature="e#22595#22645#0" />
-            <element signature="e#22757#22883#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1384526572/math.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="85" column="25" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FBaI/dna.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
+        <state relative-caret-position="651">
           <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
@@ -790,11 +582,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HackerRank/MatrixRotation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding>
-            <element signature="e#16#27#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="894">
+          <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
         </state>
       </provider>
     </entry>
