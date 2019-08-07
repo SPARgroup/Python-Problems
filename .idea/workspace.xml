@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2af4d0d-3e59-40d7-b7f5-81775547b959" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ZOMCAV.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sub.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Python-Problems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-Problems.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FBaI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FBaI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerRank/MatrixRotation.py" beforeDir="false" afterPath="$PROJECT_DIR$/HackerRank/MatrixRotation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FBaI/flappybird.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="340" column="76" selection-start-line="340" selection-start-column="76" selection-end-line="340" selection-end-column="76" />
+            <state>
+              <caret line="339" column="57" lean-forward="true" selection-start-line="339" selection-start-column="57" selection-end-line="339" selection-end-column="57" />
               <folding>
                 <element signature="n#!!doc" />
                 <element signature="e#232#243#0" expanded="true" />
@@ -35,20 +35,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HackerRank/MatrixRotation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="894">
-              <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
+            <state relative-caret-position="200">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/arcadejump.py">
+        <entry file="file://$PROJECT_DIR$/sub.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13482">
-              <caret line="649" selection-start-line="649" selection-end-line="672" />
+            <state relative-caret-position="140">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ZOMCAV.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -56,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FBaI/dna.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
+            <state relative-caret-position="620">
               <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
@@ -79,8 +88,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/HackerRank/MatrixRotation.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/keras.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/FBaI/flappybird.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/keras.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -103,6 +112,8 @@
         <option value="$PROJECT_DIR$/FBaI/dna.py" />
         <option value="$PROJECT_DIR$/FBaI/flappybird.py" />
         <option value="$PROJECT_DIR$/HackerRank/MatrixRotation.py" />
+        <option value="$PROJECT_DIR$/sub.py" />
+        <option value="$PROJECT_DIR$/ZOMCAV.py" />
       </list>
     </option>
   </component>
@@ -122,11 +133,6 @@
             <path>
               <item name="Python-Problems" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python-Problems" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Python-Problems" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python-Problems" type="462c0819:PsiDirectoryNode" />
-              <item name="HackerRank" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -166,7 +172,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MatrixRotation">
+  <component name="RunManager" selected="Python.flappybird">
     <configuration name="MatrixRotation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python-Problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -251,7 +257,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="prototyping" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="sub" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python-Problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -259,11 +265,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/UltimateTicTacToe-scripts" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UltimateTicTacToe-scripts/prototyping.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sub.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -274,11 +280,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.MatrixRotation" />
         <item itemvalue="Python.flappybird" />
+        <item itemvalue="Python.sub" />
+        <item itemvalue="Python.MatrixRotation" />
         <item itemvalue="Python.keras" />
         <item itemvalue="Python.prototyping (1)" />
-        <item itemvalue="Python.prototyping" />
       </list>
     </recent_temporary>
   </component>
@@ -390,14 +396,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49839228" visible="true" weight="0.15595363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49839228" visible="true" weight="0.15550596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.14963119" />
       <window_info id="Favorites" order="2" sideWeight="0.5016077" side_tool="true" weight="0.24973656" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3279743" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.95124596" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.9500805" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.9678457" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -552,27 +559,23 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1384526572/math.py" />
-    <entry file="file://$PROJECT_DIR$/FBaI/flappybird.py">
+    <entry file="file://$PROJECT_DIR$/HackerRank/MatrixRotation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="340" column="76" selection-start-line="340" selection-start-column="76" selection-end-line="340" selection-end-column="76" />
-          <folding>
-            <element signature="n#!!doc" />
-            <element signature="e#232#243#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/arcadejump.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13482">
+        <state relative-caret-position="12840">
           <caret line="649" selection-start-line="649" selection-end-line="672" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FBaI/dna.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
+        <state relative-caret-position="620">
           <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
@@ -580,10 +583,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HackerRank/MatrixRotation.py">
+    <entry file="file://$PROJECT_DIR$/FBaI/flappybird.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="894">
-          <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
+        <state>
+          <caret line="339" column="57" lean-forward="true" selection-start-line="339" selection-start-column="57" selection-end-line="339" selection-end-column="57" />
+          <folding>
+            <element signature="n#!!doc" />
+            <element signature="e#232#243#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sub.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZOMCAV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
         </state>
       </provider>
     </entry>
