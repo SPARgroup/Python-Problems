@@ -18,7 +18,7 @@ class ai:
         self.dead = False
         self.score = 0
         self.fitness = 0
-
+        self.mutate()
     def playMove(self, inputs):
         """Inputs: """
         activation = 0
@@ -43,9 +43,11 @@ class ai:
         self.weights = chromosome[0:len(chromosome) - 1]
         self.bias = chromosome[-1]
         self.chromosome = self.weights + [self.bias]
+        print(chromosome)
 
     def mutate(self):
         new = []
         for gene in self.chromosome:
-            new.append(gene + rand.random() - 0.5)
+            new.append(gene + (rand.random() - 0.5) * 2)
+
         self.set(new)

@@ -319,9 +319,9 @@ def make_gen(parents):
     junior_adam.crossover(parents[0], pars[1])
     newgen = [junior_adam]*n
 
-    for adam_junior in parents[1:]:
-        adam_junior.mutate()
-
+    for u in newgen:
+        pass
+    newgen[0] = parents[0]
     return newgen
 
 generation = []
@@ -421,8 +421,9 @@ def main(passed):
                 #print("COMRADE DIED, F ")
 
         if allDead(generation):
+            print([i.score for i in generation])
             generation = make_gen(generation)
-            print([i.dead for i in generation])
+
             main(False) #Recursion Gods
 
         #display_surface.blit(bird.image, bird.rect)
@@ -433,7 +434,8 @@ def main(passed):
                 if p.x + PipePair.WIDTH < bird.x and not p.score_counted:
                     print(pipes[currIndex].top_height_px, pipes[currIndex].bottom_height_px)
                     currIndex += 1
-                    bird.score += 1
+                    if not bird.dead:
+                        bird.score += 1
                     p.score_counted = True
 
         score_surface = score_font.render(str(score), True, (255, 255, 255))
