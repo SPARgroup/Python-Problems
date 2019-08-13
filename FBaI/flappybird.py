@@ -12,17 +12,18 @@ from collections import deque
 import pygame
 from pygame.locals import *
 
-from dna import ai
+import dna
+import time
 
 FPS = 60
 ANIMATION_SPEED = 0.18  # pixels per millisecond
 WIN_WIDTH = 284 * 2  # BG image size: 284x512 px; tiled twice
 WIN_HEIGHT = 512
 divide = 200
-n = 50
 
 
-class Bird(pygame.sprite.Sprite, ai):
+
+class Bird(pygame.sprite.Sprite, dna.ai):
     """OUR AI class methods"""
     """Components:
         1. Chromosomes
@@ -79,7 +80,7 @@ class Bird(pygame.sprite.Sprite, ai):
                 1. image of the bird with its wing pointing downward
         """
         super(Bird, self).__init__()
-        ai.__init__(self, chromosome)
+        dna.ai.__init__(self, chromosome)
         self.x, self.y = x, y
         self.msec_to_climb = msec_to_climb
         self._img_wingup, self._img_wingdown = images
@@ -306,6 +307,9 @@ def key(birdie):
     return birdie.fitness
 
 
+def scoreOf(birdie):
+    return birdie.score
+
 
 def make_gen(parents):
     global n
@@ -324,6 +328,12 @@ def make_gen(parents):
     newgen[0] = parents[0]
     return newgen
 
+
+def saveCurrentBest(population):
+    population.sort(key=scoreOf)
+
+    population[0].saveGenes()
+
 generation = []
 images = None
 pygame.init()
@@ -332,6 +342,9 @@ pygame.display.set_caption('Pygame Flappy Bird')
 clock = pygame.time.Clock()
 score_font = pygame.font.SysFont(None, 32, bold=True)
 images = load_images()
+
+gen = 1
+n = 50 #number of birds per gen
 def main(passed):
     """The application's entry point.
     If someone executes this module (instead of importing it, for
@@ -339,12 +352,13 @@ def main(passed):
     """
     global images
     global display_surface, clock, score_font
-    global generation
+    global generation, gen, n
 
+    print("Generation", gen)
     # the bird stays in the same x position, so bird.x is a constant
     # center bird on screen
 
-    chromosome = [-0.02, -3.4, -1.2, -0.6785]
+    chromosome = [-0.2, -0.46, -0.54, -0.6969]
     bird = Bird(50, int(WIN_HEIGHT / 2 - Bird.HEIGHT / 2 - 200), 2,
                 (images['bird-wingup'], images['bird-wingdown']), chromosome)
 
@@ -373,7 +387,6 @@ def main(passed):
         for e in pygame.event.get():
             if e.type == QUIT or (e.type == KEYUP and e.key == K_ESCAPE):
                 done = True
-
                 break
             elif e.type == KEYUP and e.key in (K_PAUSE, K_p):
                 paused = not paused
@@ -381,13 +394,10 @@ def main(passed):
                                              e.key in (K_UP, K_RETURN, K_SPACE)):
                 bird.jump()
                 bird.msec_to_climb = Bird.CLIMB_DURATION
-
+            if e.type == KEYUP and e.key == K_s:
+                saveCurrentBest(generation)
         if paused:
-            continue  # don't draw anything
-
-        # check for collisions
-
-        # done=true
+            continue
 
         for x in (0, WIN_WIDTH / 2):
             display_surface.blit(images['background'], (x, 0))
@@ -418,28 +428,34 @@ def main(passed):
             if pipe_collision or 0 >= bird.y or bird.y >= WIN_HEIGHT - Bird.HEIGHT:
                 bird.fitness = bird.score / h #inversely to height from pipe gap and directly to score
                 bird.dead = True
-                #print("COMRADE DIED, F ")
 
-        if allDead(generation):
-            print([i.score for i in generation])
-            generation = make_gen(generation)
-
-            main(False) #Recursion Gods
-
-        #display_surface.blit(bird.image, bird.rect)
+        actually = False #naam mein kya rakha hai
 
         # update and display score
         for p in pipes:
             for bird in generation:
                 if p.x + PipePair.WIDTH < bird.x and not p.score_counted:
-                    print(pipes[currIndex].top_height_px, pipes[currIndex].bottom_height_px)
-                    currIndex += 1
                     if not bird.dead:
                         bird.score += 1
-                    p.score_counted = True
+                        actually = True
+
+            if actually:
+                currIndex+=1
+                p.score_counted = True
+
+            actually = False
+
+        if allDead(generation):
+            dna.max_score = max(dna.max_score, max([i.score for i in generation]))
+            #dna.factor *= 2/(dna.max_score + 1)
+            print("Scores: ",[i.score for i in generation])
+            generation = make_gen(generation)
+            time.sleep(1)
+            gen += 1
+            main(False) #Recursion Gods
 
 
-        score_surface = score_font.render(str(score), True, (255, 255, 255))
+        score_surface = score_font.render(str(max([i.score for i in generation])), True, (255, 255, 255))
         score_x = WIN_WIDTH / 2 - score_surface.get_width() / 2
         display_surface.blit(score_surface, (score_x, PipePair.PIECE_HEIGHT))
 
