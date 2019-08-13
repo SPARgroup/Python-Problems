@@ -48,6 +48,6 @@ class ai:
     def mutate(self):
         new = []
         for gene in self.chromosome:
-            new.append(gene + (rand.random() - 0.5) * 2)
+            new.append(gene + (rand.random() - 0.5)*2)
 
         self.set(new)

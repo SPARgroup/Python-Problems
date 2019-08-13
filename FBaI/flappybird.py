@@ -401,9 +401,9 @@ def main(passed):
             display_surface.blit(p.image, p.rect)
 
         for bird in generation:
-            d = (pipes[currIndex].x - bird.x)/300
-            h = (bird.y - pipes[currIndex].top_height_px)/300
-            H = (bird.y)/300
+            d = (pipes[currIndex].x - bird.x)*(-1)/300
+            h = (bird.y - pipes[currIndex].top_height_px)*(-1)/300
+            H = (bird.y)*(-1)/300
 
             if (bird.playMove([d, h, H])):
                 bird.jump()
@@ -437,6 +437,7 @@ def main(passed):
                     if not bird.dead:
                         bird.score += 1
                     p.score_counted = True
+
 
         score_surface = score_font.render(str(score), True, (255, 255, 255))
         score_x = WIN_WIDTH / 2 - score_surface.get_width() / 2
