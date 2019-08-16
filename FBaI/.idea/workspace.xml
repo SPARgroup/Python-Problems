@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="225c5737-0d18-427e-9d56-219187877bec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FBaI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FBaI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dna.py" beforeDir="false" afterPath="$PROJECT_DIR$/dna.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flappybird.py" beforeDir="false" afterPath="$PROJECT_DIR$/flappybird.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UltimateTicTacToe-scripts/onlinepvp/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UltimateTicTacToe-scripts/onlinepvp/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UltimateTicTacToe-scripts/onlinepvp/.idea/onlinepvp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../UltimateTicTacToe-scripts/onlinepvp/.idea/onlinepvp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UltimateTicTacToe-scripts/onlinepvp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UltimateTicTacToe-scripts/onlinepvp/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flappybird.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2705">
-              <caret line="327" column="26" selection-start-line="327" selection-start-column="26" selection-end-line="327" selection-end-column="26" />
+            <state relative-caret-position="180">
+              <caret line="318" column="102" selection-start-line="318" selection-start-column="102" selection-end-line="318" selection-end-column="102" />
               <folding>
                 <element signature="e#234#245#0" expanded="true" />
               </folding>
@@ -31,11 +25,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/16-08-19__13_13.gene">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="85" lean-forward="true" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dna.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+            <state relative-caret-position="213">
+              <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -62,8 +65,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/flappybird.py" />
         <option value="$PROJECT_DIR$/dna.py" />
+        <option value="$PROJECT_DIR$/flappybird.py" />
       </list>
     </option>
   </component>
@@ -88,7 +91,20 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="FBaI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FBaI" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -115,9 +131,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\dps\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flappybird.py" />
@@ -153,20 +169,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49925596" visible="true" weight="0.32827735" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49925596" visible="true" weight="0.9468599" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39871383" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.32850242" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50074404" side_tool="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -220,22 +236,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flappybird.py">
+    <entry file="file://$PROJECT_DIR$/dna.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2705">
-          <caret line="327" column="26" selection-start-line="327" selection-start-column="26" selection-end-line="327" selection-end-column="26" />
+        <state relative-caret-position="213">
+          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding>
-            <element signature="e#234#245#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dna.py">
+    <entry file="file://$PROJECT_DIR$/16-08-19__13_13.gene">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+        <state>
+          <caret column="85" lean-forward="true" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flappybird.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="318" column="102" selection-start-line="318" selection-start-column="102" selection-end-line="318" selection-end-column="102" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#234#245#0" expanded="true" />
           </folding>
         </state>
       </provider>

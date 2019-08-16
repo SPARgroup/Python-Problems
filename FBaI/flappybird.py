@@ -16,7 +16,7 @@ import dna
 import time
 
 FPS = 60
-ANIMATION_SPEED = 0.18  # pixels per millisecond
+ANIMATION_SPEED = 0.18 # pixels per millisecond
 WIN_WIDTH = 284 * 2  # BG image size: 284x512 px; tiled twice
 WIN_HEIGHT = 512
 divide = 200
@@ -60,10 +60,10 @@ class Bird(pygame.sprite.Sprite, dna.ai):
     SINK_SPEED = 0.18
     CLIMB_SPEED = 0.3
     CLIMB_DURATION = 333.3
-    g = 0.001
-    jumpVel = -0.34
-    normal_g = 0.0008
-    increased_g = 0.00098
+    #g = 0.001
+    jumpVel = -0.34              #original = -0.34
+    normal_g = 0.0008          #original values =0.0008
+    increased_g = 0.00098       #original = 0.00098
 
     def __init__(self, x, y, msec_to_climb, images, chromosome):
         """Initialise a new Bird instance.
@@ -156,7 +156,7 @@ class PipePair(pygame.sprite.Sprite):
 
     WIDTH = 80
     PIECE_HEIGHT = 32
-    ADD_INTERVAL = 3000
+    ADD_INTERVAL = 2500
 
     def __init__(self, pipe_end_img, pipe_body_img):
         """Initialises a new random PipePair.
@@ -284,14 +284,14 @@ def load_images():
             'bird-wingup': load_image('bird_wing_up.png'),
             'bird-wingdown': load_image('bird_wing_down.png')}
 
-
+factor = 5
 def frames_to_msec(frames, fps=FPS):
     """Convert frames to milliseconds at the specified framerate.
     Arguments:
     frames: How many frames to convert to milliseconds.
     fps: The framerate to use for conversion.  Default: FPS.
     """
-    return 1000.0 * frames / fps
+    return 1000.0 * (frames / fps) *factor
 
 
 def msec_to_frames(milliseconds, fps=FPS):
@@ -300,7 +300,7 @@ def msec_to_frames(milliseconds, fps=FPS):
     milliseconds: How many milliseconds to convert to frames.
     fps: The framerate to use for conversion.  Default: FPS.
     """
-    return fps * milliseconds / 1000.0
+    return (fps * milliseconds) / (1000.0* factor)
 
 
 def key(birdie):
@@ -313,24 +313,24 @@ def scoreOf(birdie):
 
 def make_gen(parents):
     global n
-    parents.sort(key=key)
+    parents.sort(reverse=True, key=scoreOf)
+    print("Parents: ", [i.score for i in parents])
     pars = parents[:2]
-    chromosome = [-0.02, -3.4, -1.2, -0.6785] # just a random chromosome
-
-    junior_adam = Bird(50, int(WIN_HEIGHT / 2 - Bird.HEIGHT / 2 -200), 2,
-                 (images['bird-wingup'], images['bird-wingdown']), chromosome)
-
-    junior_adam.crossover(parents[0], pars[1])
-    newgen = [junior_adam]*n
-
-    for u in newgen:
-        pass
+    chromosome = [0.14901931296730186, -3.6813666491220953, -0.14930858842238504, -0.7411175781858406] # just a random chromosome
+    newgen = []
+    for i in range(n):
+        junior_adam = Bird(50, int(WIN_HEIGHT / 2 - Bird.HEIGHT / 2 - 200), 2,
+                           (images['bird-wingup'], images['bird-wingdown']), chromosome)
+        junior_adam.crossover(pars[0], pars[1])
+        junior_adam.mutate()
+        newgen.append(junior_adam)
+       # pass
     newgen[0] = parents[0]
     return newgen
 
 
 def saveCurrentBest(population):
-    population.sort(key=scoreOf)
+    population.sort(key=scoreOf,reverse=True)
 
     population[0].saveGenes()
 
@@ -442,8 +442,8 @@ def main(passed):
             if actually:
                 currIndex+=1
                 p.score_counted = True
-
-            actually = False
+                actually = False
+            #actually = False
 
         if allDead(generation):
             dna.max_score = max(dna.max_score, max([i.score for i in generation]))
@@ -452,7 +452,7 @@ def main(passed):
             generation = make_gen(generation)
             time.sleep(1)
             gen += 1
-            main(False) #Recursion Gods
+            main(True) #Recursion Gods
 
 
         score_surface = score_font.render(str(max([i.score for i in generation])), True, (255, 255, 255))

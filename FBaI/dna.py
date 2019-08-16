@@ -2,11 +2,14 @@ import numpy
 import random as rand
 import time
 import datetime
+
 generation = []
 
-factor = 2 #mutation factor or learning rate
+factor = 2  # mutation factor or learning rate
 
 max_score = 0
+
+
 class ai:
     """Components:
         1. Chromosomes
@@ -16,12 +19,14 @@ class ai:
         5. Mutation
         Number of inputs: Distance, Height from pipe gap, height from ground"""
     global factor
+
     def __init__(self, chromosome):
         self.set(chromosome)
         self.dead = False
         self.score = 0
         self.fitness = 0
-        self.mutate()
+        #self.mutate()
+
     def playMove(self, inputs):
         """Inputs: """
         activation = 0
@@ -62,6 +67,6 @@ class ai:
     def saveGenes(self):
         date = datetime.datetime
         strr = str(date.now().strftime("%d-%m-%y__%H_%M"))
-        f = open(strr+".gene", "w")
-        f.write(str(self.chromosome)+ "\n"+ str(max_score))
+        f = open(strr + ".gene", "w")
+        f.write(str(self.chromosome) + "\n" + str(max_score))
         f.close()
