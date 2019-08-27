@@ -8,7 +8,7 @@ class Colors:
     red=(255,0,0)
     green=(0,255,0)
     blue=(0,0,255)
-    bg=(91,109,126)
+    bg=(45,45,45)
     orange=(228,106,107)
     orange2=(200,90,140)
 
@@ -70,10 +70,10 @@ def theta(points):
     return math.atan2(p2[1] - p1[1], p2[0] - p1[0])
 
 
-def renderText(text, pos):
+def renderText(text, pos, color):
     nexa = pg.font.Font("resources/Nexa Bold.otf", 45)
 
-    t = nexa.render(text,True, Colors.blue)
+    t = nexa.render(text,True, color)
 
     rect = t.get_rect()
     rect.center = pos
@@ -85,7 +85,7 @@ def save():
     global path, path_inner
 
 
-width = 100 #width of the track
+width = 25 #width of the track
 
 def trackEditor():
     global width, w, h, clock, disp
@@ -145,7 +145,6 @@ def trackEditor():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_c:
                     path_closed = not path_closed
-                    renderText("Hello", (200,200))
                 if event.key == pg.K_g:
                     #generate inner track
                     l=len(path)
@@ -191,6 +190,7 @@ def trackEditor():
         except:
             pass
 
+        renderText("S: Save    G: Smooth     C: Render Closed     Esc: Exit", (70, 40), Colors.orange)
         pygame.display.update()
 
         clock.tick(75)
