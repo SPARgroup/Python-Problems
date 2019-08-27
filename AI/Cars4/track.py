@@ -17,10 +17,34 @@ class Images:
     pass
 
 
+class Car():
+    def __init__(self):
+        pass
+
+
+class Track():
+    def __init__(self, properties):
+        self.inner = properties[0]
+        self.outer = properties[1]
+        self.miles = properties[2]
+        self.innerpoints = properties[3]
+        self.outerpoints = properties[4]
+
+    def display(self, disp):
+        for i in range(len(self.innerpoints) - 1):
+            pygame.draw.lines(disp, Colors.orange, False, self.innerpoints, 5)
+            try:
+                pygame.draw.lines(disp, Colors.orange, False, self.outerpoints, 5)
+            except ValueError:
+                pass
+
+
 def load_images():
     pt_size = (5,5)
+    car_size = (50, 24.4)  #image ratio = 2.045045045045:1
     pt_image = pygame.transform.scale(pygame.image.load("resources/point.png").convert_alpha(),pt_size)
     Images.point=pt_image
+    car = pg.transform.scale(pg.image.load("resources/lambi.png").convert_alpha(), car_size)
 
 
 def dist(p1, p2):
@@ -55,11 +79,14 @@ def renderText(text, pos):
     rect.center = pos
     disp.blit(t, pos)
 
+
 def save():
     file = open("track.csv", "w")
     global path, path_inner
 
+
 width = 100 #width of the track
+
 def trackEditor():
     global width, w, h, clock, disp
     pygame.init()
@@ -68,7 +95,7 @@ def trackEditor():
     display_info = pygame.display.Info()
     monitor_res = (display_info.current_w, display_info.current_h)
 
-    path_res = 2000 # the more the worse
+    path_res = 3000 # the more the worse
 
     w = monitor_res[0]
     h = monitor_res[1]
@@ -127,8 +154,23 @@ def trackEditor():
                         for i in range(l):
                             path_inner.append(get_inner(path[i][0], path[i][1], [path[i-1], path[(i + 1) % l]]))
                 if event.key == pg.K_ESCAPE:
-                    pygame.quit()
-                    1/0 #masterminds
+                    pass
+                    #1/0 #masterminds
+                if event.key == pg.K_s:
+                    #Save track
+                    l = len(path)
+                    inner, outer, milestones = [], [], []
+                    try:
+                        for i in range(len(path)):
+                            milestones.append(pygame.draw.line(disp, Colors.white, path[i], path_inner[i]))
+                            inner.append(pygame.draw.line(disp, Colors.white, path_inner[i], path_inner[(i+1)%l]))
+                            outer.append(pygame.draw.line(disp, Colors.white, path[i], path[(i+1)%l]))
+
+                        return inner, outer, milestones, path_inner, path
+                    except:
+                        inner.clear()
+                        outer.clear()
+                        milestones.clear()
 
         #RENDER
 
@@ -144,7 +186,7 @@ def trackEditor():
 
         try:
             for i in range(len(path)):
-                rec = pygame.draw.line(disp,Colors.white, path[i], path_inner[i])
+                pygame.draw.line(disp,Colors.white, path[i], path_inner[i])
                 midp = ((path[i][0] + path_inner[i][0])//2, (path[i][1] + path_inner[i][1])//2)
         except:
             pass
@@ -154,4 +196,12 @@ def trackEditor():
         clock.tick(75)
 
 
-trackEditor()
+track = Track(trackEditor())
+
+while True:
+    for e in pygame.event.get():
+        pass
+    disp.fill(Colors.bg)
+
+
+    clock.tick(75)
