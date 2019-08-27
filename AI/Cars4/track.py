@@ -41,7 +41,7 @@ class Track():
 
 def load_images():
     pt_size = (5,5)
-    car_size = (50, 24.4)  #image ratio = 2.045045045045:1
+    car_size = (50, 24)  #image ratio = 2.045045045045:1
     pt_image = pygame.transform.scale(pygame.image.load("resources/point.png").convert_alpha(),pt_size)
     Images.point=pt_image
     car = pg.transform.scale(pg.image.load("resources/lambi.png").convert_alpha(), car_size)
@@ -102,7 +102,7 @@ def trackEditor():
 
     clock = pygame.time.Clock()
 
-    disp = pygame.display.set_mode((w, h), flags=pg.FULLSCREEN,depth=16)
+    disp = pygame.display.set_mode((w, h),depth=16)
 
     load_images()
 
