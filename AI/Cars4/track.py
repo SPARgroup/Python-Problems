@@ -1,7 +1,7 @@
 import pygame as pg, pygame
 import math
 from time import sleep
-
+import neuralnetwork as nn
 
 class Colors:
     white=(255,255,255)
@@ -17,8 +17,8 @@ class Images:
     pass
 
 
-class Car():
-    def __init__(self):
+class Car(nn.Brain):
+    def __init__(self, startPos):
         pass
 
 
