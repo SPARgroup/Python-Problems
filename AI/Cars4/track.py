@@ -9,8 +9,8 @@ class Colors:
     green=(0,255,0)
     blue=(0,0,255)
     bg=(45,45,45)
-    orange=(228,106,107)
-    orange2=(200,90,140)
+    orange=(246,114,128)
+    orange2=(232,23,93)
 
 
 class Images:
@@ -85,7 +85,7 @@ def save():
     global path, path_inner
 
 
-width = 25 #width of the track
+width = 75 #width of the track
 
 def trackEditor():
     global width, w, h, clock, disp
