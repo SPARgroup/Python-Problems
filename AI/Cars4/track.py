@@ -17,11 +17,6 @@ class Images:
     pass
 
 
-class Car(nn.Brain):
-    def __init__(self, startPos):
-        pass
-
-
 class Track():
     def __init__(self, properties):
         self.inner = properties[0]
@@ -196,12 +191,3 @@ def trackEditor():
         clock.tick(75)
 
 
-track = Track(trackEditor())
-
-while True:
-    for e in pygame.event.get():
-        pass
-    disp.fill(Colors.bg)
-
-
-    clock.tick(75)
