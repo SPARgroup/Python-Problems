@@ -24,22 +24,43 @@ class Track():
         self.miles = properties[2]
         self.innerpoints = properties[3]
         self.outerpoints = properties[4]
+        self.startpoint = ((self.outerpoints[0][0] + self.innerpoints[0][0]) / 2, (self.outerpoints[0][1] + self.innerpoints[0][1]) / 2)
 
     def display(self, disp):
         for i in range(len(self.innerpoints) - 1):
-            pygame.draw.lines(disp, Colors.orange, False, self.innerpoints, 5)
+            pygame.draw.lines(disp, Colors.orange, True, self.innerpoints, 5)
             try:
-                pygame.draw.lines(disp, Colors.orange, False, self.outerpoints, 5)
+                pygame.draw.lines(disp, Colors.orange, True, self.outerpoints, 5)
             except ValueError:
                 pass
 
+        for rect in self.outer:
+            displayRect(rect, disp)
+
+    def calc_slopes(self):
+        self.slopes = []
+
+
+def displayRect(rect, disp):
+    pygame.draw.lines(disp,Colors.white,True, [rect.topleft, rect.topright, rect.bottomright, rect.bottomleft])
 
 def load_images():
-    pt_size = (5,5)
-    car_size = (50, 24)  #image ratio = 2.045045045045:1
-    pt_image = pygame.transform.scale(pygame.image.load("resources/point.png").convert_alpha(),pt_size)
+    global width
+
+    pt_size=(5,5)
+    pt_image=pygame.transform.scale(pygame.image.load("resources/point.png").convert_alpha(),pt_size)
     Images.point=pt_image
-    car = pg.transform.scale(pg.image.load("resources/lambi.png").convert_alpha(), car_size)
+
+    #Load Purple Lamborghini
+    orig = (615, 316)
+    factor = 3
+    new_h = int(width/factor)
+
+    fac = new_h / orig[1]
+
+    car_size = (int(orig[0] * fac), new_h)
+
+    Images.car = pg.transform.scale(pg.image.load("resources/lambi2.png").convert_alpha(), car_size)
 
 
 def dist(p1, p2):
@@ -65,7 +86,7 @@ def theta(points):
     return math.atan2(p2[1] - p1[1], p2[0] - p1[0])
 
 
-def renderText(text, pos, color):
+def renderText(text, pos, color, disp):
     nexa = pg.font.Font("resources/Nexa Bold.otf", 45)
 
     t = nexa.render(text,True, color)
@@ -80,7 +101,7 @@ def save():
     global path, path_inner
 
 
-width = 75 #width of the track
+width = 125 #width of the track
 
 def trackEditor():
     global width, w, h, clock, disp
@@ -97,7 +118,7 @@ def trackEditor():
 
     clock = pygame.time.Clock()
 
-    disp = pygame.display.set_mode((w, h),depth=16)
+    disp = pygame.display.set_mode((w, h), flags = pg.FULLSCREEN,depth=16)
 
     load_images()
 
@@ -148,6 +169,7 @@ def trackEditor():
                         for i in range(l):
                             path_inner.append(get_inner(path[i][0], path[i][1], [path[i-1], path[(i + 1) % l]]))
                 if event.key == pg.K_ESCAPE:
+                    pygame.quit()
                     pass
                     #1/0 #masterminds
                 if event.key == pg.K_s:
@@ -172,6 +194,7 @@ def trackEditor():
             pygame.draw.lines(disp, Colors.orange,path_closed, path,5)
             try:
                 pygame.draw.lines(disp,Colors.orange,path_closed,path_inner,5)
+                pass
             except ValueError:
                 pass
 
@@ -185,7 +208,7 @@ def trackEditor():
         except:
             pass
 
-        renderText("S: Save    G: Smooth     C: Render Closed     Esc: Exit", (70, 40), Colors.orange)
+        renderText("S: Save    G: Smooth     C: Render Closed     Esc: Exit", (70, 40), Colors.orange, disp)
         pygame.display.update()
 
         clock.tick(75)
