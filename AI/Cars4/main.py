@@ -24,6 +24,7 @@ class Car(nn.Brain):
 
 
 track = vs.Track(vs.trackEditor())
+track.saveTrack("First")
 
 pygame.init()
 

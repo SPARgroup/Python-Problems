@@ -2,6 +2,7 @@ import pygame as pg, pygame
 import math
 from time import sleep
 import neuralnetwork as nn
+import csv
 
 class Colors:
     white=(255,255,255)
@@ -40,9 +41,29 @@ class Track():
     def calc_slopes(self):
         self.slopes = []
 
+    def saveTrack(self, name):
+        v_out = []
+        v_in = []
+        trans_vect = (self.outerpoints[0][0] - self.innerpoints[0][0],self.outerpoints[0][1] - self.innerpoints[0][1])
+        l = len(self.outerpoints)
+
+        for i in range(l):
+            v_out.append((self.outerpoints[(i+1)%l][0] - self.outerpoints[i][0],self.outerpoints[(i+1)%l][1] - self.outerpoints[i][1]))
+            v_in.append((self.innerpoints[(i + 1) % l][0] - self.innerpoints[i][0],self.innerpoints[(i + 1) % l][1] - self.innerpoints[i][1]))
+
+        file = open("tracks/{}.track".format(name), "w", newline='')
+        writer = csv.writer(file)
+        writer.writerow([str(l), str(trans_vect[0]), str(trans_vect[1])]) #First line: total vectors for each, trans vect x, trans vect y
+        for v in v_out:
+            writer.writerow([str(i) for i in v])
+        for w in v_in:
+            writer.writerow([str(int(i)) for i in w])
+        file.close()
+
 
 def displayRect(rect, disp):
     pygame.draw.lines(disp,Colors.white,True, [rect.topleft, rect.topright, rect.bottomright, rect.bottomleft])
+
 
 def load_images():
     global width
@@ -102,6 +123,7 @@ def save():
 
 
 width = 125 #width of the track
+
 
 def trackEditor():
     global width, w, h, clock, disp

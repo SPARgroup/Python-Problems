@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b054d8a-8216-4c79-ba1e-193090cdafaf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Cars4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Cars4.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/track.py" beforeDir="false" afterPath="$PROJECT_DIR$/track.py" afterDir="false" />
@@ -21,11 +20,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="58" column="17" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="17" />
+            <state relative-caret-position="381">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#192#577#0" />
               </folding>
             </state>
           </provider>
@@ -43,14 +41,45 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/track.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2978">
-              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+            <state relative-caret-position="293">
+              <caret line="55" column="137" selection-start-line="55" selection-start-column="137" selection-end-line="55" selection-end-column="137" />
               <folding>
                 <element signature="e#109#252#0" />
                 <element signature="e#273#277#0" />
-                <element signature="e#1175#1227#0" />
-                <element signature="e#1685#1843#0" />
-                <element signature="e#1862#1919#0" />
+                <element signature="e#339#654#0" />
+                <element signature="e#693#1033#0" />
+                <element signature="e#748#964#0" />
+                <element signature="e#1070#1086#0" />
+                <element signature="e#1349#1615#0" />
+                <element signature="e#1122#1229#0" />
+                <element signature="e#1254#1683#0" />
+                <element signature="e#1708#1760#0" />
+                <element signature="e#1796#1996#0" />
+                <element signature="e#2022#2177#0" />
+                <element signature="e#2224#2382#0" />
+                <element signature="e#2401#2458#0" />
+                <element signature="e#2517#6198#0" />
+                <element signature="e#3103#6198#0" />
+                <element signature="e#3195#3362#0" />
+                <element signature="e#3216#3291#0" />
+                <element signature="e#3417#5406#0" />
+                <element signature="e#3467#4003#0" />
+                <element signature="e#3531#3855#0" />
+                <element signature="e#3589#3855#0" />
+                <element signature="e#3676#3855#0" />
+                <element signature="e#3911#4003#0" />
+                <element signature="e#4062#5406#0" />
+                <element signature="e#4196#4476#0" />
+                <element signature="e#4302#4476#0" />
+                <element signature="e#4542#4618#0" />
+                <element signature="e#4679#5406#0" />
+                <element signature="e#4832#5259#0" />
+                <element signature="e#4887#5184#0" />
+                <element signature="e#5312#5406#0" />
+                <element signature="e#5476#5703#0" />
+                <element signature="e#5568#5651#0" />
+                <element signature="e#5801#5999#0" />
+                <element signature="e#5844#5999#0" />
               </folding>
             </state>
           </provider>
@@ -59,7 +88,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/1626689119/pygame/draw.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-152">
+            <state relative-caret-position="1020">
               <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
             </state>
           </provider>
@@ -75,6 +104,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Samarth Singla" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -102,29 +136,11 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Cars4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cars4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cars4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cars4" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -227,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567012072262</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Progress on track and car display. &#10;Problem encountered: Pygame doesnt really rotate rectangles. &#10;I propose one of these 2 solutions:&#10; -&gt; Change to some other engine. Will have to check which ones have what we want.&#10; -&gt; Write our own custom collision engine (including a custom rect class that actually rotates)&#10; &#10; Cheers">
+      <created>1567356634201</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1567356634201</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -297,13 +320,28 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added cropped version of sweet lambo" />
     <MESSAGE value="Random Unnecessary shit" />
     <MESSAGE value="Let us Start" />
     <MESSAGE value="Some color palletes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some color palletes" />
+    <MESSAGE value="Progress on track and car display. &#10;Problem encountered: Pygame doesnt really rotate rectangles. &#10;I propose one of these 2 solutions:&#10; -&gt; Change to some other engine. Will have to check which ones have what we want.&#10; -&gt; Write our own custom collision engine (including a custom rect class that actually rotates)&#10; &#10; Cheers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Progress on track and car display. &#10;Problem encountered: Pygame doesnt really rotate rectangles. &#10;I propose one of these 2 solutions:&#10; -&gt; Change to some other engine. Will have to check which ones have what we want.&#10; -&gt; Write our own custom collision engine (including a custom rect class that actually rotates)&#10; &#10; Cheers" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/1626689119/pygame/surface.py">
@@ -360,32 +398,69 @@
     </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/1626689119/pygame/draw.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
+        <state relative-caret-position="1020">
           <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="58" column="17" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="17" />
+        <state relative-caret-position="381">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#192#577#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/1626689119/_csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="131" column="4" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/track.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2978">
-          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        <state relative-caret-position="293">
+          <caret line="55" column="137" selection-start-line="55" selection-start-column="137" selection-end-line="55" selection-end-column="137" />
           <folding>
             <element signature="e#109#252#0" />
             <element signature="e#273#277#0" />
-            <element signature="e#1175#1227#0" />
-            <element signature="e#1685#1843#0" />
-            <element signature="e#1862#1919#0" />
+            <element signature="e#339#654#0" />
+            <element signature="e#693#1033#0" />
+            <element signature="e#748#964#0" />
+            <element signature="e#1070#1086#0" />
+            <element signature="e#1349#1615#0" />
+            <element signature="e#1122#1229#0" />
+            <element signature="e#1254#1683#0" />
+            <element signature="e#1708#1760#0" />
+            <element signature="e#1796#1996#0" />
+            <element signature="e#2022#2177#0" />
+            <element signature="e#2224#2382#0" />
+            <element signature="e#2401#2458#0" />
+            <element signature="e#2517#6198#0" />
+            <element signature="e#3103#6198#0" />
+            <element signature="e#3195#3362#0" />
+            <element signature="e#3216#3291#0" />
+            <element signature="e#3417#5406#0" />
+            <element signature="e#3467#4003#0" />
+            <element signature="e#3531#3855#0" />
+            <element signature="e#3589#3855#0" />
+            <element signature="e#3676#3855#0" />
+            <element signature="e#3911#4003#0" />
+            <element signature="e#4062#5406#0" />
+            <element signature="e#4196#4476#0" />
+            <element signature="e#4302#4476#0" />
+            <element signature="e#4542#4618#0" />
+            <element signature="e#4679#5406#0" />
+            <element signature="e#4832#5259#0" />
+            <element signature="e#4887#5184#0" />
+            <element signature="e#5312#5406#0" />
+            <element signature="e#5476#5703#0" />
+            <element signature="e#5568#5651#0" />
+            <element signature="e#5801#5999#0" />
+            <element signature="e#5844#5999#0" />
           </folding>
         </state>
       </provider>
