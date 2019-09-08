@@ -3,6 +3,10 @@ import math
 from time import sleep
 import neuralnetwork as nn
 import csv
+import os
+
+abspath = os.path.dirname(os.path.abspath(__file__)) + '\\'
+print(abspath)
 
 class Colors:
     white=(255,255,255)
@@ -44,14 +48,14 @@ class Track():
     def saveTrack(self, name):
         v_out = []
         v_in = []
-        trans_vect = (self.outerpoints[0][0] - self.innerpoints[0][0],self.outerpoints[0][1] - self.innerpoints[0][1])
+        trans_vect = (self.innerpoints[0][0] - self.outerpoints[0][0],self.innerpoints[0][1] - self.outerpoints[0][1])
         l = len(self.outerpoints)
 
         for i in range(l):
             v_out.append((self.outerpoints[(i+1)%l][0] - self.outerpoints[i][0],self.outerpoints[(i+1)%l][1] - self.outerpoints[i][1]))
             v_in.append((self.innerpoints[(i + 1) % l][0] - self.innerpoints[i][0],self.innerpoints[(i + 1) % l][1] - self.innerpoints[i][1]))
 
-        file = open("tracks/{}.track".format(name), "w", newline='')
+        file = open(abspath + "tracks\\{}.track".format(name), "w", newline='')
         writer = csv.writer(file)
         writer.writerow([str(l), str(trans_vect[0]), str(trans_vect[1])]) #First line: total vectors for each, trans vect x, trans vect y
         for v in v_out:
@@ -69,7 +73,7 @@ def load_images():
     global width
 
     pt_size=(5,5)
-    pt_image=pygame.transform.scale(pygame.image.load("resources/point.png").convert_alpha(),pt_size)
+    pt_image=pygame.transform.scale(pygame.image.load(abspath + "resources\\point.png").convert_alpha(),pt_size)
     Images.point=pt_image
 
     #Load Purple Lamborghini
@@ -81,7 +85,7 @@ def load_images():
 
     car_size = (int(orig[0] * fac), new_h)
 
-    Images.car = pg.transform.scale(pg.image.load("resources/lambi2.png").convert_alpha(), car_size)
+    Images.car = pg.transform.scale(pg.image.load(abspath + "resources\\lambi2.png").convert_alpha(), car_size)
 
 
 def dist(p1, p2):
@@ -108,7 +112,7 @@ def theta(points):
 
 
 def renderText(text, pos, color, disp):
-    nexa = pg.font.Font("resources/Nexa Bold.otf", 45)
+    nexa = pg.font.Font(abspath + "resources\\Nexa Bold.otf", 45)
 
     t = nexa.render(text,True, color)
 
@@ -118,11 +122,10 @@ def renderText(text, pos, color, disp):
 
 
 def save():
-    file = open("track.csv", "w")
-    global path, path_inner
+    pass
 
 
-width = 125 #width of the track
+width = 75 #width of the track
 
 
 def trackEditor():
@@ -235,4 +238,7 @@ def trackEditor():
 
         clock.tick(75)
 
+track = Track(trackEditor())
+track.saveTrack("First")
 
+print("Bye ~nyan")
